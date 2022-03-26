@@ -1,0 +1,11 @@
+## 数据库
+- 创建集合：coding-catetory，编程分类数据集合
+ - code是分类编码，0表示所有分类，在前端加载的时候，就不需要硬编码判断了
+
+- 创建集合：coding-source，编程资源，
+ - 字段category是coding-catetory的code字段
+
+- 创建集合：soft-category，软件分类数据集合
+
+## 权限
+- 数据库中所有的集合的权限设置为"所有用户可读"

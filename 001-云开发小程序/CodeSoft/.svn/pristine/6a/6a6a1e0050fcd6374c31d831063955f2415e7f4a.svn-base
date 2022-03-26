@@ -1,0 +1,84 @@
+// pages/soft/soft.js
+var app = getApp();
+const db = wx.cloud.database()
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+
+  },
+  
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.loadSoftCategory()
+    this.loadSoftSource()
+  },
+
+  //加载软件分类
+  loadSoftCategory: function(){
+    wx.showLoading({
+      title: '数据加载中',
+    })
+    db.collection("soft-category").orderBy("sort","asc").get({
+      success: res => {
+        if(res.data) {
+          console.log(res.data)
+          this.setData({
+            itemList: res.data,
+            curCode: res.data[0].code
+          })
+        } 
+      },
+      complete: res => {
+        wx.hideLoading()
+      }
+    })
+  },
+
+  //加载资源
+  loadSoftSource: function(code){
+    //加载数据
+    wx.showLoading({
+      title: '数据加载中',
+    })
+    let query = db.collection("soft-source")
+    if(code){
+      code = new Number(code)
+      query = query.where({category:code})
+    }
+    query.where({enable:1}).orderBy("sort","asc").get({
+      success: res => {
+        if(res.data) {
+          this.setData({
+            sourceList: res.data
+          })
+        } 
+      },
+      complete: res => {
+        wx.hideLoading()
+      }
+    })
+  },
+
+  changeItem: function(e){
+    let code = e.target.dataset.code
+    this.setData({
+      curCode: code
+    })
+    this.loadSoftSource(code)
+  },
+  
+  handleLongPress: function(e){
+    let content = e.target.dataset.content
+    wx.setClipboardData({
+      data: content
+    })
+  }
+  
+})
+

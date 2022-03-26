@@ -1,0 +1,1 @@
+"D:\work\WeChatDevTool\cli.bat" cloud functions deploy --e moban-0adc39 --n quickstartFunctions --r --project "D:\workspaceAction\CodeSoft" --report

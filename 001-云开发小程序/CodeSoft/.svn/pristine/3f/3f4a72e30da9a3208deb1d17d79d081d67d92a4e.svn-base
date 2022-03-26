@@ -1,0 +1,11 @@
+<view class="container">
+
+  <view class="user-header">
+    <open-data class="user-avatar" type="userAvatarUrl"></open-data>
+  </view>
+
+  <view class="split-v"></view>
+
+  <view class="help-tip">工程师加班开发中</view>
+
+</view>

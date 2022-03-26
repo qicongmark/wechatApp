@@ -1,0 +1,34 @@
+
+## json 数据导入的时候不能有换行
+
+## blogs的数据形式
+{
+    "_id": "123456",
+    "content": "内容",
+    "avatar": "a1",   
+    "createAt": 12345,   //会根据这个排序
+    "nickname": "大聪",
+    "image": "https://cdn.jsdelivr.net/"
+}
+
+
+## 资源分类
+{
+    "_id": "123456",
+    "name": "学习资料",
+    "sort": 1,   //会根据这个排序
+    "code": 1001  //编码，资源表的category字段
+}
+
+## 资源内容
+{
+    "_id": "123456",
+    "category": 1001,
+    "name": "标题",
+    "content": "内容",
+    "icon": "1",
+    "img": "https://cdn.jsdelivr.net/",
+    "sort": 1
+}
+
+

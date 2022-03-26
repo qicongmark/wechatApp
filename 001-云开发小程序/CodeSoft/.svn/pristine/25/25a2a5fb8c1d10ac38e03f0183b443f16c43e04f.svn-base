@@ -1,0 +1,98 @@
+<image class="bgimg" mode="widthFix" src="/images/bg.jpg"></image>
+
+<view class="bg-userinfo">
+ <view class="nickname bg-nickname">
+  <open-data type="userNickName" style="color:#fff;font-size:38rpx;letter-spacing:1rpx"></open-data>
+ </view>
+ <open-data class="bg-avatar" type="userAvatarUrl"></open-data>
+</view>
+
+<view class="container" style="margin-top:50rpx;">
+ <view wx:if="{{item}}" class="friend-card">
+  <view class="friend-item">
+   <open-data class="avatar" type="userAvatarUrl"></open-data>
+   <view style="width:100%;">
+    <view class="nickname">
+     <open-data type="userNickName"></open-data>
+    </view>
+    <view class="content">
+     点击右下角 .. 进行编辑
+    </view>
+
+    <view wx:if="{{item.image}}" class="image-block">
+     <image mode="heightFix" src="{{item.image}}"></image>
+    </view>
+
+    <view class="tip-location">
+     <text>深圳·腾讯总部</text>
+    </view>
+
+    <view class="tip">
+     <text>2小时前</text>
+     <view class="opt-dot">··</view>
+    </view>
+    
+   </view>
+  </view>
+  <view class="zan-block">
+   <image class="zan-img" style="width:48rpx;height:48rpx" src="/images/icon/zan.png"></image>
+   <view>
+    <image class="zan-img" src="/images/a3.jpg"></image>
+    <image class="zan-img" src="/images/a4.jpg"></image>
+    <image class="zan-img" src="/images/a5.jpg"></image>
+    <image class="zan-img" src="/images/a6.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+    <image class="zan-img" src="/images/a3.jpg"></image>
+    <image class="zan-img" src="/images/a4.jpg"></image>
+    <image class="zan-img" src="/images/a5.jpg"></image>
+    <image class="zan-img" src="/images/a6.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+    <image class="zan-img" src="/images/a3.jpg"></image>
+    <image class="zan-img" src="/images/a4.jpg"></image>
+    <image class="zan-img" src="/images/a5.jpg"></image>
+    <image class="zan-img" src="/images/a6.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+    <image class="zan-img" src="/images/a3.jpg"></image>
+    <image class="zan-img" src="/images/a4.jpg"></image>
+    <image class="zan-img" src="/images/a5.jpg"></image>
+    <image class="zan-img" src="/images/a6.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+    <image class="zan-img" src="/images/a3.jpg"></image>
+    <image class="zan-img" src="/images/a4.jpg"></image>
+    <image class="zan-img" src="/images/a5.jpg"></image>
+    <image class="zan-img" src="/images/a6.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+    <image class="zan-img" src="/images/a7.jpg"></image>
+    <image class="zan-img" src="/images/a8.jpg"></image>
+    <image class="zan-img" src="/images/a9.jpg"></image>
+   </view>
+  </view>
+ </view>
+
+</view>
+

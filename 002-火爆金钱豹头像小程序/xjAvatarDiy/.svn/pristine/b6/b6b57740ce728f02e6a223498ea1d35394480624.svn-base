@@ -1,0 +1,19 @@
+/* components/canvas-drag/index.wxss */
+
+.movable-label {
+  margin-top: 300rpx;
+  width: 800rpx;
+  height: 400rpx;
+  background: #eee;
+}
+
+.movable-block {
+  width: 10rpx;
+  height: 120rpx;
+  background: #ccc;
+}
+
+.movable-block .image-con {
+  width: 100%;
+  height: 100%;
+}

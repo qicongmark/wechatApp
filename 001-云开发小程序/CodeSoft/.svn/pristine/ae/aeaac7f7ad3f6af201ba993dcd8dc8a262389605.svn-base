@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/coding/coding"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "编程和软件",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#2b2b2b",
+    "selectedColor": "#42c642",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon/soft.png",
+        "selectedIconPath": "images/icon/softSelected.png",
+        "text": "软件"
+      },
+      {
+        "pagePath": "pages/coding/coding",
+        "iconPath": "images/icon/coding.png",
+        "selectedIconPath": "images/icon/codingSelected.png",
+        "text": "编程"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/icon/user.png",
+        "selectedIconPath": "images/icon/userSelected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

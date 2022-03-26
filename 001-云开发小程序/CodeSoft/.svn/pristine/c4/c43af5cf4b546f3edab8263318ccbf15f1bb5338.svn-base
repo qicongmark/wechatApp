@@ -1,0 +1,13 @@
+page {
+ background: #fff;
+}
+.container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ box-sizing: border-box;
+ background-color: #FFF;
+}
+view{
+ text-align: center;
+}

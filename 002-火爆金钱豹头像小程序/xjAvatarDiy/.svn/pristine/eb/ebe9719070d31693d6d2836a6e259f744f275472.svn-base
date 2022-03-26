@@ -1,0 +1,182 @@
+const app = getApp();
+import CanvasDrag from '../../components/canvas-drag/canvas-drag';
+
+Page({
+  data: {
+    bgPic: null,
+    tapIndex: 0,
+    imgList: [],
+    graph: {},
+  },
+
+  onLoad: function () {
+    let imgList = this.data.imgList
+    for(let i = 0; i < 10; i++){
+      imgList[i] = "/images/" + i + ".png";
+    }
+    this.setData({
+      imgList:imgList
+    })
+  },
+  onReady: function () {
+    this.drawBgImg("/images/avatar.png")
+  },
+
+  selectImg: function (e) {
+    var avatar = e.currentTarget.dataset.avatar;
+    this.setData({
+      graph: {
+        w: 100,
+        h: 100,
+        type: 'image',
+        single: true,
+        url: avatar
+      }
+    })
+  },
+
+  /**
+   * 导出图片
+   */
+  onExport() {
+    CanvasDrag.export().then((filePath) => {
+      this.saveImage(filePath);
+    }).catch((e) => {
+      console.error(e);
+    })
+  },
+
+  // 保存图片到相册
+  saveImage: function (filepath) {
+    var that = this;
+    wx.showLoading({
+      title: '保存中...',
+    })
+    wx.saveImageToPhotosAlbum({ //保存图片到相册
+      filePath: filepath,
+      success: res => {
+        wx.showToast({
+          title: '图片已存入相册',
+          icon: "success",
+          duration: 2000
+        })
+      },
+      complete: res => {
+        wx.hideLoading()
+      }
+    });
+  },
+
+  // 从相册选择
+  chooseImage: function () {
+    var that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original'],
+      success: (res) => {
+        this.drawBgImg(res.tempFilePaths[0])
+      }
+    })
+  },
+
+  //画背景图
+  drawBgImg: function(url){
+    wx.getImageInfo({
+      src: url,
+      success: function (res) {
+        if(res.width == res.height){
+          CanvasDrag.changeBgImage(url);
+        }else{
+          CanvasDrag.changeBgImageCut(url,res.width,res.height);
+        }
+      }
+    })
+  },
+  
+  // 获取用户头像
+  getUserInfo: function (e) {
+    // console.log(e.detail.userInfo);
+
+    this.setData({
+      hasUserInfo: true
+    })
+    var that = this;
+    // console.log(e.detail.userInfo.avatarUrl);
+    var avatarUrl = e.detail.userInfo.avatarUrl;
+    var avatarHd = this.headimgHD(avatarUrl);
+
+    console.log(avatarHd);
+    wx.getImageInfo({
+      src: avatarHd,
+      success: res => {
+        this.onChangeBgImage(res.path);
+      }
+    })
+    wx.setStorageSync("userAvatar", avatarHd);
+  },
+
+  deblock: function (e) {
+    console.log(e);
+    var curIndex = e.currentTarget.dataset.tap;
+    if (this.data.imgList[curIndex] == "locked") {
+      this.setData({
+        shareModule: true,
+        curIndex: curIndex
+      })
+      this.setData({
+        tapIndex: e.currentTarget.dataset.tap
+      })
+    } else {
+      this.chooseImg(e.currentTarget.dataset.haturl);
+    }
+
+  },
+
+  deblockAll: function () {
+    this.setData({
+      shareModule: true
+    })
+  },
+
+  // 用户分享
+  onShareAppMessage: function () {
+    var that = this;
+    this.setData({
+      shareModule: false,
+      shareAllModule: false
+    })
+
+    setTimeout(function () {
+      var imgList = that.data.imgList;
+      for (var i = 0; i < imgList.length; i++) {
+        imgList[i] = "unlocked"
+      }
+      that.setData({
+        imgList: imgList,
+        delockAll: false
+      })
+      wx.setStorageSync("saveImgList", imgList);
+    }, 3000)
+
+    return {
+      title: "官方信息：送你一顶圣诞帽",
+      path: "pages/imageeditor/imageeditor",
+      imageUrl: "../../image/shareCard.png"
+    }
+
+  },
+
+  uploadBtn: function () {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ["compressed", "original"],
+      success: function (t) {
+        var a = t.tempFilePaths[0];
+        wx.navigateTo({
+          url: "/pages/cutInside/cutInside?filepath=" + a
+        });
+      }
+    });
+  },
+
+});

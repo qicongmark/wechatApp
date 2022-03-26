@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/crop/crop"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e1c2ae",
+    "navigationBarTitleText": "金钱豹头像制作器",
+    "navigationBarTextStyle": "black",
+    "disableScroll": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bg {
+  position:fixed;
+  width:100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.avatar-canvas{
+  margin-top:100rpx;
+  border-radius:6rpx;
+}
+
+.scrollView {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  white-space: nowrap;
+  background-color: #a62c27;
+}
+.diy-img{
+  display: inline-block;
+  flex-direction: column;
+  position: relative;
+  width: 150rpx;
+  margin:10px 6px 6px 6px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.diy-img image{
+  height:150rpx;
+  width:150rpx;
+  border-radius:10rpx;
+  background-color: #fff;
+}
+
+.active{
+  border: 6rpx solid #CEC5E1;
+}

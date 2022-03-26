@@ -1,0 +1,23 @@
+<view class="container">
+
+ <view class="friend-card">
+  <view class="friend-item">
+   <image class="avatar" src="/images/avatar.jpg"></image>
+   <view>
+    <view class="nickname">祁大聪讲编程</view>
+    <view class="content">
+    生活中，工作中有太多的朋友杭州也涌入了很多从四面八方来收割CEO的后渲染
+    言必称操盘手，给罗永浩直播间布置过直播就敢说，
+    深度参与交割朋友早期直播操盘
+    </view>
+
+    <view class="image-block">
+     <image mode="heightFix" src="https://cdn.jsdelivr.net/gh/qidacong/blob-img@master/20210610/pic.35fm3cf43pg0.png" data-url="https://cdn.jsdelivr.net/gh/qidacong/blob-img@master/20210610/pic.35fm3cf43pg0.png" bindtap="previewImg"></image>
+    </view>
+    <view class="tip">24分钟前</view>
+
+   </view>
+  </view>
+ </view>
+
+</view>

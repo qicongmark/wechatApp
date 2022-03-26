@@ -1,0 +1,17 @@
+<view class="container">
+  <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+  <view class="hint">2022年，换个头像豹富一年</view>
+  <view class="avatar-block">
+    <canvas-drag id="canvas-drag" graph="{{graph}}" width="250" height="250"></canvas-drag>
+    <button style="width:210px;" type="primary" bindtap="onExport">保存头像图片</button>
+    <view class="btn-block">
+      <button style="width:85px;padding:5px" plain bindtap="getUserProfile">微信头像</button>
+      <button style="width:85px;padding:5px" plain bindtap="chooseImage">上传照片</button>
+    </view>
+  </view>
+</view>
+<scroll-view class="scrollView" scrollX="true">
+  <view class="diy-img" wx:for="{{imgList}}">
+    <image src="{{item}}" bindtap="selectImg" data-avatar="{{item}}"></image>
+  </view>
+</scroll-view>

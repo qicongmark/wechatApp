@@ -1,0 +1,31 @@
+<!-- 源码模板 -->
+<div class="star-tip">防止找不到，点击上方 ...“添加到我的小程序”</div>
+
+<view class="container">
+ <div class="grid">
+   
+  <navigator wx:if="{{config.showPyq==1}}" class="ux-col-1" url="/pages/01pyq/01pyq">
+    <image class="icon" src="/images/icon/22.png"></image>
+    <view class="icon-name">点赞图</view>
+  </navigator>
+  
+  <navigator wx:if="{{config.showAvatar==1}}" class="ux-col-1" >
+    <image class="icon" src="/images/icon/21.png"></image>
+    <view class="icon-name">头像diy</view>
+  </navigator>
+  
+  <navigator wx:if="{{config.showWerun==1}}" class="ux-col-1" url="/pages/02werun/02werun">
+    <image class="icon" src="/images/icon/23.png"></image>
+    <view class="icon-name">本月步数</view>
+  </navigator>
+
+  <!--
+  <view class="ux-col-1">Hello</view>
+  <view class="ux-col-1">World</view>
+  -->
+   
+ </div>
+
+ <button class="share-btn" type="primary" open-type="share">点击分享给好友</button>
+
+</view>

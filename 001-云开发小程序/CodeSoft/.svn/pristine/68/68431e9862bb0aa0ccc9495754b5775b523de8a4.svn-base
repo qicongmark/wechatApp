@@ -1,0 +1,44 @@
+{
+ "pages": [
+  "pages/index/index",
+  "pages/coding/coding",
+  "pages/blogs/blogs",
+  "pages/blog/blog",
+  "pages/01pyq/01pyq"
+ ],
+ "window": {
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#F6F6F6",
+  "navigationBarTitleText": "编程和软件",
+  "navigationBarTextStyle": "black"
+ },
+ "tabBar": {
+  "color": "#2b2b2b",
+  "selectedColor": "#42c642",
+  "backgroundColor": "#F6F6F6",
+  "borderStyle": "white",
+  "list": [
+   {
+    "pagePath": "pages/index/index",
+    "iconPath": "images/icon/tool.png",
+    "selectedIconPath": "images/icon/toolSelected.png",
+    "text": "工具"
+   },
+   {
+    "pagePath": "pages/coding/coding",
+    "iconPath": "images/icon/coding.png",
+    "selectedIconPath": "images/icon/codingSelected.png",
+    "text": "导航"
+   },
+   {
+    "pagePath": "pages/blogs/blogs",
+    "iconPath": "images/icon/user.png",
+    "selectedIconPath": "images/icon/userSelected.png",
+    "text": "圈子"
+   }
+  ]
+ },
+ "sitemapLocation": "sitemap.json",
+ "style": "v2"
+}

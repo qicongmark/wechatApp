@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="title">周末去哪玩？</view>
+
+  <view class="main">
+    <view class="canvas-container">
+      <view  animation="{{animationData}}" class="canvas-content" >
+        <view class="canvas-line">
+          <view class="canvas-litem" wx:for="{{awardsList}}" wx:key="unique" style="-webkit-transform: rotate({{item.lineTurn}});transform: rotate({{item.lineTurn}})"></view>
+        </view>
+        
+        <view class="canvas-list">
+          <view class="canvas-item" wx:for="{{awardsList}}" wx:key="unique">
+              <view class="canvas-item-text" style="-webkit-transform: rotate({{item.turn}});transform: rotate({{item.turn}})">{{item.award}}</view>
+          </view>
+        </view>
+      </view>
+      <view bindtap="playReward" class="canvas-btn {{btnDisabled}}">转</view>		
+    </view>
+  </view>
+  
+  <view class="help-tip-title">源码获取</view>
+  <view class="help-tip" bindlongpress="handleLongPress">长按复制：coder10，微信搜索关注</view>
+  <view class="help-tip">回复“转盘小程序”即可</view>
+  <button class="share-btn" type="primary" open-type="share">点击分享给好友</button>
+
+</view>
+
+
+

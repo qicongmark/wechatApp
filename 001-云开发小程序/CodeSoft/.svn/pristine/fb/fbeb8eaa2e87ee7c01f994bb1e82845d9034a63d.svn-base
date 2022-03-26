@@ -1,0 +1,39 @@
+/**app.wxss**/
+ 
+
+button {
+  background: initial;
+}
+
+button:focus{
+  outline: 0;
+}
+
+button::after{
+  border: none;
+}
+
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+.help-tip-title{
+  margin-top: 100rpx;
+  width:100%;
+  text-align:center;
+  font-weight: bold;
+}
+.help-tip{
+  width:100%;
+  text-align:center;
+  color: #7a7a7a;
+  margin-top: 30rpx;
+}
+.share-btn{
+  margin-top: 50rpx;
+}

@@ -1,0 +1,25 @@
+<view class="container">
+
+  <view wx:for="{{blogs}}" wx:key="key" class="friend-card">
+    <view class="friend-item">
+      <image class="avatar" src="/images/avatar/{{item.avatar}}.jpg"></image>
+      <view style="width:100%;">
+        <view class="nickname">{{item.nickname}}</view>
+        <view class="content">
+          <text class="content-text" style="white-space:pre-wrap">{{item.content}}</text>
+        </view>
+
+        <view wx:if="{{item.image}}" class="image-block">
+          <image style="width:100%;" mode="widthFix"  src="{{item.image}}" data-url="{{item.image}}" bindtap="previewImg"></image>
+        </view>
+
+        <button bindtap="doShare" data-bid="{{item._id}}" data-img="{{item.image}}"
+          style="margin:10rpx 0 0 -25rpx;padding:0;width:180rpx;" open-type="share">
+          <text class="tip">分享给好友</text>
+        </button>
+
+      </view>
+    </view>
+  </view>
+
+</view>

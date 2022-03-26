@@ -1,0 +1,119 @@
+// pages/02werun/02werun.js
+let Calendar = require("../../utils/Calendar.js");
+let app = getApp();
+
+Page({
+
+ /**
+  * 页面的初始数据
+  */
+ data: {
+
+ },
+
+ /**
+  * 生命周期函数--监听页面加载
+  */
+ onLoad: function (options) {
+  
+  wx.getWeRunData({
+   success:res=>{
+    wx.showLoading({
+     title: '数据加载中',
+    })
+    const cloudID = res.cloudID
+    wx.cloud.callFunction({
+     name:"getWeRunData",
+     data:{weRunData:wx.cloud.CloudID(cloudID)},
+     success: runRes=>{
+      if(runRes.errMsg.includes('ok')){
+       console.log(runRes.result)
+       let result = runRes.result.weRunData.data;              
+       this.initCalendar(result.stepInfoList)
+      }
+     },
+     complete: res => {
+      wx.hideLoading()
+     }
+    })
+   }
+   
+  })
+ },
+
+ initCalendar: function (signDates) {
+  //当前年月日
+  let paramDate = new Date()
+  let now = new Date();//当前时间
+  let nowMonth = now.getMonth();
+  let nowYear = now.getFullYear();
+
+  //从后台获取当前年月-打卡
+  let openid = app.globalData.openid;
+  let year = paramDate.getFullYear();
+  let month = paramDate.getMonth();
+  
+  //星期
+  let days = ["日", "一", "二", "三", "四", "五", "六"];
+  //签到日历
+  let calendarObj = Calendar.getSignCalendar(paramDate, signDates);
+  this.setData({
+    signDates: signDates,
+    year: paramDate.getFullYear(),
+    month: paramDate.getMonth() + 1,
+    calendarObj: calendarObj,
+    days: days
+  });
+ },
+
+ /**
+  * 生命周期函数--监听页面初次渲染完成
+  */
+ onReady: function () {
+
+ },
+
+ /**
+  * 生命周期函数--监听页面显示
+  */
+ onShow: function () {
+
+ },
+
+ /**
+  * 生命周期函数--监听页面隐藏
+  */
+ onHide: function () {
+
+ },
+
+ /**
+  * 生命周期函数--监听页面卸载
+  */
+ onUnload: function () {
+
+ },
+
+ /**
+  * 页面相关事件处理函数--监听用户下拉动作
+  */
+ onPullDownRefresh: function () {
+
+ },
+
+ /**
+  * 页面上拉触底事件的处理函数
+  */
+ onReachBottom: function () {
+
+ },
+
+ /**
+  * 用户点击右上角分享
+  */
+ onShareAppMessage: function () {
+  return{
+    title:'你这个月多少步？PK一下！'
+  }
+ }
+})

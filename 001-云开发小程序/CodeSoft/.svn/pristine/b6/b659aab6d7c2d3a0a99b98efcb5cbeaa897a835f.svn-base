@@ -1,0 +1,14 @@
+<view class="container">
+  
+  <view style="width:80%;margin-top:50px;">当前您正在使用“编程与软件”小程序</view>
+  <view style="width:80%;">就是最简单的云开发小程序</view>
+
+  <view class="help-tip-title">源码获取</view>
+  <view class="help-tip" bindlongpress="handleLongPress">长按复制：coder10，微信搜索关注</view>
+  <view class="help-tip">回复“小程序云开发”即可</view>
+  <button class="share-btn" type="primary" open-type="share">点击分享给好友</button>
+
+</view>
+
+
+

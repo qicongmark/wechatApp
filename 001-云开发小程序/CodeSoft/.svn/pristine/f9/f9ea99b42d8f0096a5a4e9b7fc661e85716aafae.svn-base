@@ -1,0 +1,13 @@
+<view class="container">
+
+  <view class="user-header">
+    <open-data class="user-avatar" type="userAvatarUrl"></open-data>
+  </view>
+
+  <view class="split-v"></view>
+
+  <view class="help-tip">工程师加班开发中</view>
+  
+  <view class="help-tip">更多资源获取：</view>
+  <view class="help-tip" bindlongpress="handleLongPress">长按复制：coder10，微信搜索即可</view>
+</view>

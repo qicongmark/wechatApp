@@ -1,0 +1,38 @@
+page{
+  background-color: #fff;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #191919;
+  background-color: #fff;
+} 
+.grid{
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding:10rpx;
+  font-size: 28rpx;
+}
+.icon{
+  width: 64rpx;
+  height: 64rpx;
+  flex-shrink: 0;
+}
+
+/**自适应宽度**/
+.ux-col-1{
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  padding: 30rpx;
+  margin: 10rpx;
+  background-color: #efefef;
+  border-radius: 30rpx;
+}
+ 
+ 
+ 

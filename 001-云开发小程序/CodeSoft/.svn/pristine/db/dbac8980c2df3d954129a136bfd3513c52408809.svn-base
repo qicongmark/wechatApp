@@ -1,0 +1,36 @@
+{
+ "setting": {},
+ "condition": {
+  "plugin": {
+   "list": []
+  },
+  "game": {
+   "list": []
+  },
+  "gamePlugin": {
+   "list": []
+  },
+  "miniprogram": {
+   "list": [
+    {
+     "name": "pages/soft/soft",
+     "pathName": "pages/soft/soft",
+     "query": "",
+     "scene": null
+    },
+    {
+     "name": "pages/user/user",
+     "pathName": "pages/user/user",
+     "query": "",
+     "scene": null
+    },
+    {
+     "name": "pages/pdf/pdf",
+     "pathName": "pages/pdf/pdf",
+     "query": "",
+     "scene": null
+    }
+   ]
+  }
+ }
+}

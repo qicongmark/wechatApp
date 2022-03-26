@@ -1,0 +1,24 @@
+
+<view class="container">
+  <view class="item-nav">  
+    <block wx:for="{{itemList}}" wx:key="key">
+      <view class="nav-item {{(item.code == curCode)? 'active' : ''}}" 
+      data-code="{{item.code}}" bindtap="changeItem">
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+
+  <scroll-view class="source-content" bindscrolltolower="fecthMore" scroll-y>
+    <view class="source-item" wx:for="{{sourceList}}" wx:key="key">
+      <view class="source-name">
+        {{item.name}}
+      </view>
+      <view bindlongpress="handleLongPress" data-content="{{item.content}}">
+        {{item.content}}
+      </view>
+    </view>
+  </scroll-view>
+
+</view>
+

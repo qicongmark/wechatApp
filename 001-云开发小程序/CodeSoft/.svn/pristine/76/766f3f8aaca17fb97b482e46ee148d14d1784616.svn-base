@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/mates/mates",
+    "pages/blogs/blogs",
+    "pages/index/index",
+    "pages/mate/mate",
+    "pages/blog/blog",
+    "pages/02werun/02werun"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "编程和软件",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#2b2b2b",
+    "selectedColor": "#42c642",
+    "backgroundColor": "#F6F6F6",
+    "borderStyle": "white",
+    "list": [
+
+      {
+        "pagePath": "pages/mates/mates",
+        "iconPath": "images/icon/mate.png",
+        "selectedIconPath": "images/icon/mateSelected.png",
+        "text": "资料下载"
+      },
+      {
+        "pagePath": "pages/blogs/blogs",
+        "iconPath": "images/icon/user.png",
+        "selectedIconPath": "images/icon/userSelected.png",
+        "text": "程序员圈子"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

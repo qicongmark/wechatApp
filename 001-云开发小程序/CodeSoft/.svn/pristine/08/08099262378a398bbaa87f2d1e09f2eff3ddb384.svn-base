@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="item-nav">
+    <block wx:for="{{itemList}}" wx:key="key">
+      <view class="nav-item {{(item.code == curCode)? 'active' : ''}}" data-code="{{item.code}}" bindtap="changeItem">
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+
+  <scroll-view wx:if="{{contentFlag}}" class="source-block" scroll-y>
+    <view class="source-item" wx:for="{{sourceList}}" wx:key="key" data-sid="{{item._id}}" bindtap="clickSource">
+      <view class="source-name">
+        <image wx:if="{{item.icon}}" class="icon" src="/images/icon/{{item.icon}}.png"></image>
+        <view>{{item.name}}</view>
+      </view>
+      <image wx:if="{{item.img}}" class="source-img" mode="aspectFill" src="{{item.img}}"></image>
+    </view>
+  </scroll-view>
+
+  <scroll-view wx:else class="source-block" scroll-y>
+    <view class="source-item" style="border:none;">
+      <view class="source-name">
+        <view>{{curItem.name}}</view>
+      </view>
+
+      <view class="source-content">
+        <text style="white-space:pre-wrap">{{curItem.content}}</text>
+      </view>
+
+      <view class="source-btn-block">
+        <button type="default" bindtap="goback"
+          style="width:120rpx;padding:10rpx;font-weight:normal;margin-left:0rpx;">返回</button>
+        <button type="primary" bindtap="copy" style="width:120rpx;padding:10rpx;font-weight:normal">复制</button>
+        <button data-sid="{{curItem._id}}" bindtap="doShare" open-type="share"
+          style="width:200rpx;padding:10rpx;font-weight:normal;background-color:#fa5151;color:#fff;">分享给好友</button>
+      </view>
+
+      <image wx:if="{{curItem.img}}" class="source-img-view" mode="widthFix" src="{{curItem.img}}"
+        data-url="{{curItem.img}}" bindtap="previewImg"></image>
+    </view>
+  </scroll-view>
+
+</view>

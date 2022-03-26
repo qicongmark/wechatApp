@@ -1,0 +1,7 @@
+<!--components/canvas-drag/index.wxml-->
+<canvas canvas-id='canvas-label' 
+disable-scroll="true"
+bindtouchstart="start"
+bindtouchmove="move"
+bindtouchend="end"
+style='width:{{width}}px;height:{{height}}px;margin:20rpx auto'></canvas>

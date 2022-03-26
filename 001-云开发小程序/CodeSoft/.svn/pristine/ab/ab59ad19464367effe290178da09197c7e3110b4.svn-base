@@ -1,0 +1,23 @@
+<!-- 源码模板 -->
+<view class="container">
+ <div class="grid">
+   
+  <navigator class="ux-col-1" url="/pages/02yunkaifa/02yunkaifa">
+    <image class="icon" src="/images/icon/22.png"></image>
+    <view class="icon-name">朋友圈点赞</view>
+  </navigator>
+  
+  <!--
+  <navigator class="ux-col-1" >
+    <image class="icon" src="/images/icon/21.png"></image>
+    <view class="icon-name">头像diy</view>
+  </navigator>
+  
+  <view class="ux-col-1">Hello</view>
+  <view class="ux-col-1">World</view>-->
+   
+ </div>
+
+ <button class="share-btn" type="primary" open-type="share">点击分享给好友</button>
+
+</view>

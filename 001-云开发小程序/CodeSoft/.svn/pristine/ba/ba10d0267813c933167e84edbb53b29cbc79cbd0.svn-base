@@ -1,0 +1,35 @@
+
+## 数据库
+- 四个集合：
+ - coding-catetory 编程分类
+ - coding-source 编程源资料
+ - soft-category 软件分类
+ - soft-source 软件源资料
+
+## 数据库说明
+- 创建集合：coding-catetory，编程分类数据集合
+ - {
+    "_id": "8937eaa96115196c045107fb61af9323",
+    "name": "Java资料",
+    "sort": 1,
+    "code": 1001
+   }
+ - code是分类编码，0表示所有分类，在前端加载的时候，就不需要硬编码判断了
+
+- 创建集合：coding-source，编程资源，
+ - {
+    "_id": "cd045e756115419a0552ba8b7dcf3a0b",
+    "name": "JVM虚拟机",
+    "sort": 2,
+    "category": 1001,
+    "content": "JVM下载链接xxxx",
+    "enable": 1
+   }
+ - 字段category对应的是coding-catetory的code字段
+
+- 创建集合：soft-category，软件分类数据集合
+- 创建集合：soft-source，软件资源，
+
+## 集合权限
+- 数据库中所有的集合的权限设置为"所有用户可读"
+

@@ -1,0 +1,20 @@
+<!-- 源码模板 -->
+<div class="star-tip">防止找不到，点击上方 ...“添加到我的小程序”</div>
+
+<view class="container">
+  <div class="grid">
+
+    <navigator class="ux-col-1" url="/pages/02werun/02werun">
+      <image class="icon" src="/images/icon/23.png"></image>
+      <view class="icon-name">微信步数</view>
+    </navigator>
+    <!--
+  <view class="ux-col-1">Hello</view>
+  <view class="ux-col-1">World</view>
+  -->
+
+  </div>
+
+  <button class="share-btn" type="primary" open-type="share" style="background-color:#fa5151;">点击分享给好友</button>
+
+</view>

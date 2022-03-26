@@ -1,0 +1,40 @@
+.top {
+  position: absolute;
+  width: 100%;
+  top: 10rpx;
+  display: flex;
+  flex-flow: wrap;
+  z-index: 10;
+  color: white;
+  justify-content: space-around;
+}
+
+.hint {
+  position: absolute;
+  top: 10rpx;
+  width: 100%;
+  font-size: 33rpx;
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
+
+page {
+  background: white;
+}
+
+view {
+  font-size: 30rpx;
+}
+
+.bottom {
+  bottom:100rpx;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 210rpx;
+}

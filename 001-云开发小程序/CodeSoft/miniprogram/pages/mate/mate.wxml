@@ -1,0 +1,27 @@
+<view class="container">
+
+  <view wx:if="{{item}}" class="source-item">
+    <view class="source-name">
+      <text>{{item.name}}</text>
+    </view>
+
+    <view class="content">
+      <text style="white-space:pre-wrap">{{item.content}}</text>
+    </view>
+
+    <view wx:if="{{item.img}}" class="image-block">
+      <image style="width:100%;" mode="widthFix" src="{{item.img}}" data-url="{{item.img}}" bindtap="previewImg">
+      </image>
+    </view>
+
+    <view class="source-btn-block">
+      <button type="warn" bindtap="copy" style="width:120rpx;padding:10rpx;margin:0rpx;font-weight:normal">复制</button>
+      <button type="primary" bindtap="toSrcs" data-sid="{{curItem._id}}"
+        style="width:200rpx;padding:10rpx;margin:0rpx;font-weight:normal;margin:0rpx 30rpx;">查看更多</button>
+      <button type="default" open-type="share"
+        style="width:200rpx;padding:10rpx;font-weight:normal;margin:0rpx;background-color:#fa5151;color:#fff;">分享给好友</button>
+    </view>
+
+  </view>
+
+</view>

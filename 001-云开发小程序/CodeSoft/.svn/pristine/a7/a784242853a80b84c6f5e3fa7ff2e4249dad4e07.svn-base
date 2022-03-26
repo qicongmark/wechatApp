@@ -1,0 +1,13 @@
+<view class="container">
+
+  <view class="user-header">
+    <open-data class="user-avatar" type="userAvatarUrl"></open-data>
+  </view>
+
+  <view class="split-v"></view>
+
+  <view class="help-tip">打开PDF</view>
+
+
+  <button bindtap="openPDF" type="primary">打开PDF</button>
+</view>

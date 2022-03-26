@@ -1,0 +1,7 @@
+<image-cropper id="image-cropper" limit_move="{{limit_move}}" disable_rotate="{{disable_rotate}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" angle="{{angle}}" disable_width="{{disable_width}}" max_width="{{max_width}}" max_height="{{max_height}}" disable_height="{{disable_height}}" disable_ratio="{{disable_ratio}}">
+</image-cropper>
+
+<view class='bottom'>
+  <button type="primary" bindtap='submit'>确定裁剪</button>
+  <button bindtap='upload' style="margin-top:50rpx;">上传图片</button>
+</view>

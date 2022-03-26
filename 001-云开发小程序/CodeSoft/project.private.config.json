@@ -1,0 +1,36 @@
+{
+ "setting": {},
+ "condition": {
+  "plugin": {
+   "list": []
+  },
+  "game": {
+   "list": []
+  },
+  "gamePlugin": {
+   "list": []
+  },
+  "miniprogram": {
+   "list": [
+    {
+     "name": "pages/blog/blog",
+     "pathName": "pages/blog/blog",
+     "query": "",
+     "scene": null
+    },
+    {
+     "name": "pages/02werun/02werun",
+     "pathName": "pages/02werun/02werun",
+     "query": "",
+     "scene": null
+    },
+    {
+     "name": "pages/mate/mate",
+     "pathName": "pages/mate/mate",
+     "query": "",
+     "scene": null
+    }
+   ]
+  }
+ }
+}

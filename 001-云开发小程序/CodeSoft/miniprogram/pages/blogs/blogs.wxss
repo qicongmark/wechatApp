@@ -1,0 +1,78 @@
+page{
+ background-color: #fff;
+}
+.container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ color: #191919;
+ background-color: #fff;
+} 
+.friend-card{
+ width: 100%;
+ border-bottom: 1rpx solid #e8e8e8;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.friend-item{
+ width: 90%; 
+ padding:30rpx 0rpx 20rpx 0rpx;
+ display: flex;
+ flex-direction: row;
+ align-items: flex-start;
+}
+.avatar{
+ overflow: hidden;
+ width: 40px;
+ height: 40px;
+ flex-shrink: 0;
+ margin-right: 16rpx;
+ border-radius: 6rpx;
+}
+.item-block{
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+}
+.nickname{
+ color: #5a6990;
+ font-weight: bold;
+ font-size: 16px;
+}
+.content{
+ margin-top: 8rpx;
+ font-size: 34rpx;
+}
+.content-text{
+	color: #000;
+}
+.image-block{
+ margin-top: 20rpx;
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ align-items: flex-start;
+}
+.image-block image{
+	width: 100%;
+}
+.tip{
+ color: #a3a3a3;
+ font-size: 26rpx;
+ font-weight: normal;
+}
+
+.share-image{
+ width: 48rpx;
+ height: 48rpx;
+}
+button {
+ background-color: #fff;
+}
+button::after{
+ background-color: #fff;
+}
+button:hover{
+ background-color: #fff;
+}

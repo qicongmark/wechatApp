@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #FFF;
+}
+
+page {
+  background: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.user-header {
+  width: 100%;
+  padding: 20rpx 0rpx;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.user-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  display: block;
+  margin: 0px 40rpx;
+  border: 2rpx solid #FFF;
+}
+
+.user-info {
+  margin-top: 36rpx;
+}
+
+.user-nickname {
+  font-size: 36rpx;
+  letter-spacing: 3rpx;
+}
+
+.split-v {
+  width: 100%;
+  border-bottom: 1px solid #F6F6F6;
+  margin: 20rpx 0rpx;
+}
+
+.help-tip {
+  width: 100%;
+  text-align: center;
+  color: #7a7a7a;
+  margin-top: 50rpx;
+}

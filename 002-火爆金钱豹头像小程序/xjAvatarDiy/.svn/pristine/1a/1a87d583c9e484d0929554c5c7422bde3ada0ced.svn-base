@@ -1,0 +1,307 @@
+const app = getApp();
+import CanvasDrag from '../../components/canvas-drag/canvas-drag';
+
+Page({
+  data: {
+    bgPic: null,
+    tapIndex: 0,
+    imgList: [],
+    graph: {},
+  },
+
+  onLoad: function () {
+    let imgList = this.data.imgList
+    for(let i = 0; i < 10; i++){
+      imgList[i] = "/images/" + i + ".png";
+    }
+    this.setData({
+      imgList:imgList
+    })
+  },
+  onShow: function () {
+    if (app.globalData.imgurl) {
+      this.onChangeBgImage(app.globalData.imgurl)
+    }
+  },
+  onReady: function () {
+
+  },
+
+  selectImg: function (e) {
+    var avatar = e.currentTarget.dataset.avatar;
+    this.setData({
+      graph: {
+        w: 200,
+        h: 200,
+        type: 'image',
+        url: avatar
+      }
+    })
+  },
+
+  cancel: function () {
+    this.setData({
+      shareModule: false,
+      shareAllModule: false
+    })
+  },
+
+
+  // 从相册选择
+  selFromAlbum: function () {
+    var that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original'],
+      success: (res) => {
+        that.setData({
+          avatarimage: res.tempFilePaths[0],
+          diy: true,
+          showEnsureBtn: true,
+          jiequx: 0,
+          jiequy: 0
+        })
+        wx.getImageInfo({
+          src: res.tempFilePaths[0],
+          success: function (res) {
+            var str = res.width / res.height;
+            if (str > 1) {
+              that.setData({
+                liheight: 200,
+                liwidth: 200 * str
+              })
+
+            } else {
+              that.setData({
+                liwidth: 200,
+                liheight: 200 / str
+              })
+            }
+          }
+        })
+        // this.onChangeBgImage(res.tempFilePaths[0])
+      }
+    })
+  },
+
+
+  //移动生成新头像
+  drawShy: function () {
+    var liwidth = this.data.liwidth * 4;
+    var liheight = this.data.liheight * 4;
+    this.setData({
+      canWidth: liwidth,
+      canHeight: liheight
+    })
+    console.log(this.data.liwidth * 4);
+    console.log(this.data.liheight * 4);
+    const cans = wx.createCanvasContext('wrapCanvas');
+    cans.drawImage(this.data.avatarimage, 0, 0, liwidth, liheight);
+    console.log(this.data.jiequx);
+    console.log(this.data.jiequy);
+    cans.draw(true, res => {
+      var timer = setTimeout(function () {}, 2000)
+      wx.canvasToTempFilePath({
+        canvasId: 'wrapCanvas',
+        x: (this.data.jiequx) * 4,
+        y: (this.data.jiequy) * 4,
+        width: 800,
+        height: 800,
+        destWidth: 200,
+        destHeight: 200,
+        success: res => {
+          this.setData({
+            diy: false,
+            showEnsureBtn: false
+          })
+          this.onChangeBgImage(res.tempFilePath);
+        }
+      }, this)
+    })
+  },
+
+  moveImage: function (e) {
+    console.log(e.detail.x);
+    console.log(e.detail.y);
+    this.setData({
+      jiequx: Math.abs(e.detail.x),
+      jiequy: Math.abs(e.detail.y)
+    })
+
+  },
+
+  /**
+   * 导出图片
+   */
+  onExport() {
+    CanvasDrag.export().then((filePath) => {
+      this.saveImage(filePath);
+    }).catch((e) => {
+      console.error(e);
+    })
+  },
+
+
+  // 保存图片到相册
+  saveImage: function (filepath) {
+    var that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.saveImageToPhotosAlbum({ //保存图片到相册
+      filePath: filepath,
+      success: res => {
+        wx.showToast({
+          title: '图片已存入相册',
+          icon: "success",
+          duration: 2000
+        })
+      },
+      complete: res => {
+        wx.hideLoading()
+      }
+    });
+  },
+
+
+  headimgHD: function (imageUrl) {
+    // console.log('原来的头像', imageUrl);
+
+    imageUrl = imageUrl.split('/'); //把头像的路径切成数组
+
+    //把大小数值为 46 || 64 || 96 || 132 的转换为0
+    if (imageUrl[imageUrl.length - 1] && (imageUrl[imageUrl.length - 1] == 46 || imageUrl[imageUrl.length - 1] == 64 || imageUrl[imageUrl.length - 1] == 96 || imageUrl[imageUrl.length - 1] == 132)) {
+      imageUrl[imageUrl.length - 1] = 0;
+    }
+
+    imageUrl = imageUrl.join('/'); //重新拼接为字符串
+
+    // console.log('高清的头像', imageUrl);
+
+    return imageUrl;
+  },
+
+  onAddTest() {
+    this.setData({
+      graph: {
+        w: 120,
+        h: 120,
+        type: 'image',
+        url: '../../assets/images/test.jpg',
+      }
+    });
+  },
+
+  /**
+   * 改变背景照片
+   */
+  onChangeBgImage(cvsimg) {
+    CanvasDrag.changeBgImage(cvsimg);
+  },
+  /**
+   * 添加图片
+   */
+  onAddImage(e) {
+    // console.log(e);
+    var index = e.currentTarget.dataset.index;
+    var listindex = e.currentTarget.dataset.listindex;
+    var model = this.data.imagelist[listindex][index];
+    var rate = model.height / 80;
+    var width = model.width / rate;
+    this.setData({
+      graph: {
+        w: width,
+        h: 80,
+        type: 'image',
+        url: model.imgurl
+      }
+    })
+  },
+
+  // 获取用户头像
+  getUserInfo: function (e) {
+    // console.log(e.detail.userInfo);
+
+    this.setData({
+      hasUserInfo: true
+    })
+    var that = this;
+    // console.log(e.detail.userInfo.avatarUrl);
+    var avatarUrl = e.detail.userInfo.avatarUrl;
+    var avatarHd = this.headimgHD(avatarUrl);
+
+    console.log(avatarHd);
+    wx.getImageInfo({
+      src: avatarHd,
+      success: res => {
+        this.onChangeBgImage(res.path);
+      }
+    })
+    wx.setStorageSync("userAvatar", avatarHd);
+  },
+
+  deblock: function (e) {
+    console.log(e);
+    var curIndex = e.currentTarget.dataset.tap;
+    if (this.data.imgList[curIndex] == "locked") {
+      this.setData({
+        shareModule: true,
+        curIndex: curIndex
+      })
+      this.setData({
+        tapIndex: e.currentTarget.dataset.tap
+      })
+    } else {
+      this.chooseImg(e.currentTarget.dataset.haturl);
+    }
+
+  },
+
+  deblockAll: function () {
+    this.setData({
+      shareModule: true
+    })
+  },
+
+  // 用户分享
+  onShareAppMessage: function () {
+    var that = this;
+    this.setData({
+      shareModule: false,
+      shareAllModule: false
+    })
+
+    setTimeout(function () {
+      var imgList = that.data.imgList;
+      for (var i = 0; i < imgList.length; i++) {
+        imgList[i] = "unlocked"
+      }
+      that.setData({
+        imgList: imgList,
+        delockAll: false
+      })
+      wx.setStorageSync("saveImgList", imgList);
+    }, 3000)
+
+    return {
+      title: "官方信息：送你一顶圣诞帽",
+      path: "pages/imageeditor/imageeditor",
+      imageUrl: "../../image/shareCard.png"
+    }
+
+  },
+
+  uploadBtn: function () {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ["compressed", "original"],
+      success: function (t) {
+        var a = t.tempFilePaths[0];
+        wx.navigateTo({
+          url: "/pages/cutInside/cutInside?filepath=" + a
+        });
+      }
+    });
+  },
+
+});

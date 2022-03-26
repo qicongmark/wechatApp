@@ -1,0 +1,20 @@
+
+<view class="container">
+  <view class="item-nav">
+    <block wx:for="{{itemList}}" wx-key="key">
+      <view class="nav-item {{(item.code == curItem)? 'active' : ''}}" 
+      id="{{item.code}}" bindtap="changeItem">
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+
+  <scroll-view class="product-content" bindscrolltolower="fecthMore" scroll-y>
+    
+    <block wx:for="{{products}}" wx:key="key">
+      
+    </block>
+    
+  </scroll-view>
+</view>
+

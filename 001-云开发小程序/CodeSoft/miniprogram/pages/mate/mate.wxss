@@ -1,0 +1,42 @@
+page{
+ background-color: #fff;
+}
+.container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ color: #191919;
+ background-color: #fff;
+}
+
+.source-item{
+ padding: 20rpx;
+ font-size: 28rpx;
+ padding:30rpx;
+}
+
+.source-name{
+ height: 60rpx;
+ font-weight: bold;
+ text-align: center;
+}
+
+.source-img-view{
+ width:100%;
+ border-radius:4rpx
+}
+
+.source-content{
+ margin-top: 20rpx;
+ width: 100%;
+}
+.image-block{
+ margin-top:30rpx;
+}
+.source-btn-block{
+ display: flex;
+ justify-content: center;
+ flex-direction: row;
+ margin-top: 40rpx;
+ margin-bottom: 50rpx;
+}

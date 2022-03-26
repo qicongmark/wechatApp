@@ -1,0 +1,141 @@
+page{
+ background-color: #fff;
+}
+.bgimg{
+ width: 100%;
+}
+.bg-avatar{
+ overflow: hidden;
+ width: 70px;
+ height: 70px;
+ flex-shrink: 0;
+ margin-right: 10rpx;
+ border-radius: 10rpx;
+}
+.bg-nickname{
+ margin-top: 25rpx;
+ margin-right: 15rpx;
+}
+.bg-userinfo{
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-end;
+ margin-top: -90rpx;
+ margin-right: 15rpx;
+}
+
+.container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ color: #191919;
+ background-color: #fff;
+} 
+.friend-card{
+ width: 100%;
+ border-bottom: 1rpx solid #e8e8e8;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding-bottom: 30rpx;
+}
+.friend-item{
+ width: 90%; 
+ padding:30rpx 0rpx 20rpx 0rpx;
+ display: flex;
+ flex-direction: row;
+ align-items: flex-start;
+}
+.avatar{
+ overflow: hidden;
+ width: 40px;
+ height: 40px;
+ flex-shrink: 0;
+ margin-right: 16rpx;
+ border-radius: 6rpx;
+}
+.item-block{
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+}
+.nickname{
+ color: #5a6990;
+ font-weight: bold;
+ font-size: 16px;
+}
+.content{
+ margin-top: 6rpx;
+ font-size: 30rpx;
+}
+.image-block{
+ margin-top: 15rpx;
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ align-items: flex-start;
+}
+.image-block image{
+ max-height: 300rpx;
+}
+.tip{
+ width: 100%;
+ color: #b3b3b3;
+ font-size: 26rpx;
+ font-weight: normal;
+ margin-top: 15rpx;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+}
+
+.opt-dot{
+ text-align: center;
+ padding: 0px 4px 0px 1px;
+ height:20px;
+ line-height: 22px;
+ width:28px;
+ background-color: #f6f6f6;
+ color: #5a6990;
+ font-weight:bolder;
+ border-radius:5px;
+ letter-spacing:-6px;
+ font-size: 30px;
+}
+
+.tip-location{
+ width: 100%;
+ color: #5a6990;
+ font-size: 26rpx;
+ font-weight: normal;
+ margin-top: 12rpx;
+}
+
+.zan-block{
+ width: 90%; 
+ background-color: #f6f6f6;
+ display: flex;
+ flex-direction: row;
+ padding: 10rpx 0rpx;
+}
+.zan-img{
+ width: 60rpx;
+ height: 60rpx;
+ margin: 3rpx 6rpx;
+ border-radius:5rpx;
+ flex-shrink: 0;
+}
+
+.share-image{
+ width: 48rpx;
+ height: 48rpx;
+}
+button {
+ background-color: #fff;
+}
+button::after{
+ background-color: #fff;
+}
+button:hover{
+ background-color: #fff;
+}

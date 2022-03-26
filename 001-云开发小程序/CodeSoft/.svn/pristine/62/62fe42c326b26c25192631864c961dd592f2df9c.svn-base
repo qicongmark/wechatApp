@@ -1,0 +1,100 @@
+
+<view wx:if="{{pyqFlag}}" >
+ <image class="bgimg" mode="widthFix" src="{{pyqBg}}"></image>
+
+ <view class="bg-userinfo">
+  <view class="nickname bg-nickname">
+   <open-data type="userNickName" style="color:#fff;font-size:38rpx;letter-spacing:1rpx"></open-data>
+  </view>
+  <open-data class="bg-avatar" type="userAvatarUrl"></open-data>
+ </view>
+
+ <view class="container" style="margin-top:50rpx;">
+  <view class="friend-card">
+   <view class="friend-item">
+    <open-data class="avatar" type="userAvatarUrl"></open-data>
+    <view style="width:100%;">
+     <view class="nickname">
+      <open-data type="userNickName"></open-data>
+     </view>
+     <view class="content">
+      <text>{{item.content}}</text>
+     </view>
+
+     <view wx:if="{{item.pypImg}}" class="image-block">
+      <image mode="heightFix" src="{{item.pypImg}}"></image>
+     </view>
+
+     <view wx:if="{{item.location}}" class="tip-location">
+      {{item.location}}
+     </view>
+     
+     <view class="tip" bindtap="editPyq">
+      <text>{{item.time}}</text>
+      <view class="opt-dot">··</view>
+     </view>
+     
+    </view>
+   </view>
+
+   <view wx:if="{{item.supports}}" class="zan-block">
+    <image class="zan-img" style="width:48rpx;height:48rpx" src="/images/icon/pyq-zan.png"></image>
+    <view class="zan-support">
+     <image wx:for="{{item.supports}}" class="zan-img" src="/images/avatar/{{item}}.jpg"></image>
+    </view>
+   </view>
+   
+  </view>
+ </view>
+</view>
+
+<view wx:else>
+ <form class="ux-form" bindsubmit="doSubmit">
+   <view class="form-group">
+     <label class="form-name">朋友圈内容</label>
+   </view>
+
+   <view class="form-group">
+     <label class="form-label">内容</label>
+     <textarea style="height:290rpx;" class="form-control" name="content" value="{{item.content}}" placeholder="请输入内容" />
+   </view>
+
+   <view class="form-group">
+     <label class="form-label">配图</label>
+     <image wx:if="{{pypImg}}" style="width:100rpx;margin-right:10rpx;" mode="widthFix" src="{{pypImg}}" bindtap="deletePyqImg"></image>
+     <image src="/images/icon/pyq-p.png" class="zan-img" bindtap="choosePyqImg"></image>
+   </view>
+
+   <view class="form-group">
+     <label class="form-label">时间</label>
+     <input class="form-control" name="time" value="{{item.time}}" />
+   </view>
+
+   <view class="form-group">
+     <label class="form-label">位置</label>
+     <input class="form-control" name="location" value="{{item.location}}" placeholder="奥体公园" />
+   </view>
+
+   <view class="form-group">
+     <label class="form-label">点赞数</label>
+     <picker class="form-control" bindchange="changeNum" value="{{index}}" range="{{nums}}">
+      <view class="form-label"> {{num}}</view>
+     </picker>
+   </view>
+
+   <view class="form-group">
+     <label class="form-label">封面图</label>
+     <image wx:if="{{pyqBg}}" style="width:100rpx;margin-right:10rpx;" mode="widthFix" src="{{pyqBg}}" bindtap="deletePyqBg"></image>
+     <image src="/images/icon/pyq-b.png" class="zan-img" bindtap="choosePyqBg"></image>
+   </view>
+
+   <view class="btn-block">
+    <button class="form-btn" style="width:200rpx;" type="primary" form-type="submit">确定</button>
+    <button class="form-btn" style="width:200rpx;" type="default" bindtap="goback">返回</button>
+   </view>
+   
+ </form>
+</view>
+
+<view style="height:200rpx;width:100%;"></view>
+

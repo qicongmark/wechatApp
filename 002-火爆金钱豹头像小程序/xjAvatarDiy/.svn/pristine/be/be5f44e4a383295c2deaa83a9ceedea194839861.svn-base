@@ -1,0 +1,23 @@
+<view class="container">
+  <image class="bg" src="/images/bg.png" mode="aspectFill"></image>
+
+  <canvas-drag class="avatar-canvas" id="canvas-drag" graph="{{graph}}" width="200" height="200"></canvas-drag>
+
+  <scroll-view class="scrollView" scrollX="true">
+    <view class="diy-img" wx:for="{{imgList}}">
+      <image src="{{item}}" bindtap="selectImg" data-avatar="{{item}}"></image>
+    </view>
+  </scroll-view>
+
+  <!-- 授权弹窗 -->
+  <cover-view class="mask" wx:if="{{!hasUserInfo&&canIUse}}">
+    <cover-view class="startModule">
+      <cover-view class="tiptext">授权获取您的头像</cover-view>
+      <button type="primary" class="ready" open-type='getUserInfo' bindgetuserinfo="getUserInfo">确定</button>
+    </cover-view>
+  </cover-view>
+
+</view>
+
+<canvas canvas-id='wrapCanvas' style='width:{{canWidth}}px;height:{{canHeight}}px;position:absolute;left:-2000px;top:-2000px;' wx:if="{{diy}}"></canvas>
+
