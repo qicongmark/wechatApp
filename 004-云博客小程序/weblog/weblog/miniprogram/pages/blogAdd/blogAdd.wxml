@@ -1,0 +1,57 @@
+
+<view class="container">
+  <form bindsubmit="submitBlog">
+    <view class="form-group">
+      <label class="form-label">头像</label>
+      <input value="{{userInfo.avatar}}" name="avatar" class="form-control" placeholder="请输入头像"/>
+      <button type="primary" bindtap="onGetUserProfile" style="width:100rpx;padding:0rpx;margin:0rpx;">授权</button>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">昵称</label>
+      <input value="{{userInfo.name}}" name="name" class="form-control" placeholder="请输入昵称"/>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">简介</label>
+      <textarea name="brief" class="form-control" style="height: 150rpx;" placeholder="请输入简介"></textarea>
+    </view>
+
+    <view class="form-group form-column">
+      <label class="form-label">内容</label>
+      <view class="toolbar" catchtouchend="format">
+        <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i>
+        <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" data-value="{{3}}"></i>
+        <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+        <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+        <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+        <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+        <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i>
+        <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i>
+      </view>
+      <editor id="contentEditor" bindready="onEditorReady" class="form-editor"></editor>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">图片</label>
+      <image bindtap="removeBlogImage" wx:if="{{blogImg}}" src="{{blogImg}}" mode="widthFix"></image>
+      <image bindtap="chooseBlogImage" mode="widthFix" class="form-img" src="../../images/icon/img.png"></image>
+    </view>
+
+    <view style="margin-top:30rpx;margin-bottom:60rpx;">
+      <button type="primary" form-type="submit">保存</button>
+      
+      <!--
+      <button bindtap="testBlogFunctions" type="warn">测试调用云函数</button>
+      -->
+    </view>
+
+    <!--样例
+    <text>{{blog.brief}}</text>
+    <rich-text nodes="{{blog.content}}"></rich-text>
+    <image src="cloud://moban-0adc39.6d6f-moban-0adc39-1258743806/1652639891703.png"></image>
+    -->
+    
+  </form>
+</view>
+

@@ -1,0 +1,157 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 30rpx;
+  background: #F6F6F6;
+}
+.banner{
+  margin-top: 10rpx;
+  width: 100%;
+  height: 300rpx;
+  text-align: center;
+}
+.banner image{
+  width: 100%;
+  height: 300rpx;
+  border-radius: 15rpx;
+}
+.category{
+  padding: 0rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+.c-item{
+  text-align: center;
+  margin: 0px 10rpx;
+}
+.category image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.c-name{
+  font-size:26rpx;
+}
+.promp-block{
+  padding: 20rpx;
+  margin-top: 30rpx;
+}
+.title-block{
+  display: flex;
+  flex-direction: row;
+}
+.title{
+  font-weight: bold;
+  padding: 15rpx 20rpx;
+  font-size: 32rpx;
+}
+.cur-title{
+  color: #1aad19;
+  border-bottom: 4rpx solid #1aad19;
+}
+.promp-sv{
+  box-shadow: 0 0 5px #ddd;
+  padding: 5rpx;
+}
+.promp{
+  width: 100%;
+  white-space: nowrap;
+}
+.p-item{
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #eee;
+  margin: 10rpx;
+  display: inline-block;
+}
+.p-item image{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+}
+.p-item view{
+  text-align: center;
+  font-size: 26rpx;
+  width: 180rpx;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+  overflow : hidden;
+}
+
+.blog-block{
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+}
+
+.blog-card {
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 6rpx;
+}
+
+.blog-item {
+  width: 95%;
+}
+
+.blog-user{
+  display: flex;
+	flex-direction: row;
+  align-items: center;
+  justify-content:flex-start;
+  width: 95%;
+  padding-top: 10rpx;
+}
+.avatar {
+	overflow: hidden;
+	width: 80rpx;
+	height: 80rpx;
+	flex-shrink: 0;
+	margin-right: 16rpx;
+  border-radius: 50%;
+}
+
+.username {
+	color: #5a6990;
+	font-weight: bold;
+  font-size: 16px;
+  flex: 1;
+}
+
+.blog {
+  width: 100%;
+	font-size: 32rpx;
+	margin: 20rpx 0rpx;
+}
+
+.blog-text {
+	color: #000;
+}
+
+.image-block {
+	margin-top: 15rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.image-block image {
+	width: 100%;
+	border-radius: 5rpx;
+}
+
+.share-btn-block {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+  flex-direction: row;
+  margin: 0rpx;
+  margin-top: 30rpx;
+}
+

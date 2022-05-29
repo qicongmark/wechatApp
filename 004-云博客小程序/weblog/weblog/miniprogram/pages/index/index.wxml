@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+  
+  <!-- 博客展示 -->
+  <view class="blog-block">
+    <block wx:for="{{blogs}}">
+    
+      <view class="blog-card">
+        <view class="blog-user">
+          <image class="avatar" src="{{item.avatar}}"></image>
+          <view class="username">{{item.name}}</view>
+          <button bindtap="removeBlog" data-id="{{item._id}}" style="width:64rpx;padding:0rpx;margin:0rpx;">
+            <image class="icon-share" src="../../images/icon/delete.png"></image>
+          </button>
+          <button open-type="share" style="width:64rpx;padding:0rpx;margin:0rpx;">
+            <image class="icon-share" src="../../images/icon/share.png"></image>
+          </button>
+        </view>
+        
+        <view class="blog-item">
+          <navigator url="/pages/blogRead/blogRead?id={{item._id}}">
+          <view class="blog">
+            <text class="blog-text">{{item.brief}}</text>
+          </view>
+          <view wx:if="{{item.img}}" class="image-block">
+            <image src="{{item.img}}" mode="widthFix"></image>
+          </view>
+          </navigator>
+        </view>
+        
+      </view>
+    </block>
+  </view>
+
+
+  
+</view>

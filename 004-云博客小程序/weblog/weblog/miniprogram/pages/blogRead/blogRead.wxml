@@ -1,0 +1,13 @@
+<view class="container">
+
+  <image src="{{blog.img}}" mode="widthFix"></image>
+
+  <view class="blog-brief">
+    <text>{{blog.brief}}</text>
+  </view>
+
+  <view class="blog-content">
+    <rich-text nodes="{{blog.content}}"></rich-text>
+  </view>
+
+</view>

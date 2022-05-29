@@ -1,0 +1,19 @@
+
+/* pages/blogAdd/blogAdd.wxss */
+@import "./assets/iconfont.wxss";
+
+.toolbar {
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 50px;
+  width: 100%;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: none;
+  border-right: none;
+}
+

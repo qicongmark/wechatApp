@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/blogAdd/blogAdd",
+    "pages/blogRead/blogRead"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "祁大聪讲编程",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#2b2b2b",
+    "backgroundColor": "#F6F6F6",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath": "images/icon/home.png",
+        "text": "博客展示"
+      },
+      {
+        "pagePath": "pages/blogAdd/blogAdd",
+        "iconPath": "images/icon/add.png",
+        "selectedIconPath": "images/icon/add.png",
+        "text": "添加博客"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

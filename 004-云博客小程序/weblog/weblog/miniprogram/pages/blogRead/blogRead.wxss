@@ -1,0 +1,12 @@
+/* pages/blogRead/blogRead.wxss */
+.container{
+  text-align: center;
+  padding:0rpx 60rpx;
+}
+.blog-brief{
+  margin:30rpx 0rpx;
+  color: #8c8c8c;
+}
+.blog-content{
+  text-align: left;
+}

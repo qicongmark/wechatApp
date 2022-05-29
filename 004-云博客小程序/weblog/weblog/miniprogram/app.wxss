@@ -1,0 +1,143 @@
+/**app.wxss**/
+
+
+button {
+  background: initial;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button::after {
+  border: none;
+}
+
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+.help-tip-title {
+  margin-top: 100rpx;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.help-tip {
+  width: 100%;
+  text-align: center;
+  color: #7a7a7a;
+  margin-top: 30rpx;
+}
+
+.share-btn {
+  margin-top: 50rpx;
+}
+
+/**form**/
+.ux-form {
+  width: 90%;
+}
+
+.form-group {
+  padding: 20rpx 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+
+.form-label {
+  color: #191919;
+  width: 150rpx;
+  padding-left: 15rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  letter-spacing: 1rpx;
+}
+
+.form-title{
+  font-size: 32rpx;
+  color: #7f7f7f;
+  width: 100%;
+}
+
+.form-control {
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #555;
+  font-size: 32rpx;
+  flex: 1;
+}
+
+.form-name {
+  color: #7f7f7f;
+  height: 40rpx;
+  line-height: 60rpx;
+  width: 180rpx;
+  font-size: 28rpx;
+  letter-spacing: 1rpx;
+}
+
+.form-icon {
+  position: absolute;
+  width: 20rpx;
+  height: 40rpx;
+  right: 60rpx;
+  margin-top: 10rpx;
+}
+
+.form-img {
+  width: 62rpx;
+  height: 62rpx;
+  margin: 6rpx;
+  border-radius: 8rpx;
+  flex-shrink: 0;
+}
+
+.form-btn {
+  margin-top: 60rpx;
+  letter-spacing: 2rpx;
+}
+
+.form-column{
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-editor {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: auto;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #ECECEC;
+}
+
+.ql-active {
+  color: #22C704;
+}
+
+/**
+* icon
+**/
+.icon-share{
+  width:48rpx;
+  height:48rpx;
+}
+
+.share-btn-block {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}

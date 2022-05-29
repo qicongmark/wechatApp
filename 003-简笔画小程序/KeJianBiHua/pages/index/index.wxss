@@ -1,0 +1,90 @@
+page{
+  margin: 0px;
+  padding: 0px;
+}
+.myCanvas{
+  border: 1px solid #666;
+}
+
+.canvas_tools_block{
+  margin-top: 10rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.canvas_tools{
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+}
+
+.t-item{
+  width:70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border: 2rpx solid #CCC;
+  margin: 6rpx;
+  border-radius: 50%;
+  font-size: 32rpx;
+}
+
+.t-item-cur{
+  width:70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  margin: 6rpx;
+  border-radius: 50%;
+  font-size: 32rpx;
+  border: 4rpx solid #666;
+}
+
+
+.t-item-sq{
+  width:70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border: 2rpx solid #CCC;
+  background-color:#eee;
+  margin: 6rpx;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+}
+
+.t-button-sq{
+  width:74rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  text-align: center;
+  background-color:#eee;
+  margin: 6rpx;
+  padding: 0rpx;
+  font-size: 32rpx;
+}
+.t-button-sq::after{border: 2rpx solid #CCC;}
+
+.img-block{
+  width: 150rpx;
+}
+
+.img-block image{
+  margin-top: -10rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+.btn-linmo{
+  width: 100rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  margin-top: -10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+}
+

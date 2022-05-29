@@ -1,0 +1,48 @@
+<view class="container" catchtouchmove='false'>
+    
+    <!--画布区域-->
+    <view class="canvas_area">
+        <canvas canvas-id="myCanvas" class="myCanvas"
+            style='width:{{screenWidth}}px; height:{{screenHeight}}px;'
+            disable-scroll="false"
+            bindtouchstart="touchStart"
+            bindtouchmove="touchMove"
+            bindtouchend="touchEnd">
+        </canvas>
+    </view>
+
+    <!--画布工具区域-->
+    <view class="canvas_tools_block">
+      <view class='img-block'>
+        <image mode="aspectFit" data-p="{{demoIndex}}" bindtap="changeImg" src="{{demoImg}}"></image>
+        <button class='btn-linmo' bindtap='doCopy'>{{copyName}}</button>
+      </view>
+      
+      <view>
+        <view class="canvas_tools" style='margin-top:0rpx;'>
+          <view class="{{curColor == '#000000'? 't-item-cur' : 't-item' }}" bindtap="colorSelect" data-p="#000000" style='background-color:#000000;'></view>
+          <view class="{{curColor == '#cc0033'? 't-item-cur' : 't-item' }}" bindtap="colorSelect" data-p="#cc0033" style='background-color:#cc0033;'></view>
+          <view class="{{curColor == '#ff9900'? 't-item-cur' : 't-item' }}" bindtap="colorSelect" data-p="#ff9900" style='background-color:#ff9900;'></view>
+          <view class="{{curColor == '#01aef0'? 't-item-cur' : 't-item' }}" bindtap="colorSelect" data-p="#01aef0" style='background-color:#01aef0;'></view>
+          <view class="{{curColor == '#05c605'? 't-item-cur' : 't-item' }}" bindtap="colorSelect" data-p="#05c605" style='background-color:#05c605;'></view>
+          <view class="{{curColor == '#f9f605'? 't-item-cur' : 't-item' }}" bindtap="colorSelect" data-p="#f9f605" style='background-color:#f9f605;'></view>
+        </view>
+        <view class="canvas_tools">
+          <view class="{{curSize == 2? 't-item-cur' : 't-item' }}" bindtap="penSelect" data-p="2">细</view>
+          <view class="{{curSize == 4? 't-item-cur' : 't-item' }}" bindtap="penSelect" data-p="4">中</view>
+          <view class="{{curSize == 10? 't-item-cur' : 't-item' }}" bindtap="penSelect" data-p="10">粗</view>
+          <view class="t-item-sq" hover-class='btn-hover' style='color:red;' bindtap="doClear">清</view>
+          <view class="t-item-sq" hover-class='btn-hover' style='color:blue;' bindtap="saveCanvas">存</view>
+          <button class="t-button-sq" hover-class='btn-hover' open-type='share'>↱</button>
+        </view>
+      </view>
+                
+    </view>
+    <!--
+    <view class="canvas_tools">
+        <view class="t-item" bindtap="erase" data-p="#FFFFFF" >擦</view>
+        <view class="t-item" bindtap="clearCanvas">清</view>
+        <view class="t-item" bindtap="revoke">撤</view>
+    </view>-->
+</view>
+
