@@ -3,7 +3,7 @@
 
 - https://mp.weixin.qq.com/s/njNtUha2CU9qBZq0v_V1-g
 
-- 或关注公众号： 祁大聪 获取
+- 或关注公众号： 祁大聪 获取（更多源码）
 
 ## 效果预览
 

@@ -1,9 +1,9 @@
 
 ## 源码使用方法（含视频教程）
 
-https://mp.weixin.qq.com/s/gW0WCq0yyL_70vSJ6qQfew
+- https://mp.weixin.qq.com/s/gW0WCq0yyL_70vSJ6qQfew
 
-## 或关注公众号： 祁大聪 获取
+- 或关注公众号： 祁大聪 获取（更多源码）
 
 ##效果预览
 
