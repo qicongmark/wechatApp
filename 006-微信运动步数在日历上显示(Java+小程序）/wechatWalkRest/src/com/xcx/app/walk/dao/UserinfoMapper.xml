@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://10.20.91.130/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.xcx.app.walk.dao.UserinfoDao">
+
+	<select id="queryTodayRank" parameterType="java.lang.String" resultType="com.xcx.app.walk.domain.Userinfo">
+		SELECT * FROM T_WALK_USERINFO
+		WHERE avatarurl IS NOT NULL
+		ORDER BY todaysteps DESC, ID DESC
+		LIMIT 0 ,15
+	</select>
+
+	<select id="queryMonthRank" parameterType="java.lang.String" resultType="com.xcx.app.walk.domain.Userinfo">
+		SELECT * FROM T_WALK_USERINFO
+		WHERE avatarurl IS NOT NULL
+		ORDER BY monthkeepcount DESC, monthsteps DESC, ID DESC
+		LIMIT 0 ,15
+	</select>
+	
+	<select id="queryAllRank" parameterType="java.lang.String" resultType="com.xcx.app.walk.domain.Userinfo">
+		SELECT * FROM T_WALK_USERINFO
+		WHERE avatarurl IS NOT NULL
+		ORDER BY keepcount DESC, steps DESC
+		LIMIT 0 ,15
+	</select>
+	
+	<update id="resetTodayStep" flushCache="true">
+		UPDATE T_WALK_USERINFO 
+ 		SET todaysteps = 0
+ 		<![CDATA[ WHERE todaysteps > 0 ]]>
+	</update>
+	
+	<update id="resetMonthStep" flushCache="true">
+		update T_WALK_USERINFO 
+		set preMonthKeepCount = monthKeepCount, 
+		monthKeepCount = 0, 
+		preMonthSteps = monthSteps, 
+		monthSteps=0
+	</update>
+	
+	<select id="getByOpenid" parameterType="java.lang.String" resultType="com.xcx.app.walk.domain.Userinfo">
+		SELECT * FROM T_WALK_USERINFO
+		WHERE openid = #{openid}
+	</select>
+
+	<insert id="create" parameterType="com.xcx.app.walk.domain.Userinfo" flushCache="true"  useGeneratedKeys="true" keyProperty="id"  >
+		INSERT INTO T_WALK_USERINFO
+		<trim prefix="(" suffix=")"  suffixOverrides="," >
+		<if test="openid != null ">
+		openid,
+		</if>
+		<if test="nickname != null ">
+		nickname,
+		</if>
+		<if test="avatarurl != null ">
+		avatarurl,
+		</if>
+		<if test="avatarlocal != null ">
+		avatarlocal,
+		</if>
+		<if test="weight != null ">
+		weight,
+		</if>
+		<if test="height != null ">
+		height,
+		</if>
+		<if test="todaysteps != null ">
+		todaysteps,
+		</if>
+		<if test="steps != null ">
+		steps,
+		</if>
+		<if test="keepcount != null ">
+		keepcount,
+		</if>
+		<if test="premonthkeepcount != null ">
+		premonthkeepcount,
+		</if>
+		<if test="monthkeepcount != null ">
+		monthkeepcount,
+		</if>
+		<if test="kms != null ">
+		kms,
+		</if>
+		<if test="caloris != null ">
+		caloris,
+		</if>
+		<if test="myreward != null ">
+		myreward,
+		</if>
+		<if test="mypoint != null ">
+		mypoint,
+		</if>
+		<if test="lastday != null ">
+		lastday,
+		</if>
+		<if test="premonthsteps != null ">
+		premonthsteps,
+		</if>
+		<if test="monthsteps != null ">
+		monthsteps,
+		</if>
+		<if test="resigncount != null ">
+		resigncount,
+		</if>
+		<if test="gender != null ">
+		gender,
+		</if>
+		<if test="usertype != null ">
+		usertype,
+		</if>
+		<if test="wxid != null ">
+		wxid,
+		</if>
+		<if test="country != null ">
+		country,
+		</if>
+		<if test="province != null ">
+		province,
+		</if>
+		<if test="city != null ">
+		city,
+		</if>
+		<if test="address != null ">
+		address,
+		</if>
+		<if test="id != null ">
+		id,
+		</if>  
+		</trim>
+		VALUES 
+		<trim prefix="(" suffix=")"  suffixOverrides="," >
+		<if test="openid != null ">
+		#{openid},
+		</if>
+		<if test="nickname != null ">
+		#{nickname},
+		</if>
+		<if test="avatarurl != null ">
+		#{avatarurl},
+		</if>
+		<if test="avatarlocal != null ">
+		#{avatarlocal},
+		</if>
+		<if test="weight != null ">
+		#{weight},
+		</if>
+		<if test="height != null ">
+		#{height},
+		</if>
+		<if test="todaysteps != null ">
+		#{todaysteps},
+		</if>
+		<if test="steps != null ">
+		#{steps},
+		</if>
+		<if test="keepcount != null ">
+		#{keepcount},
+		</if>
+		<if test="premonthkeepcount != null ">
+		#{premonthkeepcount},
+		</if>
+		<if test="monthkeepcount != null ">
+		#{monthkeepcount},
+		</if>
+		<if test="kms != null ">
+		#{kms},
+		</if>
+		<if test="caloris != null ">
+		#{caloris},
+		</if>
+		<if test="myreward != null ">
+		#{myreward},
+		</if>
+		<if test="mypoint != null ">
+		#{mypoint},
+		</if>
+		<if test="lastday != null ">
+		#{lastday},
+		</if>
+		<if test="premonthsteps != null ">
+		#{premonthsteps},
+		</if>
+		<if test="monthsteps != null ">
+		#{monthsteps},
+		</if>
+		<if test="resigncount != null ">
+		#{resigncount},
+		</if>
+		<if test="gender != null ">
+		#{gender},
+		</if>
+		<if test="usertype != null ">
+		#{usertype},
+		</if>
+		<if test="wxid != null ">
+		#{wxid},
+		</if>
+		<if test="country != null ">
+		#{country},
+		</if>
+		<if test="province != null ">
+		#{province},
+		</if>
+		<if test="city != null ">
+		#{city},
+		</if>
+		<if test="address != null ">
+		#{address},
+		</if>
+		<if test="id != null ">
+		#{id},
+		</if>  
+		</trim>
+
+	</insert>
+
+	<update id="update" parameterType="com.xcx.app.walk.domain.Userinfo" flushCache="true">
+		UPDATE T_WALK_USERINFO 
+ 		<trim prefix="SET" suffixOverrides="," >
+		<if test="openid!= null ">
+		openid = #{openid},
+		</if>
+		<if test="nickname!= null ">
+		nickname = #{nickname},
+		</if>
+		<if test="avatarurl!= null ">
+		avatarurl = #{avatarurl},
+		</if>
+		<if test="avatarlocal!= null ">
+		avatarlocal = #{avatarlocal},
+		</if>
+		<if test="weight!= null ">
+		weight = #{weight},
+		</if>
+		<if test="height!= null ">
+		height = #{height},
+		</if>
+		<if test="todaysteps != null ">
+		todaysteps = #{todaysteps},
+		</if>
+		<if test="steps!= null ">
+		steps = #{steps},
+		</if>
+		<if test="keepcount!= null ">
+		keepcount = #{keepcount},
+		</if>
+		<if test="premonthkeepcount!= null ">
+		premonthkeepcount = #{premonthkeepcount},
+		</if>
+		<if test="monthkeepcount!= null ">
+		monthkeepcount = #{monthkeepcount},
+		</if>
+		<if test="kms!= null ">
+		kms = #{kms},
+		</if>
+		<if test="caloris!= null ">
+		caloris = #{caloris},
+		</if>
+		<if test="myreward!= null ">
+		myreward = #{myreward},
+		</if>
+		<if test="mypoint!= null ">
+		mypoint = #{mypoint},
+		</if>
+		<if test="lastday!= null ">
+		lastday = #{lastday},
+		</if>
+		<if test="premonthsteps!= null ">
+		premonthsteps = #{premonthsteps},
+		</if>
+		<if test="monthsteps!= null ">
+		monthsteps = #{monthsteps},
+		</if>
+		<if test="resigncount!= null ">
+		resigncount = #{resigncount},
+		</if>
+		<if test="gender!= null ">
+		gender = #{gender},
+		</if>
+		<if test="usertype!= null ">
+		usertype = #{usertype},
+		</if>
+		<if test="wxid!= null ">
+		wxid = #{wxid},
+		</if>
+		<if test="country!= null ">
+		country = #{country},
+		</if>
+		<if test="province!= null ">
+		province = #{province},
+		</if>
+		<if test="city!= null ">
+		city = #{city},
+		</if>
+		<if test="address!= null ">
+		address = #{address},
+		</if>
+		</trim>
+		WHERE ID = #{id} 
+	</update>
+	
+	<update id="updateUserinfoByOpenid" parameterType="com.xcx.app.walk.domain.Userinfo" flushCache="true">
+		UPDATE T_WALK_USERINFO 
+ 		<trim prefix="SET" suffixOverrides="," >
+		<if test="nickname!= null ">
+		nickname = #{nickname},
+		</if>
+		<if test="avatarurl!= null ">
+		avatarurl = #{avatarurl},
+		</if>
+		<if test="avatarlocal!= null ">
+		avatarlocal = #{avatarlocal},
+		</if>
+		<if test="weight!= null ">
+		weight = #{weight},
+		</if>
+		<if test="height!= null ">
+		height = #{height},
+		</if>
+		<if test="todaysteps!= null ">
+		todaysteps = #{todaysteps},
+		</if>
+		<if test="steps!= null ">
+		steps = #{steps},
+		</if>
+		<if test="keepcount!= null ">
+		keepcount = #{keepcount},
+		</if>
+		<if test="premonthkeepcount!= null ">
+		premonthkeepcount = #{premonthkeepcount},
+		</if>
+		<if test="monthkeepcount!= null ">
+		monthkeepcount = #{monthkeepcount},
+		</if>
+		<if test="kms!= null ">
+		kms = #{kms},
+		</if>
+		<if test="caloris!= null ">
+		caloris = #{caloris},
+		</if>
+		<if test="myreward!= null ">
+		myreward = #{myreward},
+		</if>
+		<if test="mypoint!= null ">
+		mypoint = #{mypoint},
+		</if>
+		<if test="lastday!= null ">
+		lastday = #{lastday},
+		</if>
+		<if test="premonthsteps!= null ">
+		premonthsteps = #{premonthsteps},
+		</if>
+		<if test="monthsteps!= null ">
+		monthsteps = #{monthsteps},
+		</if>
+		<if test="resigncount!= null ">
+		resigncount = #{resigncount},
+		</if>
+		<if test="gender!= null ">
+		gender = #{gender},
+		</if>
+		<if test="usertype!= null ">
+		usertype = #{usertype},
+		</if>
+		<if test="wxid!= null ">
+		wxid = #{wxid},
+		</if>
+		<if test="country!= null ">
+		country = #{country},
+		</if>
+		<if test="province!= null ">
+		province = #{province},
+		</if>
+		<if test="city!= null ">
+		city = #{city},
+		</if>
+		<if test="address!= null ">
+		address = #{address},
+		</if>
+		</trim>
+		WHERE openid = #{openid}
+	</update>
+	
+
+	<delete id="delete" parameterType="com.xcx.app.walk.domain.Userinfo" >
+		DELETE FROM T_WALK_USERINFO
+		WHERE ID = #{id}
+	</delete>
+
+</mapper>

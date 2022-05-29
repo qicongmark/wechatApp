@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://10.20.91.130/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.xcx.app.walk.dao.WalkDataDao">
+		
+	<select id="getTodayData" parameterType="com.xcx.app.walk.domain.WalkData" resultType="com.xcx.app.walk.domain.WalkData">
+		SELECT * 
+		FROM T_WALK_DATA
+		WHERE openid = #{openid}
+		AND year = #{year}
+		AND month = #{month}
+		AND kdate = #{kdate}
+	</select>
+	
+	<select id="getCalendarData" parameterType="com.xcx.app.walk.domain.WalkData" resultType="com.xcx.app.walk.domain.WalkData">
+		SELECT year, month, kdate, steps, kms, caloris
+		FROM T_WALK_DATA
+		WHERE openid = #{openid}
+		AND year = #{year}
+		AND month = #{month}
+		ORDER BY kdate ASC
+	</select>
+
+	<insert id="create" parameterType="com.xcx.app.walk.domain.WalkData" flushCache="true"  useGeneratedKeys="true" keyProperty="id"  >
+		INSERT INTO T_WALK_DATA
+		<trim prefix="(" suffix=")"  suffixOverrides="," >
+		<if test="openid != null ">
+		openid,
+		</if>
+		<if test="year != null ">
+		year,
+		</if>
+		<if test="month != null ">
+		month,
+		</if>
+		<if test="kdate != null ">
+		kdate,
+		</if>
+		<if test="steps != null ">
+		steps,
+		</if>
+		<if test="kms != null ">
+		kms,
+		</if>
+		<if test="caloris != null ">
+		caloris,
+		</if>
+		<if test="id != null ">
+		id,
+		</if>  
+		</trim>
+		VALUES 
+		<trim prefix="(" suffix=")"  suffixOverrides="," >
+		<if test="openid != null ">
+		#{openid},
+		</if>
+		<if test="year != null ">
+		#{year},
+		</if>
+		<if test="month != null ">
+		#{month},
+		</if>
+		<if test="kdate != null ">
+		#{kdate},
+		</if>
+		<if test="steps != null ">
+		#{steps},
+		</if>
+		<if test="kms != null ">
+		#{kms},
+		</if>
+		<if test="caloris != null ">
+		#{caloris},
+		</if>
+		<if test="id != null ">
+		#{id},
+		</if>  
+		</trim>
+
+	</insert>
+
+	<update id="update" parameterType="com.xcx.app.walk.domain.WalkData" flushCache="true">
+		UPDATE T_WALK_DATA 
+ 		<trim prefix="SET" suffixOverrides="," >
+		<if test="openid!= null ">
+		openid = #{openid},
+		</if>
+		<if test="year!= null ">
+		year = #{year},
+		</if>
+		<if test="month!= null ">
+		month = #{month},
+		</if>
+		<if test="kdate!= null ">
+		kdate = #{kdate},
+		</if>
+		<if test="steps!= null ">
+		steps = #{steps},
+		</if>
+		<if test="kms!= null ">
+		kms = #{kms},
+		</if>
+		<if test="caloris!= null ">
+		caloris = #{caloris},
+		</if>
+		</trim>
+		WHERE ID = #{id} 
+	</update>
+
+	<delete id="delete" parameterType="com.xcx.app.walk.domain.WalkData" >
+		DELETE FROM T_WALK_DATA
+		WHERE ID = #{id}
+	</delete>
+	
+	<insert id="insertBatch" parameterType="java.util.List">
+        INSERT INTO T_WALK_DATA 
+        (openid,year,month,kdate,steps,kms,caloris)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+        (#{item.openid}, #{item.year},#{item.month},#{item.kdate},#{item.steps},#{item.kms},#{item.caloris})
+        </foreach>
+    </insert>
+
+</mapper>
