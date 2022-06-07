@@ -1,0 +1,136 @@
+<!--pages/home/home.wxml-->
+<block wx:if="{{showFlag}}">
+<form bindsubmit="submitSearch" class="search-form">
+  <view class="search-group">
+    <input name="sCompany" class="form-control" placeholder="公司名称" maxlength="10" value="{{sCompany}}"/>
+    <picker mode="region" level="city" bindchange="searchRegion" value="{{region}}" class="form-control">
+      <view wx:if="{{sRegion[0]}}">{{sRegion[1]}}</view>
+      <view wx:else>选择城市</view>
+    </picker>
+    <button size="mini" type="primary" form-type="submit" style="font-weight:normal;background-color:#4285f4;color:#fff;width:60px;padding:0px;height:60rpx;margin-right:15rpx;">查询</button>
+    <button size="mini" type="primary" bindtap="showFlag" style="font-weight:normal;color:#fff;width:60px;padding:0px;height:60rpx;margin-right:25rpx;">添加</button>
+  </view>
+</form>
+<view class="container" style="margin-top:50rpx;">
+  <view wx:for="{{workArray}}" class="work-card">
+    <view class="work-title">
+      <view>{{item.company}}<text wx:if="{{item.depart}}"> - {{item.depart}}</text> - {{item.job}} </view>
+      <view>{{item.city}}</view>
+    </view>
+
+    <view class="work-item">
+      <view>上班时间：{{item.ontime}}</view>
+      <view>下班参考：{{item.offtime}}</view>
+    </view>
+
+    <view class="work-item">
+      <view>每周工作：{{item.day}}</view>
+      <view>日报周报：{{item.daily}}</view>
+    </view>
+
+    <view class="work-item">
+      <view>午休时间：{{item.siesta}}</view>
+      <view>特殊福利：{{item.special}}</view>
+    </view>
+
+    <view class="work-item">
+      <view style="width:100%">备注：{{item.remark}}</view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{showModal}}" class="ux-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="ux-modal" wx:if="{{showModal}}">
+    <view class='modal-title'>
+      <text style="margin-left:30rpx">提示信息</text>
+    </view>
+    <view class='modal-content'>
+      <view>您总共已经查询了 5 次</view>
+      <view>点击下方“分享群”后可继续查询</view>
+      <view>或“添加”您的公司作息时间</view>
+      <view>可无限次的查询</view>
+    </view>
+    <view class='modal-footer'>
+      <button size="mini" type="warn" bindtap='cancel'>关闭</button>
+      <button size="mini" open-type="share" type="primary" >分享群</button>
+    </view>
+</view>
+
+</block>
+<view wx:else class="container">
+  <form bindsubmit="submitWork">
+
+    <view class="form-group" style="margin-top:-20rpx;">
+      <label class="form-label form-title">分享你厂的作息时间吧（匿名）</label>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">公司名称</label>
+      <input name="company" class="form-control" placeholder="请输入公司名称，如腾讯" maxlength="10"/>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">所属部门</label>
+      <input name="depart" class="form-control" placeholder="请输入所属部门，如腾讯云" maxlength="10"/>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">工作岗位</label>
+      <input name="job" class="form-control" placeholder="请输入工作岗位，如产品" maxlength="10"/>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">所在城市</label>
+      <picker mode="region" level="city" bindchange="changeRegion" value="{{region}}" class="form-control">
+        <view>{{region[0]}}-{{region[1]}}</view>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">每周工作</label>
+      <picker bindchange="changeDay" class="form-control" value="{{index}}" range="{{dayArray}}">
+        <label>{{day}}</label>
+      </picker>
+      <label class="form-label">日报周报</label>
+      <picker bindchange="changeDaily" class="form-control" value="{{index}}" range="{{dailyArray}}">
+        <label>{{daily}}</label>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">上班时间</label>
+      <picker bindchange="changeOntime" class="form-control" value="{{index}}" range="{{ontimeArray}}">
+        <label>{{ontime}}</label>
+      </picker>
+      <label class="form-label">下班参考</label>
+      <picker bindchange="changeOfftime" class="form-control" value="{{index}}" range="{{offtimeArray}}">
+        <label>{{offtime}}</label>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">午休时间</label>
+      <picker bindchange="changeSiesta" class="form-control" value="{{index}}" range="{{siestaArray}}">
+        <label>{{siesta}}</label>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">特殊福利</label>
+      <picker bindchange="changeSpecial" class="form-control" value="{{index}}" range="{{specialArray}}">
+        <label>{{special}}</label>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">备注</label>
+      <textarea name="remark" style="height:150rpx;" class="form-control" placeholder="请输入备注" maxlength="40"></textarea>
+    </view>
+
+    <view class="share-btn-block-row">
+      <button type="default" bindtap="showFlag" style="width:200rpx;margin-top:60rpx;">返 回</button>
+      <button type="primary" form-type="submit" style="width:200rpx;margin-top:60rpx;">保 存</button>
+    </view>
+  </form>
+  
+</view>

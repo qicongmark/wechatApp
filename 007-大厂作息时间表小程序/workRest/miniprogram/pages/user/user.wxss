@@ -1,0 +1,35 @@
+
+.container {
+  background: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 25rpx;
+  height: 100vh;
+}
+.work-card{
+  padding: 25rpx;
+  margin: 15rpx 0rpx 15rpx;
+  background-color: #FFF;
+  color: #2b2b2b;
+  border-radius: 10rpx;
+}
+
+.work-title{
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 20rpx;
+  margin-bottom:20rpx;
+}
+.work-item{
+  margin:15rpx 0rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.work-item view{
+  width: 50%;
+  text-align: left;
+}

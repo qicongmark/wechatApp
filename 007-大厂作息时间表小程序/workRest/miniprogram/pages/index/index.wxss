@@ -1,0 +1,86 @@
+.search-form{
+  position: fixed;
+  background-color: #F6F6F6;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.search-group{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom:10rpx;
+}
+.search-group input {
+  background-color: #fff;
+  padding-left:6px;
+  border-radius:6rpx;
+  margin-left:25rpx;
+}
+
+.search-group picker{
+  background-color: #fff;
+  padding-left:6px;
+  border-radius:6rpx;
+  margin: 0rpx 15rpx;
+}
+
+.container {
+  background: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 25rpx;
+  height: 100vh;
+}
+.work-card{
+  padding: 25rpx;
+  margin: 15rpx 0rpx 15rpx;
+  background-color: #FFF;
+  color: #2b2b2b;
+  border-radius: 10rpx;
+}
+
+.work-title{
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 20rpx;
+  margin-bottom:20rpx;
+}
+.work-item{
+  margin:15rpx 0rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.work-item view{
+  width: 50%;
+  text-align: left;
+}
+
+.share-btn-block {
+  position: fixed;
+  right: 0rpx;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.share-btn-block button{
+  border-radius: 0;
+  margin-top:30rpx;
+  border-top-left-radius: 6rpx;
+  border-bottom-left-radius: 6rpx;
+}
+
+.share-btn-block-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50rpx;
+}
+.share-btn-block-row button{
+  margin: 0px 30rpx;
+}

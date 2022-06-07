@@ -1,0 +1,37 @@
+<!--pages/user/user.wxml-->
+<view wx:if="{{workArray.length > 0}}" class="container">
+  <view wx:for="{{workArray}}" class="work-card">
+    <view class="work-title">
+      <view>{{item.company}}<text wx:if="{{item.depart}}"> - {{item.depart}}</text> - {{item.job}} </view>
+      <view>{{item.city}}</view>
+    </view>
+
+    <view class="work-item">
+      <view>上班时间：{{item.ontime}}</view>
+      <view>下班参考：{{item.offtime}}</view>
+    </view>
+
+    <view class="work-item">
+      <view>每周工作：{{item.day}}</view>
+      <view>日报周报：{{item.daily}}</view>
+    </view>
+
+    <view class="work-item">
+      <view>午休时间：{{item.siesta}}</view>
+      <view>特殊福利：{{item.special}}</view>
+    </view>
+
+    <view class="work-item">
+      <view style="width:100%">备注：{{item.remark}}</view>
+    </view>
+
+    <view>
+      <button bindtap="removeWork" data-id="{{item._id}}" type="warn">删除</button>
+    </view>
+  </view>
+</view>
+<view wx:else class="container">
+  <view style="text-align: center;margin-top:50px;">
+    <view>您还没有添加数据</view>
+  </view>
+</view>
