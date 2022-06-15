@@ -1,0 +1,16 @@
+<view class="container">
+    <scroll-view class='left-container' scroll-y style='height:{{screenHeight}}px'>
+      <view bindtap='clickItem' data-s="{{item.text}}" wx:for="{{tsData}}" wx:item="item" wx:key="key" id="{{item.id}}" class='shiren {{item.cls}}'>{{item.text}}</view>
+    </scroll-view>
+
+    <scroll-view class='right-container' scroll-y style='height:{{screenHeight}}px'>
+      <view wx:if="{{curScItem}}">
+        <view class="scContentTitle">{{curScItem.title}}</view>
+        <view class="scContent" wx:for='{{curScItem.content}}' wx:key="key" wx:item="item">{{item}}  </view>
+        <view class="scContentDesc">{{curScItem.desc}}</view>
+      </view>
+
+      <view wx:if="{{!curScItem}}" id="{{item.id}}" bindtap='clickScItem' class="scTitle" wx:for='{{scArr}}' wx:key="key" wx:item="item">{{item.title}}    
+      </view>
+    </scroll-view>
+</view>

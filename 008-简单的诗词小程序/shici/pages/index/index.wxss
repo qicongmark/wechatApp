@@ -1,0 +1,50 @@
+/**app.wxss**/
+.container {
+  padding: 0rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+} 
+
+.left-container{
+  width: 250rpx;
+}
+
+.shiren{
+  width: 100%;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #EEE;
+  border-bottom: 2rpx solid #CCC;
+  border-right: 2rpx solid #CCC;
+}
+
+.cur-shiren{
+  background-color: #FFF;
+  border-right: none;
+}
+
+.right-container{
+  width: 100%;
+}
+.scTitle{
+  padding: 20rpx 0rpx 20rpx 20rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.scContentTitle{
+   text-align: center;
+   padding: 20rpx 0rpx 20rpx 20rpx;
+  border-bottom: 2rpx solid #eee;
+  font-weight: bold;
+}
+.scContent{
+  text-align: center;
+  padding: 20rpx 0rpx 20rpx 20rpx;
+}
+.scContentDesc{
+  margin-top: 80rpx;
+  padding: 20rpx 0rpx 20rpx 20rpx;
+  color: #AAA;
+}
