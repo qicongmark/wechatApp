@@ -7,22 +7,19 @@ Page({
 
   data: {
     scTitle:"锄禾日当午",
-
-    scEmptyBtns: [],
-
-    words:[
-      "我", "汗", "你","滴","第","禾","和", "下","土","士"
-    ]
+    answer:"汗滴禾下土",
+    wordstr:"我汗你滴第禾和下土士",
+    scEmptyBtns: []
   },
 
   initEmptyBtn:function(){
-    return [
-      { text: "", index: 0 },
-      { text: "", index: 1 },
-      { text: "", index: 2 },
-      { text: "", index: 3 },
-      { text: "", index: 4 }
-    ]
+    let arr = []
+    for(let i = 0; i < this.data.answer.length; i++){
+      arr.push({
+        text: "", index: i
+      })
+    }
+    return arr
   },
 
   /**
@@ -31,6 +28,17 @@ Page({
   onLoad: function (options) {
     this.setData({
       scEmptyBtns:this.initEmptyBtn()
+    })
+
+    this.prepareWords()
+  },
+
+  //准备字数组
+  prepareWords:function(e){
+    let words = this.data.wordstr.split("")
+    words = words.sort (function () { return Math.random () - 0.5 ; }); 
+    this.setData({
+      words:words
     })
   },
 
@@ -58,7 +66,7 @@ Page({
         answer += item.text
       }
       
-      if (answer == "汗滴禾下土"){
+      if (answer == this.data.answer){
         wx.showToast({
           title: '回答正确',
         })
@@ -77,9 +85,11 @@ Page({
 
   //清空
   clean: function(e){
+    
     this.setData({
       scEmptyBtns: this.initEmptyBtn()
     })
+    
   },
 
   
