@@ -1,0 +1,17 @@
+
+<view class="container">
+  <view style="font-weight: bold;">{{scTitle}}</view>
+
+  <view class="sc-empty-block">
+    <button class="sc-btn empty-btn" wx:for="{{scEmptyBtns}}" wx:item="item" wx:key="key" style="width:60rpx;">{{item.text}}</button>
+  </view>
+
+  <view class="sc-empty-block">
+    <button bindtap='handleClickWord' data-w="{{item}}" class="sc-btn" wx:for="{{words}}" wx:item="item" wx:key="key"  style="width:60rpx;margin: 10rpx;">{{item}}</button>
+  </view>
+  
+  <view class="sc-empty-block">
+    <button bindtap="clean" type="primary" style="margin-top:30rpx;">清空</button>
+  </view>
+</view>
+

@@ -1,0 +1,49 @@
+
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.myclass{
+  background-color: yellow;
+  color: #380cd8;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.myimage{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.sc-empty-block{
+  width: 60%;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.empty-btn{
+  background-color: #FFF;
+  border:1rpx solid  green;
+}
+
+.sc-btn {
+  padding: 0rpx;
+  text-align: center;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 10rpx;
+}
