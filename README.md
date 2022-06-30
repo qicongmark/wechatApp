@@ -25,6 +25,8 @@
 
 - 9、诗词答题小程序（单机版）
 
+- 10、课程表小程序（单机版）
+
 
 ## 每个项目源码包括
 
@@ -40,5 +42,4 @@
 ## 源码使用视频教程和更多资料，关注公众号：祁大聪 
 
 ![qidacong](https://cdn.jsdelivr.net/gh/qidacong/blob-img@master/20220520/qidacong.4z0s3ud9vm80.webp)
-
 
