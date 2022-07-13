@@ -1,0 +1,63 @@
+
+.color-red{
+  color: red;
+}
+
+.color-gray{
+  color: gray;
+}
+
+.color-sign{
+  background-color: #49b5f6;
+  border-radius: 50%;
+  color: #FFFFFF;
+}
+
+.cur-date{
+  text-decoration: underline;
+}
+
+.curdate-block{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 100%;
+}
+.curdate-block button{
+  margin: 0px 30px;
+  background-color: #49b5f6;
+  color: #FFFFFF;
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.calendar-block{
+  margin-top: 10px;
+  width: 350px;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  padding-left: 5px;
+}
+.calendar-day{
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  margin-right: 5px;
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 18px;
+}
+
+.sign-btn{
+  margin-top: 20px;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #49b5f6;
+  color: #FFFFFF;
+  letter-spacing: 5px;
+  padding: 0px;
+}
+

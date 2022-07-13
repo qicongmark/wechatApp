@@ -1,0 +1,21 @@
+<view class="container">
+  <!--当前日期-->
+  <view class="curdate-block">
+    <button bindtap='preMonth'>{{preMonth}}</button>
+   <text> {{year}}年{{month}}月</text>
+    <button bindtap='nextMonth'>{{nextMonth}}</button>
+  </view>
+  
+  <!-- 星期-->
+  <view class="calendar-block">
+    <view class="calendar-day {{(item == '日' || item == '六')?'color-red':'color-gray'}}" wx:for="{{days}}" wx:key="key" wx:item="item" wx:for-index="index">{{item}}</view>
+  </view>
+
+  <!-- 日历-->
+  <view class="calendar-block">
+    <view 
+    class="calendar-day {{item.disabled?'color-gray':''}}  {{item.sign?'color-sign':''}}" 
+    wx:for="{{calendars}}" wx:key="key" wx:item="item" wx:for-index="index">{{item.date}}</view>
+  </view>
+
+</view>
