@@ -46,7 +46,7 @@ function getSignCalendar(paramDate, signDates) {
     if (i < date || month < nowMonth || year < nowYear){//小于当前日期，disabled
       obj.disabled = true;
     }
-    if (Common.contains(signDates, i )){//如果已经签到了 sign = true;
+    if (i == date){
       obj.sign = true;
     }else{
       obj.sign = false;
