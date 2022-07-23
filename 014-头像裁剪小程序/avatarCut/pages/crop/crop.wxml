@@ -1,0 +1,13 @@
+
+<image-cropper id="image-cropper" limit_move="{{limit_move}}" disable_rotate="{{disable_rotate}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" angle="{{angle}}" disable_width="{{disable_width}}" max_width="{{max_width}}" max_height="{{max_height}}" disable_height="{{disable_height}}" disable_ratio="{{disable_ratio}}">
+</image-cropper>
+
+<text class="hint">按住图片：单手指拖动，双手指缩放</text>
+
+<view class='bottom'>
+  <button size="mini" type="primary" bindtap="submitCircle">圆形裁剪</button>
+  <button size="mini" type="primary" bindtap="submit" >正方形裁剪</button>
+  <button size="mini" bindtap="chooseImage">上传照片</button>
+  <button size="mini" bindtap="gobak">返回</button>
+</view>
+

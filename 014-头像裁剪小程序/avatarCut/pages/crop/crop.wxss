@@ -1,0 +1,47 @@
+.top {
+  position: absolute;
+  width: 100%;
+  top: 10rpx;
+  display: flex;
+  flex-flow: wrap;
+  z-index: 10;
+  color: white;
+  justify-content: space-around;
+}
+
+.hint {
+  position: absolute;
+  top: 40rpx;
+  width: 100%;
+  font-size: 36rpx;
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
+
+page {
+  background: white;
+}
+
+view {
+  font-size: 30rpx;
+}
+
+.bottom {
+  bottom:0rpx;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 80rpx;
+  background-color: #dcc3b0;
+  padding-bottom:20rpx;
+  padding-top: 20rpx;
+}
+.submit-block{
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,206 @@
+const app = getApp();
+import CanvasDrag from '../../components/canvas-drag/canvas-drag';
+
+Page({
+  data: {
+    bgPic: null,
+    tapIndex: 0,
+    graph: {},
+
+    bgActive: "sbar-active",
+    stickActive: "",
+    scrollTabFlag: 0,
+  },
+
+  onLoad: function (options) {
+    wx.showShareMenu({
+      withShareTicket:true,
+      menus:['shareAppMessage','shareTimeline']
+    })
+
+    let bgList = []
+    let imgList = [4,3,0,1,2,5,6,7,8,9,10,11]
+    for(let i = 0; i < imgList.length; i++){
+      bgList[i] = "/images/" + imgList[i] + ".png";
+    }
+
+    let stickList = []
+    imgList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
+    for(let i = 0; i < imgList.length; i++){
+      stickList[i] = "/images/s" + imgList[i] + ".png";
+    }
+    
+    this.setData({
+      bgList:bgList,
+      stickList:stickList
+    })
+  },
+  
+  onReady: function () {
+    this.drawBgImg("/images/avatar.png")
+  },
+
+  onShow: function(){
+    if(app.globalData.cropImg && app.globalData.cropImgFlag){
+      app.globalData.cropImgFlag = false
+      this.setData({
+        graph: {
+          w: 150,
+          h: 150,
+          type: 'image',
+          url: app.globalData.cropImg
+        }
+      })
+    }
+  },
+
+  //选择背景图
+  selectBg: function (e) {
+    var avatar = e.currentTarget.dataset.avatar;
+    this.drawBgImg(avatar)
+  },
+
+  //选择微信头像作为背景图
+  selectWxBg: function(e){
+    wx.getUserProfile({
+      desc: '请授权头像制作',
+      success: res=>{
+        let avatarUrl = res.userInfo.avatarUrl
+        avatarUrl = avatarUrl.substring(0,avatarUrl.lastIndexOf("/")) + "/0"
+        wx.getImageInfo({
+          src: avatarUrl,
+          success: res => {
+            this.drawBgImg(res.path)
+          }
+        })
+      }
+    })
+  },
+
+  //选择手机图片作为背景图
+  selectPhoneBg: function () {
+    var that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original'],
+      success: (res) => {
+        this.drawBgImg(res.tempFilePaths[0])
+      }
+    })
+  },
+
+  bgClick: function(e){
+    this.setData({
+      bgActive:"sbar-active",
+      stickActive:"",
+      scrollTabFlag:0
+    })
+  },
+
+
+  //贴图点击
+  stickClick: function(e){
+    this.setData({
+      bgActive:"",
+      stickActive:"sbar-active",
+      scrollTabFlag:1
+    })
+  },
+
+  //选择贴图
+  selectStick: function(e){
+    var avatar = e.currentTarget.dataset.avatar;
+    this.setData({
+      graph: {
+        w: 150,
+        h: 150,
+        type: 'image',
+        url: avatar
+      }
+    })
+  },
+
+  // 获取用户头像
+  selectWxStick: function (e) {
+    wx.getUserProfile({
+      desc: '请授权头像制作',
+      success: res=>{
+        let avatarUrl = res.userInfo.avatarUrl
+        avatarUrl = avatarUrl.substring(0,avatarUrl.lastIndexOf("/")) + "/0"
+        wx.getImageInfo({
+          src: avatarUrl,
+          success: res => {
+            this.avatarCrop(res.path)
+          }
+        })
+      }
+    })
+  },
+  
+  // 从相册选择
+  selectPhoneStick: function () {
+    var that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original'],
+      success: (res) => {
+        this.avatarCrop(res.tempFilePaths[0])
+      }
+    })
+  },
+
+  /**
+   * 导出图片
+   */
+  onExport() {
+    CanvasDrag.export().then((filePath) => {
+      this.saveImage(filePath);
+    }).catch((e) => {
+      console.error(e);
+    })
+  },
+
+  // 保存图片到相册
+  saveImage: function (filepath) {
+    var that = this;
+    wx.showLoading({
+      title: '保存中...',
+    })
+    wx.saveImageToPhotosAlbum({ //保存图片到相册
+      filePath: filepath,
+      success: res => {
+        wx.showToast({
+          title: '图片已存入相册',
+          icon: "success",
+          duration: 2000
+        })
+      },
+      complete: res => {
+        wx.hideLoading()
+      }
+    });
+  },
+
+  //画背景图
+  drawBgImg: function(url){
+    wx.getImageInfo({
+      src: url,
+      success: function (res) {
+        if(new Number(res.width) == new Number(res.height)){
+          CanvasDrag.changeBgImage(url);
+        }else{
+          CanvasDrag.changeBgImageCut(url,res.width,res.height);
+        }
+      }
+    })
+  },
+  
+  //剪辑头像
+  avatarCrop:function(avatarUrl){
+    wx.navigateTo({
+      url: '/pages/crop/crop?avatar='+avatarUrl,
+    })
+  }
+
+
+});

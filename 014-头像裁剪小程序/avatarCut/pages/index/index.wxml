@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="hint">头像裁剪</view>
+  <view class="avatar-block">
+    <canvas-drag id="canvas-drag" graph="{{graph}}" width="250" height="250"></canvas-drag>
+    <view class="btn-block">
+      <button style="width:160px;" type="primary" bindtap="onExport">保存头像图片</button>
+    </view>
+  </view>
+</view>
+
+<view class="scrollView-bar">
+  <view class="sbar-item {{bgActive}}" bindtap="bgClick">选择图片裁剪</view>
+</view>
+
+<scroll-view  class="scrollView" scrollX="true">
+  <view class="diy-img" >
+    <button bindtap="selectWxStick" style="width:75px;height:75px;line-height:75px;padding:0px;margin:0px;color:#07c160;">头像</button>
+  </view>
+  <view class="diy-img" >
+    <button bindtap="selectPhoneStick" style="width:75px;height:75px;line-height:75px;padding:0px;margin:0px;">手机照片</button>
+  </view>
+  <view class="diy-img" wx:for="{{stickList}}">
+    <image src="{{item}}" bindtap="selectStick" data-avatar="{{item}}"></image>
+  </view>
+</scroll-view>

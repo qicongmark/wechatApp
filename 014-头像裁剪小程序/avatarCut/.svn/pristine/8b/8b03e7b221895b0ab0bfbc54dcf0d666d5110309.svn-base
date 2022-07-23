@@ -1,0 +1,81 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #e1c2ae;
+}
+.logo {
+  position: fixed;
+  top:20rpx;
+  display: block;
+  width:150rpx;
+  height:150rpx;
+}
+.hint {
+  width: 100%;
+  font-size: 36rpx;
+  text-align: center;
+  color: black;
+}
+.avatar-block{
+  margin-top:30rpx;
+}
+.scrollView-bar{
+  width: 100%;
+  position: absolute;
+  bottom: 102px;
+  white-space: nowrap;
+  background-color: #e1c2ae;
+  display: flex;
+  flex-direction: row;
+}
+.sbar-item{
+  background-color: #e1c2ae;
+  padding:10px 20px;
+  border: 1px solid #fff;
+  font-size: 16px;
+}
+.sbar-active{
+  background-color: #fff;
+}
+.sbar-tip{
+  font-size:26rpx;
+  word-wrap: break-word;
+  padding-left: 10rpx;
+}
+.scrollView {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  white-space: nowrap;
+  background-color: #fff;
+}
+.diy-img {
+  display: inline-block;
+  flex-direction: column;
+  position: relative;
+  height: 75px;
+  margin: 10px 3px 10px 3px;
+  overflow: hidden;
+  padding-bottom:5px;
+}
+.diy-img image {
+  height: 75px;
+  width: 75px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #282828;
+}
+.diy-img button{
+  border: 1px solid #282828;
+}
+button{
+  margin-top:30rpx;
+}
+.btn-block{
+  display: flex;
+  flex-direction: row;
+}

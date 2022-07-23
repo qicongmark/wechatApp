@@ -1,0 +1,24 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "crop",
+          "pathName": "pages/crop/crop",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

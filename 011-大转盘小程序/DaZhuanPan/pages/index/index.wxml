@@ -1,6 +1,7 @@
 <view class="container">
 
 <view class="main">
+  <view class="title">今晚吃什么？</view>
   <view class="canvas-container">
     <view  animation="{{animationData}}" class="canvas-content" >
       <view class="canvas-line">
@@ -13,7 +14,7 @@
         </view>
       </view>
     </view>
-    <view bindtap="playReward" class="canvas-btn {{btnDisabled}}">转</view>		
+    <view bindtap="playReward" class="canvas-btn {{btnDisabled}}">吃</view>		
   </view>
 </view>
 

@@ -31,12 +31,12 @@ Page({
   onShow: function(e){
     //刷新抽奖配置
     this.awardsConfig.awards = [
-      {'id':'"rate1"', 'index': 1, 'name': '10员' },
-      {'id':'"rate2"', 'index': 2, 'name': '一瓶汽水' },
-      {'id':'"rate3"', 'index': 3, 'name': '100元' },
-      {'id':'"rate4"', 'index': 4, 'name': '88元' },
-      {'id':'"rate5"', 'index': 5, 'name': '500W' },
-      {'id':'"rate6"', 'index': 6, 'name': '八折' }
+      {'id':'"rate1"', 'index': 1, 'name': '烧烤' },
+      {'id':'"rate2"', 'index': 2, 'name': '喝水' },
+      {'id':'"rate3"', 'index': 3, 'name': '跑步' },
+      {'id':'"rate4"', 'index': 4, 'name': '满汉全席' },
+      {'id':'"rate5"', 'index': 5, 'name': '水果' },
+      {'id':'"rate6"', 'index': 6, 'name': '甜点' }
     ]
     this.drawAwardRoundel()
     
@@ -141,8 +141,8 @@ Page({
     setTimeout(function () {
       var awardContent = awardsConfig.awards[awardIndex].name
       wx.showModal({
-        title: '恭喜获奖',
-        content: '奖品：' + awardContent,
+        title: '今晚夜宵吃',
+        content: awardContent,
         showCancel: false
       });
       this.setData({

@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/crop/crop"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e1c2ae",
+    "navigationBarTitleText": "小匠头像制作",
+    "navigationBarTextStyle": "black",
+    "disableScroll": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,46 @@
+<view class="container">
+  <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+  <view class="hint">2022年，换个头像豹富一年</view>
+  <view class="avatar-block">
+    <canvas-drag id="canvas-drag" graph="{{graph}}" width="250" height="250"></canvas-drag>
+    <view class="btn-block">
+      <button style="width:160px;margin-right:10px;" type="primary" bindtap="onExport">保存头像图片</button>
+      <button style="width:80px;padding:5px;padding-top:8px;" type="warn" open-type="share">转发好友</button>
+    </view>
+    <!--<view class="btn-block">
+      <button style="width:80px;padding:5px" plain bindtap="getUserProfile">微信头像</button>
+      <button style="width:80px;padding:5px;margin-left:10px;margin-right:15px;" plain bindtap="chooseImage">上传照片</button>
+      <button style="width:80px;padding:5px" type="warn" open-type="share">转发好友</button>
+    </view>-->
+  </view>
+</view>
+<view class="scrollView-bar">
+  <view class="sbar-item {{bgActive}}" bindtap="bgClick">相框背景图</view>
+  <view class="sbar-item {{stickActive}}" bindtap="stickClick">头像和贴纸</view>
+  <view class="sbar-tip">
+    <view>使用方法：</view>
+    <view>先选相框再选贴纸</view>
+</view>
+</view>
+<scroll-view wx:if="{{scrollTabFlag == 0}}" class="scrollView" scrollX="true">
+  <view class="diy-img" >
+    <button bindtap="selectWxBg" style="width:75px;height:75px;line-height:75px;padding:0px;margin:0px;color:#07c160;">微信头像</button>
+  </view>
+  <view class="diy-img" >
+    <button bindtap="selectPhoneBg" style="width:75px;height:75px;line-height:75px;padding:0px;margin:0px;">手机照片</button>
+  </view>
+  <view class="diy-img" wx:for="{{bgList}}">
+    <image src="{{item}}" bindtap="selectBg" data-avatar="{{item}}"></image>
+  </view>
+</scroll-view>
+<scroll-view wx:if="{{scrollTabFlag == 1}}" class="scrollView" scrollX="true">
+  <view class="diy-img" >
+    <button bindtap="selectWxStick" style="width:75px;height:75px;line-height:75px;padding:0px;margin:0px;color:#07c160;">微信头像</button>
+  </view>
+  <view class="diy-img" >
+    <button bindtap="selectPhoneStick" style="width:75px;height:75px;line-height:75px;padding:0px;margin:0px;">手机照片</button>
+  </view>
+  <view class="diy-img" wx:for="{{stickList}}">
+    <image src="{{item}}" bindtap="selectStick" data-avatar="{{item}}"></image>
+  </view>
+</scroll-view>
