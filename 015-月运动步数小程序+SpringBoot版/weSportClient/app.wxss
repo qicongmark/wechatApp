@@ -1,0 +1,67 @@
+/**app.wxss**/
+Page{
+  padding: 0px;
+  width: 100%;
+  height:100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+} 
+button::after{
+  border: none;
+}
+.btn-hover{
+  transition: transform 0.5s; 
+  transform: scale(0.9,0.9); 
+}
+.trans-btn{
+  padding: 0px;
+  background-color: transparent;
+}
+.trans-btn::after{
+  border: none;
+}
+.btn-hover{
+  transition: transform 0.5s; 
+  transform: scale(0.9,0.9); 
+}
+.mr-20{
+  margin-right: 20px;
+}
+.mr-15{
+  margin-right: 15px;
+}
+.mr-10{
+  margin-right: 10px;
+}
+.mr-5{
+  margin-right: 5px;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.mt-20{
+  margin-top: 20px;
+}
+.mt-30{
+  margin-top: 30px;
+}
+.f-20{
+  font-size: 20px;
+}
+.f-14{
+  font-size: 14px;
+}
+.color-red{
+  color: red;
+}
+color-gray{
+  color: gray;
+}
+.hidden-view{
+  display: none;
+}
+

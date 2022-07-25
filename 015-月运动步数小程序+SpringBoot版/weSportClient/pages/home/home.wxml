@@ -1,0 +1,38 @@
+<view class="container">
+  <!--头像-->
+  <view class="userinfo-block">
+    <view class="userinfo-block-left">
+      <open-data class="user-avatar" type="userAvatarUrl"></open-data>
+    </view>
+    <view class="userinfo-block-right">
+      <view class="userinfo-block-item">
+        <open-data class="user-nickname" type="userNickName"></open-data>
+      </view>
+    </view>
+  </view>
+
+  <!-- 总数据栏 -->
+  <view class="navigate-userdata-block">
+    <view class="navigate-bar-data">
+      <view class="navigate-item navigate-item-left" bindtap='monthdata'>{{year}}年{{month}}月总步数：{{calendarObj.totalStepsValue}}</view>
+    </view>   
+  </view>
+  
+  <view class="calendar-content-block">
+    <!-- 星期-->
+    <view class="calendar-block-week">
+      <view class="calendar-weekday {{(item == '日' || item == '六')?'color-red':'color-gray'}}" wx:for="{{days}}" wx:key="key" wx:item="item" wx:for-index="index">{{item}}</view>
+    </view>
+
+    <!-- 日历-->
+    <view class="calendar-block">
+      <view class="calendar-day-item"
+      wx:for="{{calendarObj.calendar}}" wx:key="key" wx:item="item" wx:for-index="index">
+        <view class="calendar-day">{{item.date}}</view>
+        <view class="calendar-day-step">{{item.step}}</view>
+      </view>
+    </view>
+    
+  </view>
+
+</view>

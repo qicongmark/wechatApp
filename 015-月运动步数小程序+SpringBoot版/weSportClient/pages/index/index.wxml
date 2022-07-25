@@ -1,0 +1,18 @@
+
+<view class="container" style="margin-top: 100px;">
+  <canvas disable-scroll="true" bindtouchmove="touchmove" class="mystep-canvas  {{hiddenStepCanvas?'hidden-view':''}}" canvas-id="canvasArc">  
+      <view class="container">
+        <view class="mystep-block">
+          <view class="today-step-title">今日步数</view>
+          <view class="today-step-num {{scalecls}}">{{mystep}}</view>
+          <view class="today-step">目标一万步</view>
+        </view>
+      </view>
+  </canvas>
+</view>
+
+<view class='mystep-uploadbtn-block'>
+  <button type="primary" open-type="getUserInfo" bindgetuserinfo='tohome' >{{mymonth}}月步数</button>
+</view>
+
+
