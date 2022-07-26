@@ -51,9 +51,9 @@
   "libVersion": "2.21.3",
   "appid": "wx5bc743c1ba6135ed",
   "projectname": "avatarDiy",
-  "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "condition": {}
 }
