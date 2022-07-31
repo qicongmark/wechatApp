@@ -3,7 +3,7 @@
 
 - 每个文件夹都是一个小程序项目源码，持续更新中，感谢star
 
-- 获取源码的使用教程（视频）
+- 教程：https://jeeweixin.com/wiki/1407524274176032
 
 - https://github.com/qicongmark 
 
