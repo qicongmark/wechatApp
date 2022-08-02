@@ -1,0 +1,40 @@
+
+
+<!--pages/wxz/wxz.wxml-->
+<view class="timer">倒计时：{{time}}</view>
+<view class="wraper">
+<image wx:for="{{wxz}}" wx:key="key" src='{{item}}' data-name='{{item}}' class="sum256" bindtap='select'></image>
+</view>
+
+<view class="mask" wx:if="{{showMask}}">
+  <view class="startModule">
+  <view class="tiptext">思聪吃热狗 3秒挑战赛</view>
+  <view style='font-size:28rpx;'>用最快速度找到此图</view>
+  <image src='../../images/wxz1.png' style='width:200rpx;height:200rpx;' bindload="handleLoad"></image>
+  <button type="primary" class="ready" bindtap='start'>准备好了，开始</button>
+  </view>
+</view>
+
+<view class="endMask" wx:if="{{showTimeout}}">
+<view class="timeOut" wx:if="{{showTimeout}}">
+  <view class="result">用时{{second}}秒找到</view>
+  <view class="result1">打败了{{persent}}%的网友</view>
+  <view class="btn-view">
+  <button type='default' class="ready" bindtap='restart'>再来一次</button>
+  <button type="warn" class="ready" open-type='share'>分享好友挑战</button>
+  <button type="primary" class="ready" bindtap='saveImg'>分享图片</button>
+  </view>
+</view>
+</view>
+
+<view class="endMask" wx:if="{{showTimeoutModule}}">
+<view class="timeOut" wx:if="{{showTimeoutModule}}">
+<view class="result">真遗憾，时间到了</view>
+  <view class="result1">就差一点点，继续努力吧~</view>
+  <view class="btn-view">
+  <button type='primary' class="ready" bindtap='restart'>再来一次</button>
+  <button type="warn" class="ready" open-type='share'>分享好友挑战</button>
+  </view>
+</view>
+</view>
+

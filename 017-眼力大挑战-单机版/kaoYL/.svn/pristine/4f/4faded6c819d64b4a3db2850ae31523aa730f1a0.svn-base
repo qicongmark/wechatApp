@@ -1,0 +1,167 @@
+
+var app=getApp();
+// pages/wxz/wxz.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    curnum: 779,
+    time: 5.00,
+    showMask: true,
+    showTimeout:false,
+    showTimeoutModule:false
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    wx.showLoading({
+      title: '数据加载中',
+    })
+
+    var num = this.data.curnum;
+    this.nextSel(num);
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  changetime: function() {
+    var timer = this.data.timer;
+    var time = this.data.time;
+    var timeFixed = (parseFloat(time) - 0.1).toFixed(1);
+    this.setData({
+      time:timeFixed
+    })
+    if (this.data.time <= 0) {
+      clearInterval(timer);
+    this.setData({
+      showTimeoutModule:true
+    })
+
+    }
+  },
+
+  start: function() {
+    this.setData({
+      showMask: false
+    })
+    var timer = setInterval(this.changetime, 100);
+    this.setData({
+      timer: timer
+    })
+  },
+
+  select: function(e) {
+    var that = this;
+
+    if (e.currentTarget.dataset.name == "../../images/wxz.png") {
+      var timer = this.data.timer;
+      clearInterval(timer);
+      var restime=this.data.time;
+      var second=(5.00-restime).toFixed(2);
+      var persent=(Number(restime)*30).toFixed(2);
+      if(Number(persent)>100){
+        persent = 99 + Number((Number(persent) / 1000).toFixed(2));
+      }
+      if(Number(persent)<0.98){
+        persent=Math.random()*40
+      }
+      this.setData({
+        second:second,
+        persent:persent,
+        showTimeout:true
+      })
+
+
+      //如果选中了王思聪，弹框提示，进入下一关
+      var num = this.data.curnum;
+    } else {
+      wx.showToast({
+        title: '错了哦',
+      })
+    }
+  },
+
+
+  restart:function(){
+    this.nextSel(this.data.curnum);
+    this.setData({
+      time:5.00,
+      showTimeout:false,
+      showTimeoutModule:false
+    })
+    var timer=setInterval(this.changetime,100);
+    this.setData({
+      timer:timer
+    })
+  },
+
+  nextSel: function(num) {
+    var wxz = [];
+    for (var i = 0; i < num; i++) {
+      wxz.push("../../images/duck.png")
+    }
+    var length = wxz.length;
+    var randx = Math.floor(length * Math.random());
+    wxz.splice(randx, 1, "../../images/wxz.png");
+    this.setData({
+      wxz: wxz,
+      curnum: length
+    })
+  },
+
+  saveImg:function(){
+    wx.showLoading({
+      title: '图片保存中',
+    })
+    wx.getImageInfo({
+      src: app.CDN_URL+'wxzshare.jpg',
+      success:res=>{
+        wx.saveImageToPhotosAlbum({
+          filePath: res.path,
+          success: function(){
+            wx.showToast({
+              title: '保存成功',
+            })
+          },
+          complete: function(){
+            wx.hideLoading();
+          }
+        })
+      }
+    })
+  },
+
+  handleLoad: function() {
+    wx.hideLoading()
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+    var second=this.data.second;
+    return {
+      path: "pages/wxz/wxz",
+      title: "好难啊！但是我"+second+"秒就找到了！你也来试试",
+      imageUrl: "../../images/wxz1.png"
+    }
+
+    }
+
+})

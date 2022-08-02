@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/wxz/wxz"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "全民找热狗",
+    "navigationBarTextStyle": "black"
+  }
+}
