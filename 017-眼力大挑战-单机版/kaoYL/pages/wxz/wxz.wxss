@@ -31,11 +31,39 @@ Page{
 view{
   padding: 0;
 }
-.timer{
-  font-size: 24px;
-  text-align:center;
-  color: red;
+
+.title-block{
+  height: 200px;
+  line-height: 320px;
+  text-align: center;
+}
+
+.title-block .title{
+  color: #d81e06;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.time-block{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-top: 50rpx;
+}
+.timer{
+  width:120rpx;
+  font-size: 28px;
+  text-align:center;
+  color: #d81e06;
+  font-weight: bold;
+  margin-top:10rpx;
+}
+
+.time-block image{
+  width: 96rpx;
+  height: 96rpx;
 }
 
 .mask{

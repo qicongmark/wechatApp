@@ -1,16 +1,24 @@
 <!--pages/wxz/wxz.wxml-->
-<image class="bg" src="../../images/bg.png" mode="aspectFill"></image>
+<image class="bg" src="../../images/bg.jpeg" mode="aspectFill"></image>
 
-<view style="height: 230px;"></view>
+<view class="title-block">
+  <view class="title">第 {{curIndex+1}} 关</view>
+</view>
+
 <view wx:if="{{startFlag}}" class="wraper">
   <image wx:for="{{curMap}}" wx:key="key" src='{{item}}' data-name='{{item}}' class="larger" bindtap='select'></image>
 </view>
 
-<view class="timer">倒计时：{{time}}</view>
+<view class="time-block">
+
+<image mode="aspectFit" src="../../images/clock.png"></image>
+<view class="timer">{{time}}</view>
+
+</view>
 
 <view class="mask" wx:if="{{showMask}}">
   <view class="start-modal">
-    <view class="tiptext">眼力大挑战，5秒找到下图</view>
+    <view class="tiptext">5秒找到不同的图片</view>
     <image src='{{curItem.curimg}}' style='width:200rpx;height:200rpx;' bindload="handleLoad"></image>
     <button type="primary" class="ready" bindtap='start'>准备好了，开始</button>
   </view>
