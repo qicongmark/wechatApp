@@ -1,0 +1,235 @@
+
+.reward-header-block{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #FFFFFF;
+}
+.reward-header-block image{
+  width: 30px;
+  height: 30px;
+  margin: 0px 5px;
+}
+.reward-header-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.myreward-btn{
+  width: 80px;
+  margin: 0px;
+  padding: 0px 5px;
+  margin-right: 5px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #02b352;
+  border-radius: 30px;
+}
+
+.reward-content-block{
+  margin-top: 20px;
+  width: 95%;
+}
+.reward-content-item{
+  margin-bottom: 15px;
+  width: 100%;
+  height: 140px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.reward-content-item view{
+  height: 140px;
+}
+.reward-content-ticket{
+  width: 70%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.reward-content-btn{
+  text-align: center;
+  height: 140px;
+  line-height: 140px;
+  width: 30%;
+}
+.reward-content-ticket-item{
+  padding: 0px;
+  background-color: red;
+  width: 120px;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  margin-bottom: 5px;
+  background: #0d0d0d;  
+  overflow: hidden;  
+  background: rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
+  border-radius: 40px;
+}
+.reward-content-ticket-item::after{
+  border: none;
+}
+
+
+/*弹出层样式*/  
+.drawer_screen {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #0d0d0d;  
+  overflow: hidden;  
+  background: rgba(0, 0, 0, 0.3);
+}
+.drawer_box {  
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  overflow: hidden;  
+  position: fixed;  
+  bottom: 0px; 
+  z-index: 1001;  
+  background-color: #0d0d0d;  
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+} 
+.drawer_content_box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.drawer_content{
+  display:flex;
+  -webkit-flex-direction:row;
+  width: 80%;
+  height: 200px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #FFFFFF;
+  flex-direction: column;
+}
+.drawer_content_image{
+  margin-top: -10px;
+  width: 100%;
+}
+
+.drawer_content_title{
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  color: #0d0d0d;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.drawer_content_form{
+  width: 100%;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-input{
+  border: 1px solid #dddddd;
+  height: 40px;
+  width: 200px;
+  border-radius: 5px;
+  text-align: left;
+  padding: 0px 5px;
+}
+.drawer_content_bottom{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.drawer_content_bottom button{
+  width: 50%;
+  background-color: #FFFFFF;
+  border-radius: 0px;
+}
+.drawer_content_bottom button::after{
+  border-radius: 0px;
+}
+
+.submit-btn{
+  color: #ec5300;
+}
+.drawer_content_desc{
+  width: 100%;
+  text-align: center;
+  color: #636363;
+}
+.drawer_share_btn{
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 50rpx;
+  background-color: #44b779;
+  color: #FFFFFF;
+  margin-top: 30px;
+  border-radius: 50px;
+}
+
+.drawer_share_btn::after{
+  border: none;
+}
+.drawer_content_close_block{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.drawer_content_close{
+  border-radius: 50%;
+  width: 60rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 55rpx;
+  background-color: #FFFFFF;
+  margin-top: -15rpx;
+  margin-right: -15rpx;
+  font-size: 20px;
+  color: #0d0d0d;
+  border:2px solid #0d0d0d;
+  font-weight: bold;
+}
+.drawer_content_close::after{
+  border: none;
+}
+.drawer_footer{
+  margin-top: 20px;
+}
+.drawer_btn_block{
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  -webkit-flex-direction:row;
+	flex-direction:row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.drawer_btn_block image{
+  width: 90px;
+  height: 50px;
+  margin: 0px 10px;
+}
+.close-btn{
+  width: 35px;
+  height: 35px;
+  margin-right: 30px;
+}

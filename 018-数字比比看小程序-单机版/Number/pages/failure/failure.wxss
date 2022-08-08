@@ -1,0 +1,176 @@
+/**头部**/
+.progress-block{
+  background-color: #FFFFFF;
+}
+.header-bg{
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.userinfo-block{
+  margin-top: 15px;
+  display:flex;
+	flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.userinfo-block image{
+  height: 160px;
+}
+.mypoint-desc{
+  margin-top: 20px;
+  color: #dc767e;
+  letter-spacing: 1px;
+}
+.score-desc{
+  margin-top: 15px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+.level-desc{
+  margin-top: 15px;
+  font-size: 40px;
+  color: #fad52b;
+  letter-spacing: 1px;
+}
+.mypoint-value{
+  margin-top: 35px;
+  color: #FFFFFF;
+}
+.mypoint-value text{
+  color: #54f687;
+}
+
+.fight-btn{
+  margin-top: 30px;
+  align-items: center;
+  padding: 0px;
+  width: 80%;
+  background-color: #ffef46;
+  color: #806608;
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #ffef46;
+  border-radius: 60px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.fight-btn::after{
+  border: none;
+}
+.share-btn{
+  margin-top: 10px;
+  padding: 0px;
+  width: 80%;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50px;
+  color: #50b587;
+}
+.share-btn::after{
+  border: none;
+}
+.fight-btn-hover{
+  transition: transform 0.5s; 
+  transform: scale(0.9,0.9); 
+}
+
+.recommend-block{
+  margin-top: 10px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #666666;
+  letter-spacing: 1px;
+  align-items: center;
+  border-bottom: 1px solid #ecd6d0;
+}
+
+.recommend-block image{
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  margin-left: 15px;
+}
+.recommend-content{
+  width: 50%;
+}
+.recommend-name{
+  font-size: 18px;
+}
+.recommend-title{
+  font-size: 14px;
+}
+.recommend-btn{
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px;
+  background-color: #7c479f;
+  border-radius: 20px;
+  color: #FFFFFF;
+}
+.space-item{
+  text-align: center;
+  display: inline-block;
+  min-width: 20rpx;
+}
+.space-item-text{
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.my-reward-block{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0px 20px 0px;
+}
+.navigate-bar-clock{
+  margin-top: 40rpx;
+  width: 90%;
+  background-color: #fbeeed;
+  border-right: none;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.navigate-item{
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #7c479f;
+}
+.myreward-item{
+  display: flex;
+  flex-direction: row;
+  color: #666666;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ecd6d0;
+  margin-bottom: 5px;
+  font-size: 16px;
+  align-items: center;
+}
+.myreward-item .get-btn{
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #f3c844;
+  padding: 0px;
+  color: #FFFFFF;
+  font-size: 16px;
+  margin: 0px;
+}
+

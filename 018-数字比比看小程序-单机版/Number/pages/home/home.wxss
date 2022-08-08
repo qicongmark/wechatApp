@@ -1,0 +1,265 @@
+/**头部**/
+Page{
+  background-color: #eeeeee;
+}
+.progress-block{
+  background-color: #FFFFFF;
+}
+.header-bg{
+  width: 100%;
+  height: 500rpx;
+  margin: 0px;
+  padding: 0px;
+  background-color: #40b878;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.userinfo-block{
+  margin-top: 15px;
+  display:flex;
+	flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+}
+.user-avatar{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow:hidden;
+  object-fit: cover;
+  display: block;
+}
+.user-nickname{
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+.title-text{
+  margin-top: 15px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+.userdata-block{
+  margin-top: -50px;
+  width: 90%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #c1cac6;
+}
+.userdata-item{
+  width: 33.3%;
+  height: 100px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.userdata-item-top{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+}
+.userbtn-block{
+  margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.userbtn-block button{
+  border-radius: 30px;
+  width: 150px;
+  color: #7c479f;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.contract-block{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.contract-block button{
+  width: 45%;
+  border-radius: 50px;
+  font-size: 18px;
+}
+.contract-button{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+}
+.contract-button image{
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.fight-btn{
+  margin-top: 50px;
+  align-items: center;
+  padding: 0px;
+  width: 80%;
+  background-color: #ffef46;
+  color: #806608;
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #ffef46;
+  border-radius: 60px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.fight-btn::after{
+  border: none;
+}
+.fight-btn-hover{
+  transition: transform 0.5s; 
+  transform: scale(0.9,0.9); 
+}
+
+.share-btn{
+  margin-top: 10px;
+  padding: 0px;
+  width: 80%;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50px;
+  color: #50b587;
+}
+.share-btn::after{
+  border: none;
+}
+.recommend-block{
+  margin-top: 10px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #666666;
+  letter-spacing: 1px;
+  align-items: center;
+  border-bottom: 1px solid #ecd6d0;
+}
+
+.recommend-block image{
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  margin-left: 15px;
+}
+.recommend-content{
+  width: 50%;
+}
+.recommend-name{
+  font-size: 18px;
+}
+.recommend-title{
+  font-size: 14px;
+}
+.recommend-btn{
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px;
+  background-color: #7c479f;
+  border-radius: 20px;
+  color: #FFFFFF;
+}
+.space-item{
+  text-align: center;
+  display: inline-block;
+  min-width: 20rpx;
+}
+.space-item-text{
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.my-reward-block{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0px 20px 0px;
+}
+.navigate-bar-clock{
+  margin-top: 40rpx;
+  width: 90%;
+  background-color: #fbeeed;
+  border-right: none;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.navigate-item{
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #7c479f;
+}
+.myreward-item{
+  display: flex;
+  flex-direction: row;
+  color: #666666;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ecd6d0;
+  margin-bottom: 5px;
+  font-size: 16px;
+  align-items: center;
+}
+.myreward-item .get-btn{
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #f3c844;
+  padding: 0px;
+  color: #FFFFFF;
+  font-size: 16px;
+  margin: 0px;
+}
+
+.complain-block{
+  position: fixed;
+  right: 0px;
+  top: 20px;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background: #0acde4;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.complain-block image{
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
+
+}

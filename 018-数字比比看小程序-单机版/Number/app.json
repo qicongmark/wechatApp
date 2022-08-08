@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/play/play",
+    "pages/logs/logs",
+    "pages/failure/failure",
+    "pages/reward/reward",
+    "pages/rewardmy/rewardmy",
+    "pages/complain/complain"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3fb976",
+    "backgroundColor": "#3fb976",
+    "navigationBarTitleText": "数字比比看",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

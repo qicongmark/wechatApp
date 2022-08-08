@@ -1,0 +1,50 @@
+
+<view class="container">
+    <view class="reward-header-block">
+      <view class="reward-header-item">
+        <image src='../../images/quan.png'></image>
+        <view class='mr-10'>兑奖券: {{userInfo.myreward}}</view>
+      </view>
+      
+      <view class="reward-header-item">
+        <image src='../../images/quan.png'></image>
+        <view>积分: {{userInfo.mypoint}}</view>
+      </view>
+
+      <button class="myreward-btn" bindtap='toMyReward'>我的奖品</button>
+    </view>
+
+    <view class="reward-content-block">
+        <view wx:for="{{rewards}}" wx:key="key" wx:item="item" class="reward-content-item" style='background:url({{item.itemBg}}); background-size:100% 100%;'>
+          <view class="reward-content-ticket">
+            <button class="reward-content-ticket-item">{{item.name}}</button>
+          </view>
+          <view class="reward-content-btn" data-p="{{item.point}}" data-i="{{item.id}}" bindtap='doReward'>立即兑换</view>
+        </view>
+    </view>
+
+     <!-- 弹出层 -->
+    <view  class="drawer_screen" wx:if="{{showModalStatus}}">
+    </view>
+    <view class="drawer_box" wx:if="{{showModalStatus}}">  
+      <view class="drawer_content_box">
+        <view class="drawer_content" >
+          <view class="drawer_content_title">请添加手机号</view>
+          
+          <form bindsubmit="formSubmit" style='width:100%;'>
+            <view  class="drawer_content_form">
+              <input placeholder="请输入电话" class="form-input" name="phone" type='number' maxlength='13'></input>
+
+              <view class="drawer_content_bottom">
+                <button class="cancel-btn" bindtap='doCancel'>取 消</button>
+                <button class="submit-btn" form-type="submit" >提 交</button>
+              </view>     
+            </view>
+          </form>
+
+        </view>
+      </view>
+    </view>
+    <!-- 弹出层 end  -->
+    
+</view>

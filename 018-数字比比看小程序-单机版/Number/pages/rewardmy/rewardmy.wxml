@@ -1,0 +1,13 @@
+
+<view class="container">
+    <view class="reward-content-block">
+        <view wx:for="{{rewards}}" wx:key="key" wx:item="item" class="reward-content-item" style='background:url({{item.itemBg}}); background-size:100% 100%;'>
+          <view class="reward-content-ticket">
+            <button class="reward-content-ticket-item">{{item.rewardname}}</button>
+          </view>
+          <view class="reward-content-btn">已兑换</view>
+        </view>
+        
+    </view>
+    
+</view>

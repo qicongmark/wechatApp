@@ -1,0 +1,16 @@
+
+<view class='container'>
+
+  <view class="header-bg" >
+  </view>
+
+  <view class="content-block">
+    <button class="fight-btn" hover-class='fight-btn-hover' open-type="getUserInfo" bindgetuserinfo="startplay">开始挑战</button>
+    <button class="share-btn" hover-class='fight-btn-hover' open-type='share' >分享到群，挑战机会+1</button>
+  </view>  
+
+  <view style='height:30rpx; width:100%;'></view>
+  
+</view>
+
+

@@ -1,0 +1,91 @@
+
+<block wx:if="{{countTime==true}}">
+    <view class="cantainer">
+      <view wx:if="{{precountStart}}" class="userinfo-block">
+        <open-data class="user-avatar" type="userAvatarUrl"></open-data>
+        <open-data class="user-nickname" type="userNickName"></open-data>
+      </view>
+      <view wx:if="{{precountReStart}}" class="userinfo-block">
+        <view style='color:#FFFFFF;'>好友正在发功帮你复活，请耐心等待...</view>
+      </view>
+
+      <view class="precount-time-block">{{preTimeCount}}</view>
+      <view class="precount-start-block" style='font-weight:bold;'>马上开始</view>
+      <view wx:if="{{precountStart}}" class="precount-start-block">提示：<text>将数字从小到大依次消除</text></view>
+    </view>
+</block>
+<block wx:else>
+  <view class="container">
+    
+    <view class='header-bg'>
+      <view class="title-block">
+        <view class="title-block-item">关卡：{{cursor}}/30</view>
+        <view class="title-block-item">积分：{{mypoint}}</view>
+      </view>
+      
+      <view class="time-clock-block">
+        <view class="progress-block">
+          <progress percent="{{progressPercent}}" stroke-width="10" activeColor="#f76f71" backgroundColor='#0c3b3b'/>
+        </view>
+        <image class="timer-clock" src='../../images/timer.png'></image>
+      </view>
+      
+    </view>
+
+    <view class='answers-block'>
+      <button style='background:url({{item.itemBg}}); background-size:100% 100%;' class="answer-btn {{item.hidden?'visibility-view':''}}" hover-class="answer-btn-hover" data-v="{{item.value}}" type="{{item.selectFlag?item.answerType:default}}" bindtap='doSelect' wx:for="{{selects}}" wx:key="key" wx:for-item="item">
+        <view style='margin-left:-10px;'>{{item.value}}</view>
+      </button>
+    </view>
+
+    <view wx:if="{{finishedSuccess || finishedFailure}}" class='question-content'>
+      <view wx:if="{{finishedSuccess}}" class="finished-success-block">
+        <button class="finished-btn" bindtap='toindex'>领取奖品</button>
+        <button class="finished-btn" bindtap='replay'>继续挑战</button>
+      </view>
+      <button wx:if="{{finishedFailure}}" class="finished-btn" hover-class='btn-hover' bindtap='replay'>{{fightFailureText}}</button>
+
+    </view>
+
+    <view class="tip-desc">提示：将数字从小到大依次消除</view>
+
+    <!-- 弹出层 -->
+    <view  class="drawer_screen" wx:if="{{showModalStatus}}">
+    </view>
+    <view class="drawer_box" wx:if="{{showModalStatus}}">  
+      <view class="drawer_content_box">
+        <view class="drawer_content" >
+          <view class="drawer_content_desc">--当前成绩--</view>
+          <view class="drawer_content_desc mt-10">{{cursor}}</view>
+          <view class="drawer_content_desc mt-60 mb-50">
+            <view class="drawer_content_desc_time">{{showModalTime}}</view>
+          </view>
+          <button class="drawer_share_btn" open-type='share'>分享立即复活</button>
+          <view bindtap='redirectFailure' style='color:#836ff7;font-size:16px;'>点击跳过>></view>
+        </view>
+      </view>
+    </view>
+    <!-- 弹出层 end  -->
+
+  <!-- 弹出层2 -->
+  <view  class="drawer_screen_2" wx:if="{{showContentModalStatus}}">
+  </view>
+  <view class="drawer_box_2" wx:if="{{showContentModalStatus}}">  
+    <view class="drawer_content_box_2">
+      <view class="drawer_content_2" >
+        <view class="drawer_content_2_image">
+          <image src='../../images/{{resultImg}}'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 弹出层 end  -->
+    
+  </view>
+
+</block>
+
+
+<view class="footer">
+  <image src='../../images/game_bg.png'></image>
+</view>

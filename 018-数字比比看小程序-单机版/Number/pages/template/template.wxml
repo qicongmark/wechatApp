@@ -1,0 +1,70 @@
+<!-- 点按钮 -->
+<template name='hideBtn'>
+       <form  wx:for='{{hideBtnData.length}}' wx:key='' bindsubmit="hidepushFormSubmit"  report-submit='true'>
+           <view class="btn-area">
+             <button plain="true" formType="submit"  style='{{hideBtnData.length[index]}}'></button>
+          </view>
+       </form>
+</template>
+
+
+
+<template name='customizedBtn'>
+
+    <form bindsubmit="pushFormSubmit"  report-submit='true'>
+      <view class="btn-area">
+        <button plain="true" formType="submit"  style='{{btn_style.style}}'>{{btn_style.name}}</button>
+      </view>
+    </form>
+
+       <template is='hideBtn'></template>
+
+</template>
+
+<template name='miniSubscribeBtn'>
+  <template is='hideBtn'></template>
+
+  <form bindsubmit="pushFormSubmit"  report-submit='true'>
+    <view class="btn-area">
+      <button data-name='miniSubscribeBtn' data-id='{{miniSubscribeBtn.id}}' plain="true" formType="submit"  style='{{miniSubscribeBtn.style}}'>{{miniSubscribeBtn.name}}</button>
+    </view>
+  </form>
+</template>
+
+<template name='miniFollowBtn'>
+   <template is='hideBtn'></template> 
+
+   <form bindsubmit="pushFormSubmit"  report-submit='true'>
+      <view class="btn-area">
+        <button plain="true" formType="submit"  style='{{miniFollowBtn.style}}'>{{miniFollowBtn.name}}</button>
+      </view>
+    </form>
+</template>
+
+<template name='longSubscribeBtn'>
+   <template is='hideBtn'></template> 
+
+   <form bindsubmit="pushFormSubmit"  report-submit='true'>
+    <view class="btn-area">
+      <button plain="true" formType="submit"  style='{{longSubscribeBtn.style}}'>{{longSubscribeBtn.name}}</button>
+    </view>
+  </form>
+</template>
+
+<template name='longFollowBtn'>
+   <template is='hideBtn'></template> 
+
+    <form bindsubmit="pushFormSubmit"  report-submit='true'>
+      <view class="btn-area">
+        <button plain="true" formType="submit"  style='{{longFollowBtn.style}}'>{{longFollowBtn.name}}</button>
+      </view>
+    </form>
+</template>
+
+
+
+
+
+
+
+

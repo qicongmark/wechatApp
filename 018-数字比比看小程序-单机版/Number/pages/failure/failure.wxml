@@ -1,0 +1,36 @@
+
+<view class="cantainer">
+
+  <view class='header-bg'>
+    <view class="userinfo-block">
+      <image src="../../images/failure.png" mode='aspectFit'></image>
+    </view>
+    <view class="mypoint-desc">累计积分也可以换礼品哦~</view>
+
+    <view class="score-desc">您的成绩</view>
+    <view class="level-desc">第{{mylevel}}关</view>
+
+    <view class="mypoint-value">积分：<text>+{{mypoint}}</text></view>
+  </view>
+
+  <button class="fight-btn" hover-class='fight-btn-hover' bindtap='replay'>再来一次，赢话费</button>
+  <button class="share-btn" hover-class='fight-btn-hover' open-type='share' >分享到群，挑战机会+1</button>
+
+  <view style='height:30rpx; width:100%;'></view>
+</view>
+
+<view class="common-footer">
+  <view class='footer-item' bindtap='toindex'>
+    <image class="footer-fight-image" src='../../images/fight.png'></image>
+    <view class="footer-text">我要挑战</view>
+  </view>
+
+  <button class='footer-item trans-btn' open-type="getUserInfo" bindgetuserinfo="myhome">
+    <image class="footer-gif-image" src='../../images/user.png'></image>
+    <view class="footer-text">奖品兑换</view>
+  </button>
+</view>
+
+<view class="footer">
+  <image src='../../images/game_bg.png'></image>
+</view>

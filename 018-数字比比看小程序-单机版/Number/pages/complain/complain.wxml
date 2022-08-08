@@ -1,0 +1,16 @@
+<view class="container">
+  <view style='color:#999999; margin-top:20px;'>请选择投诉原因</view>
+  <view class="item-view" wx:for="{{items}}" wx:item="item" wx:key="key" data-d='{{item.id}}' bindtap='showSelect'>
+    <text>{{item.text}}</text><image wx:if="{{item.selected}}" src="../../images/select.png" ></image>
+  </view>
+  
+  <view style='color:#999999; margin-top:35px;'>请填写您的手机号码，方便我们联系您</view>
+  
+</view>
+<form bindsubmit="formSubmit" style='width:100%;'>
+    <view  class="drawer_content_form">
+      <view style='color:#666666;margin-left:10px;'>手机号</view>
+      <input placeholder="选填" class="form-input" name="phone" type='number' maxlength='13'></input>
+    </view>
+    <button type='primary' form-type="submit" style='width:80%;'>确认投诉</button>    
+  </form>
