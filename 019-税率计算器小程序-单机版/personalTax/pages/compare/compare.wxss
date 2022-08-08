@@ -1,0 +1,59 @@
+/* pages/compare/compare.wxss */
+ .footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+
+.footer image {
+  width: 100%;
+  height: 100%;
+} 
+.title-view{
+  width: 500rpx;
+  margin: 0 auto;
+  font-size: 36rpx;
+  font-family:微软雅黑;
+  color: #747777;
+  position: fixed;
+  top:21%;
+  left:16%;
+}
+.title1{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.money-tax{
+  font-family:微软雅黑;
+  /* margin-top: -6rpx; */
+}
+.midle-cicle{
+  width: 420rpx;
+  height: 420rpx;
+  position:fixed;
+  top:36%;
+  left: 160rpx;
+  line-height: 420rpx;
+  text-align: center;
+  font-size: 48rpx;
+  color: #fff;
+  font-family:微软雅黑;
+}
+.btn-group{
+  position: absolute;
+  bottom: 85rpx;
+  left: 116rpx;
+}
+.btn1{
+  width: 500rpx;
+  height: 100rpx;
+  margin-bottom: 20rpx;
+}
+.btn2{
+  width: 500rpx;
+  height: 100rpx;
+}

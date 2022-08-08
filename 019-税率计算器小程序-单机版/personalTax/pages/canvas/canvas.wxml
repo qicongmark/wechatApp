@@ -1,0 +1,24 @@
+<!--pages/canvas/canvas.wxml-->
+<view class="drawer_content">
+         <image src='{{imagePath}}' style='width:100%;'mode="widthFix">
+    </image> 
+ </view>
+
+<view class='v-btn'>
+  <button open-type='share'  bindtap="onshares">转给好友</button> 
+  <button bindtap='saveImg'>保存图片</button> 
+  <button  bindtap='doCancel'>重来一次</button>
+</view>
+<block wx:if="{{iphone}}">
+    <canvas class="drawer_content_canvas {{hiddenCanvas?'hidden-view':''}}" canvas-id="shareCanvas" >
+    </canvas>
+</block>
+<block wx:else>
+    <canvas class="drawer_content_canvas canvas-hide" canvas-id="shareCanvas" >
+    </canvas>
+</block>
+
+<!-- 背景图 -->
+<view class="footer">
+  <image src='{{thirdbg}}'></image>
+</view>

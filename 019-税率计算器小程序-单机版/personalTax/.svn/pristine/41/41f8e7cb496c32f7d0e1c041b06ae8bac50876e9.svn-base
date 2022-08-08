@@ -1,0 +1,270 @@
+//index.js
+//获取应用实例
+const app = getApp();
+const util=require("../../utils/util.js");
+const data=require("../../utils/data.js");
+
+Page({
+  data: {
+    motto: 'Hello World',
+    indexbg:app.CDN_URL+"index1.png",
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    multiIndex: [0, 0],
+    insureItems:[
+      { value: '自定义' },
+      { value: '自定义'},
+    ],
+    insureUse:true,
+    jijinUse:true,
+    inpt1col:false,
+    inpt2col:false,
+    insureVal: 3387,
+    jijinVal: 2409,
+    insureMi: 3387,
+    jijinMi: 2409,
+    insureMa: 25401,
+    jijinMa: 23118
+  },
+  //事件处理函数
+  bindViewTap: function() {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
+  },
+  onLoad: function(){
+
+    var multiArray = [data.getProvince(), data.getCity("北京")]
+    this.setData({
+      multiArray: multiArray
+    })
+
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
+
+    wx.showShareMenu({
+      withShareTicket: true
+    });
+  },
+  getUserInfo: function(e) {
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
+
+
+  bindMultiPickerColumnChange:function(e){
+    // console.log(e.detail.value);
+    if(e.detail.column===0){
+    var province = data.getProvince()[e.detail.value];
+    var city = data.getCity(province);
+      var multiArray = [data.getProvince(), city];
+      // console.log(multiArray);
+      var multiIndexArr1 = this.data.multiIndex;
+      multiIndexArr1[1] =0;
+    this.setData({
+      multiArray: multiArray,
+      multiIndex: multiIndexArr1
+    })
+    }
+    var multiIndexArr = this.data.multiIndex;
+    multiIndexArr[e.detail.column] = e.detail.value;
+    this.setData({
+      multiIndex: multiIndexArr
+    })
+    // console.log(this.data.multiIndex);
+    var curProvince = this.data.multiArray[0][this.data.multiIndex[0]];
+    var curCity = this.data.multiArray[1][this.data.multiIndex[1]];
+    // console.log(curProvince);
+    // console.log(curCity);
+    var insureMi=data.getSb(curProvince, curCity);
+    var jijinMi= data.getGJJ(curProvince, curCity);
+    var insureMa = data.getSbMa(curProvince, curCity);
+    var jijinMa = data.getGJJMa(curProvince, curCity);
+    this.setData({
+      insureVal: insureMi,
+      jijinVal: jijinMi,
+      insureMi: insureMi,
+      jijinMi: jijinMi,
+      insureMa: insureMa,
+      jijinMa: jijinMa
+    })
+  },  
+
+
+  getUserInfo:function(e){
+    // console.log(e.detail.userInfo)
+  },
+  getlocal:function(){
+    wx.getLocation({
+      success: function(res) {
+        // console.log(res)
+      },
+    })
+  },
+
+
+
+  chgBox:function(e){
+    if (e.target.dataset.id==0){
+      var insureUse = this.data.insureUse;
+      var inpt1col = this.data.inpt1col;
+      this.setData({
+        insureUse: !insureUse,
+        inpt1col:!inpt1col
+      })
+    }else{
+      var jijinUse = this.data.jijinUse;
+      var inpt2col = this.data.inpt2col;
+      this.setData({
+        jijinUse: !jijinUse,
+        inpt2col: !inpt2col
+      })
+    }
+    
+
+  },
+
+
+  bindBle:function(e){
+    if (e.detail.value < this.data.insureMi){
+      this.setData({
+        insureVal: this.data.insureMi
+      })
+    } else if (e.detail.value>this.data.insureMa){
+      this.setData({
+        insureVal: this.data.insureMa
+      })
+    }
+  },
+
+
+  moveout:function(e){
+    if (e.detail.value < this.data.jijinMi) {
+      this.setData({
+        jijinVal: this.data.jijinMi
+      })
+    } else if (e.detail.value > this.data.jijinMa) {
+      this.setData({
+        jijinVal: this.data.jijinMa
+      })
+    }
+  },
+
+
+  submitData:function(e){
+    // console.log(e.detail.value);
+   var bol= util.isEmpty(e.detail.value.befTax);
+  if(bol){
+    wx.showToast({
+      title: '请输入税前工资',
+      icon:"success"
+    })
+  }else{
+    var curProvince = this.data.multiArray[0][this.data.multiIndex[0]];
+    var curCity = this.data.multiArray[1][this.data.multiIndex[1]];
+    var beftax = e.detail.value.befTax;
+    var haha=data.getShebaoValue(curProvince, curCity);
+    console.log(haha)
+    var wuxian = ((e.detail.value.shebao) * haha).toFixed(1);
+    var jijinLv = data.getYijinValue(curProvince, curCity);
+
+    var jijin = (e.detail.value.gongjijin) * jijinLv;
+    var wuxianyijin = Number(wuxian) + Number(jijin);
+
+    var oldAmount = util.oldAmount(beftax, wuxianyijin);
+    var newAmount = util.newAmount(beftax, wuxianyijin);
+
+    var oldpayTax =(util.oldPayTax(oldAmount)).toFixed(1);
+    var newpayTax = (util.newPayTax(newAmount)).toFixed(1);
+    if (Number(oldpayTax)<0){
+      oldpayTax=0
+    }
+    if(Number(newpayTax)<0){
+      newpayTax=0
+    }
+    // console.log(oldpayTax);
+    // console.log(newpayTax);
+    var shengMoney = (12*Number(Number(oldpayTax) - Number(newpayTax))).toFixed(1);
+    // console.log(shengMoney);
+    wx.navigateTo({
+      url: "../compare/compare?oldpayTax=" + oldpayTax + "&&newpayTax=" + newpayTax + "&&shengMoney=" + shengMoney,
+    })
+  }
+  },
+
+
+
+
+
+  inptValChg:function(e){
+    if (Number(e.detail.value) < Number(this.data.insureMi)){
+      this.setData({
+        insureVal: this.data.insureMi
+      })
+    }if(e.detail.value>this.data.insureMa){
+      this.setData({
+        insureVal: this.data.insureMa
+      })
+      
+    }if (e.detail.value < this.data.jijinMi){
+      this.setData({
+        jijinVal: this.data.jijinMi
+      })
+      
+    }if (e.detail.value > this.data.jijinMa){
+      this.setData({
+        jijinVal: this.data.jijinMa
+      })
+      
+    } if (e.detail.value > this.data.insureMi && e.detail.value<this.data.insureMa){
+      this.setData({
+        insureVal: e.detail.value
+      })
+    } if (e.detail.value > this.data.jijinMi && e.detail.value < this.data.jijinMa){
+      this.setData({
+        jijinVal: e.detail.value
+      })
+    }
+  },
+
+
+
+  /**
+ * 用户点击右上角分享
+ */
+  onShareAppMessage: function (){
+    return {
+      title: "新个税法通过，算算每年能省多少钱？",
+      path: "/pages/index/index",
+      imageUrl: app.CDN_URL+"shareCard.png"
+    }
+  }
+})

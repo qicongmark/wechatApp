@@ -1,0 +1,199 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.section__title{
+    margin-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.section{
+    margin-bottom: 40px;
+}
+.input-cls{
+  display: inline-block;
+  width: 81%;
+  height: 70%;
+  background-color:rgb(130, 187,181);
+  text-align: left;
+  margin-left: 10rpx;
+  padding-left: 10rpx;
+  font-size: 32rpx;
+}
+.input-view{
+width:500rpx;
+height: 90rpx;
+border: 1px solid #000;
+margin: 0 auto;
+text-align: center;
+border-color: #328b7e;
+display: flex;
+align-items: center;
+margin-top: 26rpx;
+}
+.rmb-cls{
+  display: inline-block;
+  font-size: 25px;
+  position: relative;
+  top: -4rpx;
+  color: #328b7e;
+}
+ .footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+
+.footer image {
+  width: 100%;
+  height: 100%;
+} 
+.container{
+  position: absolute;
+  width: 600rpx;
+  height: 480rpx;
+  top: 30%;
+  left: 10%;
+  font-size: 28rpx;
+}
+.title{
+  width: 100%;
+  text-align: center;
+  margin-top: 30rpx;
+  font-size: 20px;
+  font-weight: 700;
+  color: #328b7e;
+}
+.midsection{
+  margin:20rpx 40rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+.changeCity-cls{
+  color: #f8af01;
+}
+.city-cls{
+  color: #ef5a28;
+}
+.insurance-title{
+  margin-left: 36rpx;
+  margin-top:14rpx;
+  color: #328b7e;
+}
+
+.insurance-title1{
+  margin-left: 36rpx;
+  color: #ef5a28;
+  display: inline-block;
+}
+.shebao-pos{
+  position: absolute;
+  bottom: 110rpx;
+}
+.gongjijin-pos{
+  position: absolute;
+  bottom: 40rpx;
+}
+
+.insurance-title2{
+  margin-left: 36rpx;
+  margin-top: 24rpx;
+  color: #ef5a28;
+  display: inline-block;
+}
+
+.check-box{
+  border-color: #ccc;
+  margin-top: 26rpx;
+}
+
+checkbox{
+zoom:70%;
+}
+.checkbox-grop{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 40rpx;
+  bottom: 46rpx;
+  font-size: 28rpx;
+}
+.input1{
+  width: 160rpx;
+  border-bottom: 1px solid #82bbb5;
+  display: inline-block;
+  margin-bottom: -3px;
+  margin-left: 18rpx;
+  color: #aaa;
+  text-align: center;
+  font-size: 28rpx;
+}
+.input2{
+  width: 125rpx;
+  border-bottom: 1px solid #82bbb5;
+  display: inline-block;
+  margin-bottom: -3px;
+  margin-left: 18rpx;
+  color: #aaa;
+  text-align: center;
+   font-size: 28rpx;
+}
+.calbtn{
+  width: 500rpx;
+  height: 100rpx;
+  background-color: #6ea3fe;
+  border-radius:40rpx;
+  font-size: 38rpx;
+}
+.moreplay{
+  width: 500rpx;
+  height: 100rpx;
+  background-color: #fee759;
+   border-radius:40rpx;
+   margin-top: 20rpx;
+   font-size: 38rpx;
+}
+.btn-view{
+position: absolute;
+bottom:7%;
+left: 15%;
+}
+.inptT{
+  width: 160rpx;
+  border-bottom: 1px solid #82bbb5;
+  display: inline-block;
+  margin-bottom: -3px;
+  margin-left: 18rpx;
+  color: #000;
+  text-align: center;
+  font-size: 28rpx;
+}
+.inptTR{
+  width: 125rpx;
+  border-bottom: 1px solid #82bbb5;
+  display: inline-block;
+  margin-bottom: -3px;
+  margin-left: 18rpx;
+  color: #000;
+  text-align: center;
+   font-size: 28rpx;
+}

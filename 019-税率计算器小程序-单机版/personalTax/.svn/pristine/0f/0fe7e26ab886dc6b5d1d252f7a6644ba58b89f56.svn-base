@@ -1,0 +1,43 @@
+<form bindsubmit="submitData">
+<view class="container">
+  <view class="title">个税计算器</view>
+
+
+
+  <view class="midsection">
+    <text class="city-cls">{{multiArray[1][multiIndex[1]]}}</text>
+    <picker mode="multiSelector" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="picker">
+        <text class="changeCity-cls">切换城市</text>
+      </view>
+    </picker>
+
+  </view>
+
+
+
+  <view class="input-view">
+    <view class="rmb-cls">￥</view>
+    <input placeholder='税前工资' class="input-cls" maxlength='12' name="befTax" bindinput="inptValChg" type='number'></input>
+  </view>
+  <view class="insurance-title">五险一金汇缴</view>
+  <view class="shebao-pos"><view class="insurance-title1">社保汇缴基数</view><input class="{{inpt1col?'inptT':'input1'}}" type='number' maxlength="8" value='{{insureVal}}' disabled='{{insureUse}}' bindblur="bindBle" name="shebao"></input></view>
+  <view class="gongjijin-pos"><view class="insurance-title2">公积金汇缴基数</view><input class="{{inpt2col?'inptTR':'input2'}}" type='number' maxlength="8" value='{{jijinVal}}' disabled='{{jijinUse}}' bindblur="moveout" name="gongjijin"></input></view>
+
+  <checkbox-group class="checkbox-grop">
+    <label class="checkbox" wx:for="{{insureItems}}" wx:key="key">
+      <checkbox value="{{item.name}}" checked="{{item.checked}}" bindtap='chgBox' data-id="{{index}}" class="check-box"/>{{item.value}}
+    </label>
+  </checkbox-group>
+</view>
+
+  <view class="btn-view">
+    <button class="calbtn" form-type="submit">算一下</button>
+    <button class="moreplay">更多好玩</button>
+  </view>
+
+</form>
+<!-- 背景图 -->
+<view class="footer">
+  <image src='{{indexbg}}'></image>
+</view>

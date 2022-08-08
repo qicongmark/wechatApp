@@ -1,0 +1,25 @@
+<!--pages/compare/compare.wxml-->
+<view class="title-view">
+    <view class="title1"><text>以前每月缴：</text><text class="money-tax">{{oldpayTax}}</text><text>元</text></view>
+   <view class="title1"><text >现在每月缴：</text><text class="money-tax">{{mewpayTax}}</text><text> 元</text></view>
+</view>
+
+
+<view class='midle-cicle' style='background:url("{{cicle}}") no-repeat;background-size:100% 100%'>{{shengMoney}}元</view>
+
+<view class='btn-group'>
+    <view class="btn1" style='background:url("{{btn1}}") no-repeat;background-size:100% 100%' bindtap='toShare'></view>
+    <view class="btn2" style='background:url("{{btn2}}") no-repeat;background-size:100% 100%' bindtap='comeBack'></view>
+</view>
+
+
+
+
+
+
+
+
+<!-- 背景图 -->
+<view class="footer">
+  <image src='{{second}}'></image>
+</view>
