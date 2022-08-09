@@ -11,3 +11,16 @@
 
 关注公众号：祁大聪，获取更多源码和教程。
 
+
+
+### 效果预览
+
+![r1](https://cdn.staticaly.com/gh/qicongmark/blob-img@master/r1.1t5bw9zzs34w.webp)
+
+
+
+![r2](https://cdn.staticaly.com/gh/qicongmark/blob-img@master/r2.47q7i8fszmg0.webp)
+
+
+
+![r3](https://cdn.staticaly.com/gh/qicongmark/blob-img@master/r3.4wey080cuqo0.webp)

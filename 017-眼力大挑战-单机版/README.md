@@ -7,3 +7,10 @@
 - 关注公众号：祁大聪，获取使用教程
 
 - 预览图：r1.png，r2.jpg
+
+### 效果预览
+
+![r1](https://cdn.staticaly.com/gh/qicongmark/blob-img@master/r1.35ytbk0kieu0.webp)
+
+![r2](https://cdn.staticaly.com/gh/qicongmark/blob-img@master/r2.1980q60j0l5s.webp)
+
