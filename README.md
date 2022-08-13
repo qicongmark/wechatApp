@@ -3,9 +3,9 @@
 
 - 每个文件夹都是一个小程序项目源码，持续更新中，感谢star
 
-- 教程：https://jeeweixin.com/wiki/1407524274176032
+- 小程序教程：https://jeeweixin.com/wiki/1469644269420576/1481371698593888
 
-- https://github.com/qicongmark 
+- 小程序学习文档：https://jeeweixin.com/wiki/1407524274176032
 
 ## 已分享了的小程序源码
 
