@@ -1,0 +1,69 @@
+/**index.wxss**/
+.container-out {
+  height: 620rpx;
+  width: 650rpx;
+  background-color: #b136b9;
+  margin: 100rpx auto;
+  border-radius: 20rpx;
+  box-shadow: 0 10px 0 #871a8e;
+  position: relative;
+}
+/**小圆球
+*/
+.circle {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  height: 20rpx;
+  width: 20rpx;
+}
+
+/**
+* 奖品
+**/
+.container-in {
+  width: 580rpx;
+  height: 530rpx;
+  background-color: #871a8e;
+  border-radius: 40rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-top: 15rpx;
+}
+.award-item {
+  height: 150rpx;
+  line-height: 150rpx;
+  margin: 0rpx 10rpx;
+  text-align: center;
+  width: 166.6666rpx;
+  background-color: #f5f0fc;
+  border-radius: 15rpx;
+  box-shadow: 0 5px 0 #d87fde;
+}
+.award-cur{
+  background-color: yellow;
+}
+
+/**居中 加粗*/
+.start-btn {
+  width: 166.6666rpx;
+  background-color: #ffe400;
+  box-shadow: 0 5px 0 #e7930a;
+  color: #f6251e;
+  border-radius: 15rpx;
+  text-align: center;
+  font-size: 55rpx;
+  font-weight: bolder;
+  height: 150rpx;
+  line-height: 150rpx;
+  margin: 0rpx 10rpx;
+}

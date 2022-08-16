@@ -1,0 +1,14 @@
+
+<!--index.wxml-->
+<view class="container-out">
+  <view class="circle" wx:for="{{circleList}}" wx:key="key" style="top:{{item.top}}rpx;left:{{item.left}}rpx;background-color:{{(index%2==0)?colorRed:colorYellow}};"></view>
+  
+  <view class="container-in">
+    <view class='{{item.cls}}' wx:for="{{awardList}}" wx:key="key" 
+    bindtap='{{item.atype == 1?"startGame":""}}'>
+      {{item.name}}
+    </view>
+  </view>
+
+</view>
+
