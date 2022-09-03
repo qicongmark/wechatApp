@@ -1,9 +1,5 @@
 {
     "description": "项目配置文件",
-    "packOptions": {
-        "ignore": [],
-        "include": []
-    },
     "setting": {
         "urlCheck": true,
         "es6": true,
@@ -24,8 +20,6 @@
         "compileHotReLoad": false,
         "lazyloadPlaceholderEnable": false,
         "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
@@ -39,12 +33,10 @@
         "disableUseStrict": false,
         "showES6CompileOption": false,
         "useCompilerPlugins": false,
-        "minifyWXML": true
+        "minifyWXML": true,
+        "ignoreUploadUnusedFiles": true
     },
     "compileType": "miniprogram",
-    "libVersion": "2.19.0",
-    "appid": "wx5bc743c1ba6135ed",
-    "projectname": "myWeApp",
     "condition": {
         "search": {
             "list": []
@@ -68,5 +60,11 @@
     "editorSetting": {
         "tabIndent": "insertSpaces",
         "tabSize": 4
-    }
+    },
+    "libVersion": "2.19.0",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "appid": "wx5bc743c1ba6135ed"
 }

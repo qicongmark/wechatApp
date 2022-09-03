@@ -5,11 +5,10 @@
     "window": {
         "backgroundColor": "#fff",
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#34a853",
+        "navigationBarBackgroundColor": "#87a9f3",
         "navigationBarTitleText": "课程表",
         "navigationBarTextStyle": "white"
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json"
-    
 }
