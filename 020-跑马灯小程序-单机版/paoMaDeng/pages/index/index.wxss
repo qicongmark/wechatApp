@@ -50,7 +50,9 @@
   box-shadow: 0 5px 0 #d87fde;
 }
 .award-cur{
-  background-color: yellow;
+  background-color: orange;
+  font-weight: bold;
+  color: #f6251e;
 }
 
 /**居中 加粗*/
