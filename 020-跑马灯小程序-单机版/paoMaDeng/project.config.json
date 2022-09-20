@@ -42,10 +42,10 @@
   "compileType": "miniprogram",
   "libVersion": "2.19.4",
   "appid": "wx5bc743c1ba6135ed",
-  "projectname": "miniprogram-92",
-  "condition": {},
+  "projectname": "paoMaDeng",
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "condition": {}
 }
