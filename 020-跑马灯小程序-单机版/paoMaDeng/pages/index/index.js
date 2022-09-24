@@ -60,7 +60,7 @@ Page({
       { name: "2元", cls: "award-item", atype: 0 },
       { name: "3元", cls: "award-item", atype: 0 },
       { name: "4元", cls: "award-item", atype: 0 },
-      { name: "抽奖", cls: "start-btn", atype: 1 },
+      { name: "开始", cls: "start-btn", atype: 1 },
       { name: "5元", cls: "award-item", atype: 0 },
       { name: "6元", cls: "award-item", atype: 0 },
       { name: "7元", cls: "award-item", atype: 0 },
@@ -82,13 +82,14 @@ Page({
   //开始抽奖
   startGame: function () {
     this.resetawardList();//重置数据
-    var i = 0;
-    var num = Math.random() * 100 >>> 2;//中奖
-    //console.log("num = ", num);
 
+    var num = Math.floor(Math.random() * 20 + 10) //中奖
+    var i = (num - 35) + Math.floor(Math.random()*7)
+    //console.log("num = ", num ," ; i = " + i);
+    
     var awardIndexs = this.data.awardIndexs;//奖品的index
     var awardList = this.data.awardList;
-    var timer = setInterval(function () {
+    this.timer = setInterval(function () {
       var t = -1;
       for (var j = 0; j < awardIndexs.length; j++) {
         var sitem = awardList[awardIndexs[j]];
@@ -105,7 +106,7 @@ Page({
 
       i++;
       if (i === num) {
-        clearInterval(timer);//清除计时器
+        clearInterval(this.timer);//清除计时器
         wx.showModal({
           title: '恭喜',
           content: '获得' + (awardList[awardIndexs[t]].name),
@@ -116,7 +117,9 @@ Page({
       this.setData({
         awardList: awardList
       });
+
     }.bind(this), 130);
+
   },
 
   //重置数据

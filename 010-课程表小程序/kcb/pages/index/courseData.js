@@ -75,11 +75,11 @@ var courseList = [
 
     //周六
     [{count:1},
-     {count:1, name:"英语", bgcolor:"#98FB98", room:"多媒体3102"},
+     {count:1, name:"化学", bgcolor:"#98FB98", room:"多媒体3102"},
      {count:1},
      {count:1},
      {count:1, siesta: 1},
-     {count:2, name:"Java编程", bgcolor:"#FA8072", room:"多媒体3102"},
+     {count:2, name:"C编程", bgcolor:"#FA8072", room:"多媒体3102"},
      {count:1},
      {count:1},
      {count:1}
