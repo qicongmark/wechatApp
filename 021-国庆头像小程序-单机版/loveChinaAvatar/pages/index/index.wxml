@@ -1,0 +1,18 @@
+<image class="bg" src="/images/bg.gif" mode="aspectFill"></image>
+
+
+<view class="container">
+  <view class="avatar-block">
+    <canvas-drag id="canvas-drag" graph="{{graph}}" width="250" height="250"></canvas-drag>
+    <div class="btn-block">
+      <button style="width:170rpx;padding:10rpx" type="warn"  bindtap="getUserProfile">微信头像</button>
+      <button style="width:170rpx;padding:10rpx" type="primary" bindtap="onExport">保存头像</button>
+    </div>
+  </view>
+</view>
+
+<scroll-view class="scrollView" scrollX="true">
+  <view class="diy-img" wx:for="{{imgList}}">
+    <image src="{{item}}" bindtap="selectImg" data-avatar="{{item}}"></image>
+  </view>
+</scroll-view>
