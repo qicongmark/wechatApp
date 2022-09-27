@@ -1,0 +1,27 @@
+<view class="container">
+  <!-- 电影列表 -->
+  <scroll-view>
+    <view class="card" wx:for="{{movies}}">
+      <image bindtap="detail" id="{{item.id}}" src="{{item.img}}" mode="widthFix" ></image>
+      
+      <view class="info-block" bindtap="detail" id="{{item.id}}">
+        <view class="row-group">
+          <view class="info" style="font-size:32rpx;font-weight:bold;color:#0f0f0f;">{{item.name}}</view>
+
+          <block wx:if="{{item['2d']}}">
+            <view class="d2">IMAX</view>
+            <view class="d3 d2-d3">2D</view>
+          </block>
+
+          <view class="d3" wx:if="{{item['3d']}}">杜比影院3D</view>
+        </view>
+
+        <text class="info">评分：{{item.score}}</text>
+        <text class="info" style="margin-top: 12rpx;">主演：{{item.stars}}</text>
+        <text class="info" style="color:#afafaf;">{{item.desc}}</text>
+      </view>
+
+      <button class="buy" bindtap="buyTickets" size="mini">购票</button>
+    </view>
+  </scroll-view>
+</view>

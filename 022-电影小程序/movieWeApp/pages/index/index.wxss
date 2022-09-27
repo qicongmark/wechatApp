@@ -1,0 +1,15 @@
+.index {
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50rpx;
+}
+
+.mBlock {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,61 @@
+<!-- detail.wxml -->
+<view class='detail'>
+	<view style='width:100%;height:200px;background-image: url("{{detail.img}}");background-repeat: no-repeat;background-size: 400%;position:absolute;z-index:-1;opacity:1;filter: blur(21px);'>
+	</view>
+	<view class="top">
+		<view class='clearfix'>
+			<view class='left pull-left'>
+				<image src='{{detail.img}}' />	
+			</view>
+			<view class='right pull-left'>
+				<view>
+					<title style='color:#fff;font-size:16px;'>{{detail.nm}}</title>
+				</view>
+				<view>
+					<text style='color:orange;font-size:12px;'>{{detail.sc}}</text>
+				</view>
+				<view>
+					<text>{{detail.cat}}
+						<text class="threeD" wx:if='{{detail["3d"]}}'>3D</text>
+						<text class='imax' wx:if='{{detail.imax}}'>IMAX</text>
+					</text>
+				</view>
+				<view>
+					<text>{{detail.src}}/ {{detail.dur}}分钟</text>
+				</view>
+				<view>
+					<text>{{detail.rt}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="btns">
+			<button>想看</button>
+			<button>评分</button>
+		</view>
+	</view>
+	<view class="info">
+		<view class='text'>
+			<text style='{{hideText ? "-webkit-line-clamp: 2" : ""}}'>{{detail.dra}}</text>
+		</view>
+		<view class='controlText {{hideClass}}' bindtap='toggleText'>
+			<text></text>
+		</view>
+	</view>
+	<view class="comment">
+		<view style='padding:5px 20px;font-size:14px;border-bottom:1px solid #ccc;border-top:1px solid #ccc'>
+			<text>观众评论</text>
+		</view>
+		<view class='item' wx:for='{{comment}}' wx:key='{{index}}'>
+			<view class='img'>
+				<image src='{{item.avatarurl}}' />
+			</view>
+			<view class='main'>
+				<view class='nickname'>{{item.nickName}}</view>
+				<view class='content'>{{item.content}}</view>
+			</view>
+		</view>
+	</view>
+	<view class='preferential-purchase'>
+		<text>优惠购买</text>
+	</view>
+</view>

@@ -1,0 +1,52 @@
+
+<scroll-view class="all">
+    <view class="detail">
+        <view class="blur" style="background-image:url({{imgsrc}})"></view>
+        <!-- 上部分电影详情 style="background-image:url({{imgsrc}});background-repeat: no-repeat;background-size: 100% 100%;-webkit-filter: blur(5px);filter: blur(5px)" -->
+        <view class="info">
+            <!-- 信息列表 horizontal -->
+            <image src="{{imgsrc}}" mode="aspectFit" style="width:150px;height:150px"  />
+            <view class="showinfo">
+                <text id="text" style="font-weight:bold;color: white;">{{name}}</text>
+                <view class="one" style="align-items:center">
+                    <text id="text" class="score">{{score}}</text>
+                    <text id="text" class="score">分</text>
+                </view>
+                <view class="two" style="align-items:center">
+                    <text id="text" class="small">({{comment}}</text>
+                    <text id="text" class="small">人评分)</text>
+                </view>
+                <text id="text" class="small">{{cat}}</text>
+                <view class="three" style="align-items:center">
+                    <text id="text" class="small">{{country}}/</text>
+                    <text id="text" class="small">{{duration}}分钟</text>
+                </view>
+                <text id="text" class="small">{{showing}}</text>
+            </view>
+        </view>
+        <!--购票以及简介-->
+        <view class="desc">
+            <button class="dobuy">立即购票</button>
+            <text class="dra" style="{{hideText?'-webkit-line-clamp:3':''}}">{{desc}}</text>
+            <image class="{{hideClass}}" wx:if="'up=={{hideClass}}'?'':'down'" bindtap="showall"
+                   style="width:25px;height:25px;" mode="aspectFit" src="{{localover}}"  />
+        </view>
+        <!--评论-->
+        <view class="comment">
+            <view class="com">
+                <text style="font-weight: bold;padding:30rpx;font-size:12pt">评论</text>
+            </view>
+            <view class="hotcom">
+                <block wx:for="{{comments}}" style="padding:10px">
+                    <view class="user">
+                        <image class="avatar" mode="aspectFit" style="width:30px;height:30px" src="{{item.avatarurl}}"  />
+                        <text style="font-size:10pt;margin-left:10px;color:lightgrey">{{item.nickName}}</text>
+                        <text style="font-size:10pt;margin-left:20px;color:lightgrey">{{item.time}}</text>
+                    </view>
+                    <view class="comdetail">{{item.content}}</view>
+                    <view class="line"></view>
+                </block>
+            </view>
+        </view>
+    </view>
+</scroll-view>

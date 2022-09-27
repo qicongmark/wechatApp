@@ -1,0 +1,118 @@
+/*detail.wxss*/
+
+.top{
+	height:200px;
+	padding:10px;
+	}
+.top .left image{
+	width:100px;
+	height:140px;
+}
+.top .right{
+	margin-left:10px;
+	color:#fff;
+	opacity:0.7;
+	font-size:14px;
+}
+.top .right view{
+	margin-bottom:3px;
+}
+.top .threeD{
+	background-color:#49d95d;
+	border:1px solid #999;
+}
+.top .imax{
+	background-color:transparent;
+	border:1px solid #999;
+}
+.top .btns{
+	display: flex;
+}
+.top .btns button{
+	background:rgba(0,0,0,0.4);
+	height:20px;
+	line-height:20px;
+	flex:1;
+	color:#fff;
+	margin:0 5px;
+	font-size:14px;
+}
+.info .text{
+	transition: 1s;
+}
+.info .text text{
+	padding:5px;
+	font-size:14px;
+	overflow: hidden;
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    transition: 1s;
+}
+.controlText{
+	text-align: center;
+}
+.controlText text{
+	display:inline-block;
+	width:28px;
+	height:20px;
+}
+.controlText text:after{
+	content:'';
+	display: block;
+	width:10px;
+	height:10px;
+	border: 1px solid;
+	border-left-width: 0;
+	border-top-width: 0;
+	transform: rotate(45deg);
+}
+.down text:after{
+	content:'';
+	display: block;
+	width:10px;
+	height:10px;
+	border: 1px solid;
+	border-left-width: 0;
+	border-top-width: 0;
+	transform: rotate(-135deg);
+}
+
+.comment{
+	margin-top:20px;
+	background: #fff;
+}
+.comment .item{
+	display: flex;
+	padding:10px;
+}
+.comment .item image{
+	width:40px;
+	height:40px;
+	border-radius:50%;
+}
+.comment .nickname{
+	font-size:14px;
+}
+.comment .main{
+	padding:10px 20px 5px 0;
+	border-bottom:1px solid #ccc;
+
+}
+.comment .main:last-child{
+	border-bottom: none;
+}
+.comment .img{
+	margin-right:20px;
+}
+.preferential-purchase{
+	position: fixed;
+	width:100%;
+	bottom:0;
+	background: #dd4021;
+	color:#fff;
+	text-align: center;
+	padding:10px 0;
+}
+.preferential-purchase text{
+
+}

@@ -1,0 +1,126 @@
+.detail{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #E0E0E0;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10rpx;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 100%;
+}
+
+.blur{
+    filter: blur(30px);
+    -webkit-filter: blur(30px);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    position: absolute;
+    align-self: center;
+    z-index: 0;
+    background-repeat: no-repeat;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    box-sizing: border-box;
+    align-items: center;
+    background-color: white;
+}
+
+.dobuy{
+    width: 100%;
+    background-color: red;
+    color: white;
+    font-size: 11pt;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dra{
+    margin-top: 10px;
+    font-size: 10pt;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.down{
+    transform: rotate(180deg);
+}
+
+#text{
+    height: 50rpx;
+}
+
+.showinfo{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.small{
+    color:lightgrey;
+    font-size:10pt;
+}
+
+.score{
+    color:orange;
+    font-size:13pt;
+    font-weight:bold;
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color:#E0E0E0;
+    margin-top: 25rpx;
+}
+
+.com{
+    background-color: white;
+    padding: 10px;
+}
+.hotcom{
+    margin-top: 1px;
+    background-color: white;
+    padding: 10px;
+}
+
+.user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.avatar{
+    border:solid 1px lightyellow;
+    border-radius: 50px;
+    margin-top: 5px;
+}
+
+.comdetail{
+    font-size: 10pt;
+    line-height: 20px;
+    margin: 10px 0px;
+}
+
+.line{
+    width: 100%;
+    height:1px;
+    background-color: #E0E0E0
+}

@@ -1,0 +1,55 @@
+.all{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.area{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    align-items: center;
+    background-color: #F1F0F0;
+}
+
+.a-name{
+    color: #565656;
+    /*font-weight: bold;*/
+}
+
+.cine-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+}
+
+.cine-info{
+    height: 100%;
+    width: 100%;
+    padding: 10px 10px;
+    align-items: center;
+}
+
+.zuo{
+    background-color: #BA1D08;
+    border: solid 1px lightyellow;
+    border-radius: 10rpx;
+    color: white;
+    font-size: 10pt;
+    text-align: center;
+    padding: 3rpx 3px;
+    margin: 0rpx 5rpx;
+}
+
+.name{
+    font-size: 13pt;
+}
+
+.addr{
+    font-size: 10pt;
+    margin: 15rpx 0rpx;
+    color: gray;
+    margin-right: 10px;
+}

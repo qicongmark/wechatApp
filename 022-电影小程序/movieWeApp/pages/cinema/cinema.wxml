@@ -1,0 +1,42 @@
+<view class="all">
+    <view class="area">
+        <text class="a-name">宝安区</text>
+    </view>
+    <view class="cine-info" wx:for="{{infos1}}">
+        <view class="cine-name">
+            <text class="name">{{item.nm}}</text>
+            <text class="zuo">座</text>
+        </view>
+        <text class="addr">{{item.addr}}</text>
+    </view>
+    <view class="area">
+        <text class="a-name">龙岗区</text>
+    </view>
+    <view class="cine-info" wx:for="{{infos2}}">
+        <view class="cine-name">
+            <text class="name">{{item.nm}}</text>
+            <text class="zuo">座</text>
+        </view>
+        <text class="addr">{{item.addr}}</text>
+    </view>
+    <view class="area">
+        <text class="a-name">南山区</text>
+    </view>
+    <view class="cine-info" wx:for="{{infos3}}">
+        <view class="cine-name">
+            <text class="name">{{item.nm}}</text>
+            <text class="zuo">座</text>
+        </view>
+        <text class="addr">{{item.addr}}</text>
+    </view>
+    <view class="area">
+        <text class="a-name">福田区</text>
+    </view>
+    <view class="cine-info" wx:for="{{infos4}}">
+        <view class="cine-name">
+            <text class="name">{{item.nm}}</text>
+            <text class="zuo">座</text>
+        </view>
+        <text class="addr">{{item.addr}}</text>
+    </view>
+</view>

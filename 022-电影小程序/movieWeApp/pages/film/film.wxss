@@ -1,0 +1,92 @@
+/**index.wxss**/
+
+
+/*top*/
+.top{
+	padding:10px;
+	display: flex;
+	font-size: 16px;
+}
+
+.top .position{
+	margin-right: 20px;
+	vertical-align: bottom;
+	padding:3px 0;
+}
+.top .search{
+	background-color: #fff;
+	padding:3px 0;
+	flex:1;
+	text-align: center;
+	color:#999;
+}
+.top .search icon{
+	position: relative;
+	top:-2px;
+	left:-2px;
+}
+
+/*main*/
+.main{
+	margin-top:10px;
+}
+.film {
+	padding:10px 0;
+	background-color:#fff;
+	height:100px;
+	
+}
+.film .image{
+	height: 100px;
+}
+.film image{
+	width:70px;
+	height:100px;
+	margin-right:10px;
+}
+.film .detail{
+	flex:1;
+	position: relative;
+	padding-right:10px;
+}
+.film title{
+	font-size:15px;
+}
+.film .threeD{
+	background-color:#49d95d;
+	border:1px solid #999;
+}
+.film .imax{
+	background-color:transparent;
+	border:1px solid #999;
+	border-left:none;
+}
+.film .score,
+.film .wish{
+	float:right;
+	color:orange;
+	position: relative;
+	top:5px;
+}
+.film .type,
+.film .star,
+.film .showInfo{
+	font-size:12px;
+	color:#999;
+	margin:5px 0;
+	width:190px;
+	overflow: hidden;
+	white-space:nowrap; 
+	text-overflow: ellipsis;
+}
+.film .buy{
+	float:right;
+	position: absolute;
+	top:60px;
+	right:10px;
+}
+.loading{
+	text-align: center;
+	color:#999;
+	font-size:16px;
+}
