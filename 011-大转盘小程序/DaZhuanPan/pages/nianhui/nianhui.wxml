@@ -1,0 +1,7 @@
+<!--pages/nianhui/nianhui.wxml-->
+<view>年会福利</view>
+<view>苹果顶配电脑</view>
+
+<button bindtap="zhuan" type="primary">抽福利</button>
+
+<view>{{star}}</view>

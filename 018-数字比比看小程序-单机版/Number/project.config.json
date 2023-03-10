@@ -39,60 +39,51 @@
     "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
-  "libVersion": "1.9.91",
+  "libVersion": "2.27.0",
   "appid": "wx5bc743c1ba6135ed",
   "projectname": "Number",
-  "isGameTourist": false,
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
-    "game": {
-      "currentL": -1,
-      "list": []
-    },
     "miniprogram": {
       "list": [
         {
-          "id": -1,
           "name": "play",
           "pathName": "pages/play/play",
           "query": ""
         },
         {
-          "id": -1,
           "name": "failure",
           "pathName": "pages/failure/failure",
           "query": ""
         },
         {
-          "id": -1,
           "name": "home",
           "pathName": "pages/home/home",
           "query": ""
         },
         {
-          "id": -1,
           "name": "reward",
           "pathName": "pages/reward/reward",
           "query": ""
         },
         {
-          "id": -1,
           "name": "rewardmy",
           "pathName": "pages/rewardmy/rewardmy",
           "query": ""
         },
         {
-          "id": -1,
           "name": "complain",
           "pathName": "pages/complain/complain",
           "query": ""
         }
       ]
     }
+  },
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
   }
 }

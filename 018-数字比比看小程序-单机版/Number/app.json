@@ -7,12 +7,12 @@
     "pages/failure/failure",
     "pages/reward/reward",
     "pages/rewardmy/rewardmy",
-    "pages/complain/complain"
+    "pages/complain/complain",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#3fb976",
-    "backgroundColor": "#3fb976",
+    "navigationBarBackgroundColor": "#FFF",
     "navigationBarTitleText": "数字比比看",
     "navigationBarTextStyle": "black"
   },

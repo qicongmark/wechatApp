@@ -1,0 +1,8 @@
+/* pages/nianhui/nianhui.wxss */
+
+view{
+  text-align: center;
+  font-size: 36px;
+  margin: 30rpx 0rpx;
+}
+

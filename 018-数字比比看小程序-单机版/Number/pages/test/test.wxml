@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+    <swiper class="banner" 
+      indicator-dots="true" 
+      autoplay="true" 
+      circular="true" 
+      indicator-color="#fff" 
+      indicator-active-color="#42c642">
+  
+      <swiper-item wx:for="{{banners}}">
+          <navigator hover-class="none" url="/pages/webview/webview?url={{item.link}}">
+              <image src="{{item.img}}" mode="aspectFill"></image>
+          </navigator>
+      </swiper-item>
+      
+    </swiper>
+  
+    <view class="interview">
+      <image bindtap="exam" src="../../images/interview.gif" mode="aspectFit"/>
+      <image bindtap="help" src="../../images/communication.gif" mode="aspectFit"/>
+    </view>
+    
+    <!-- 菜单导航 -->
+    <view class="category">
+      <view class="c-item" wx:for="{{category}}">
+        <view bindtap="navigator" hover-class="none" data-id="{{item.id}}">
+          <image src="../../images/{{item.image}}" mode="aspectFill"></image>
+          <view class="c-name">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+
+    
+  </view>
+  

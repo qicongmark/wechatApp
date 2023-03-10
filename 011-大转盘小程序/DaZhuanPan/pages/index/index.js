@@ -23,20 +23,20 @@ Page({
       "rate2":1,
       "rate3":2,
       "rate4":1,
-      "rate5":4,
-      "rate6":1
+      "rate5":3,
+      "rate6":2
     }
   },
 
   onShow: function(e){
     //刷新抽奖配置
     this.awardsConfig.awards = [
-      {'id':'"rate1"', 'index': 1, 'name': '烧烤' },
-      {'id':'"rate2"', 'index': 2, 'name': '喝水' },
-      {'id':'"rate3"', 'index': 3, 'name': '跑步' },
-      {'id':'"rate4"', 'index': 4, 'name': '满汉全席' },
-      {'id':'"rate5"', 'index': 5, 'name': '水果' },
-      {'id':'"rate6"', 'index': 6, 'name': '甜点' }
+      {'id':'"rate1"', 'index': 1, 'name': '刘亦菲' },
+      {'id':'"rate2"', 'index': 2, 'name': '赵丽颖' },
+      {'id':'"rate3"', 'index': 3, 'name': '高圆圆' },
+      {'id':'"rate4"', 'index': 4, 'name': '孙俪' },
+      {'id':'"rate5"', 'index': 5, 'name': '热巴' },
+      {'id':'"rate6"', 'index': 6, 'name': '刘诗诗' }
     ]
     this.drawAwardRoundel()
     
@@ -141,7 +141,7 @@ Page({
     setTimeout(function () {
       var awardContent = awardsConfig.awards[awardIndex].name
       wx.showModal({
-        title: '今晚夜宵吃',
+        title: '员工',
         content: awardContent,
         showCancel: false
       });
