@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/tang/tang",
+    "pages/song/song",
+    "pages/yuan/yuan",
+    "pages/poem/poem"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#78c3af",
+    "navigationBarTitleText": "诗词小程序",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "backgroundColor": "#F6F6F6",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/tang/tang",
+        "text": "唐诗",
+        "iconPath": "images/tang.png",
+        "selectedIconPath": "images/tang-select.png"
+      },
+      {
+        "pagePath": "pages/song/song",
+        "text": "宋词",
+        "iconPath": "images/song.png",
+        "selectedIconPath": "images/song-select.png"
+      },
+      {
+        "pagePath": "pages/yuan/yuan",
+        "text": "元曲",
+        "iconPath": "images/yuan.png",
+        "selectedIconPath": "images/yuan-select.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

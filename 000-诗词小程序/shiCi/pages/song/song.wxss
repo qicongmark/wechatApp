@@ -1,0 +1,46 @@
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #f6f6f6;
+}
+.poem-nav{
+  width: 25%;
+  height: 100vh;
+  text-align: center;
+  flex-shrink: 0;
+}
+.nav-item{
+  background-color: #f6f6f6;
+  color: #2b2b2b;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.active{
+  background-color: #fff;
+  color: #42c642;
+}
+
+.poem-content{
+  width: 80%;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.poem-item{
+  padding: 30rpx;
+}
+.poem-title{
+  font-size:36rpx;
+  font-weight: bold;
+  margin: 30rpx 0rpx;
+  text-align: center;
+}
+.poem-verse{
+  margin: 20rpx 0rpx;
+}
+.poem-img{
+  width:100%;
+}

@@ -1,0 +1,68 @@
+{
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "tang",
+          "pathName": "pages/tang/tang",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "S07-C02",
+          "pathName": "pages/S07/C02/C02",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "S07-C03",
+          "pathName": "pages/S07/C03/C03",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "S07-C04",
+          "pathName": "pages/S07/C04/C04",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "S07-C05",
+          "pathName": "pages/S07/C05/C05",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "song",
+          "pathName": "pages/song/song",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "yuan",
+          "pathName": "pages/yuan/yuan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "poem",
+          "pathName": "pages/poem/poem",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "S06-C29",
+          "pathName": "pages/S06/C29/C29",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "shiCi"
+}
