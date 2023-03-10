@@ -1,0 +1,31 @@
+/* pages/yuan/yuan.wxss */
+.container{
+  background-color: #fff;
+  padding: 0rpx;
+}
+
+.poem-card{
+  width: 100%;
+  border-bottom: 1px solid #efefef;
+}
+.poem-author{
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 20rpx;
+}
+.poem-image{
+  width: 100rpx;
+  height: 150rpx;
+  border-radius: 6rpx;
+  margin-right: 15rpx;
+  flex-shrink: 0;
+}
+.author{
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #5a6990;
+}
+.title{
+  font-weight: bold;
+  margin: 10rpx 0rpx;
+}
