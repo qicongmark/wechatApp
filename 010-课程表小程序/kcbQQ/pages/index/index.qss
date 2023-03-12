@@ -1,0 +1,169 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 0px;
+    box-sizing: border-box;
+}
+
+page {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow: scroll;
+}
+
+.schedule-top-fixed {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+}
+
+/**
+  * 星期样式
+  **/
+.week-block {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 55px;
+    background: #e4e4e4;
+}
+
+.week-block image {
+    width: 90rpx;
+    height: 100%;
+}
+
+.week-day {
+    font-size: 24rpx;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    height: 55px;
+}
+
+.day-item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cur-day-item {
+    background-color: #7fcaf1;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-item view {
+    margin: 4rpx 0rpx;
+}
+
+.cur-day-item view{
+    margin: 4rpx 0rpx;
+}
+
+/**
+  * 课表样式
+  **/
+.schedule-table {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.section-time-block {
+    width: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: rgba(234, 238, 241, 0.6);
+}
+
+.time-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 45px;
+    font-size: 24rpx;
+    border-bottom: 1px solid #7fcaf1;
+}
+
+.time-item-siesta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 45px;
+    font-size: 24rpx;
+    background-color: #e4e4e4;
+    border-bottom: 1px solid #7fcaf1;
+}
+
+.time-no {
+    font-size: 24rpx;
+}
+
+.course-shedule-block {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.course-shedule-block-bg {
+    background-color: #F3E4D0;
+}
+
+.course-day-block {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 9;
+}
+
+.course-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #7fcaf1;
+}
+
+.course-name {
+    width: 100%;
+    font-size: 30rpx;
+    text-align: center;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.course-room {
+    font-size: 20rpx;
+    text-align: center;
+    width: 100%;
+    margin-top:6rpx;
+}
+

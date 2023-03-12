@@ -6,7 +6,7 @@
  * */
 var courseList = [
     //周日 16进制的颜色
-    [{count:2, name:"计算机（双）",room:"12号楼888", bgcolor:"#FFF"},
+    [{count:2, name:"计算机（单）",room:"1号楼888", bgcolor:"#A9A9A9"},
      {count:1},
      {count:1},
      {count:1, siesta: 1},
