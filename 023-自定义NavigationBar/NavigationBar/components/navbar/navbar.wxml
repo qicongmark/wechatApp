@@ -1,0 +1,19 @@
+<!-- 自定义顶部栏 -->
+<block wx:if="{{showBack}}">
+<view class="nav-bar" style="height:{{navBarHeight}}px;">
+  <image bindtap="doBack" class="nav-bar-back" src="../../images/icon/back.png" mode="aspectFit" style="height:{{navMenuHeight}}px; min-height:{{navMenuHeight}}px; line-height:{{navMenuHeight}}px; left:15px; top:{{navMenuTop}}px;"></image>
+  <view bindtap="toSearch"  class="nav-bar-search" style="height:{{navMenuHeight}}px; min-height:{{navMenuHeight}}px; line-height:{{navMenuHeight}}px; left:{{navMenuRight+40}}px; top:{{navMenuTop}}px;">
+    <input class="nav-bar-input" placeholder="{{title}}" style="height:{{navMenuHeight}}px; min-height:{{navMenuHeight}}px; line-height:{{navMenuHeight}}px; "></input>
+    <image class="nav-bar-img" src="../../images/icon/search.png" style="width:48px;height:{{navMenuHeight}}px;" mode="aspectFit"></image>
+  </view>
+</view>
+</block>
+<block wx:else>
+<view class="nav-bar" style="height:{{navBarHeight}}px;">
+  <view bindtap="toSearch"  class="nav-bar-search" style="height:{{navMenuHeight}}px; min-height:{{navMenuHeight}}px; line-height:{{navMenuHeight}}px; left:{{navMenuRight}}px; top:{{navMenuTop}}px;">
+    <input class="nav-bar-input" placeholder="{{title}}" style="height:{{navMenuHeight}}px; min-height:{{navMenuHeight}}px; line-height:{{navMenuHeight}}px; "></input>
+    <image class="nav-bar-img" src="../../images/icon/search.png" style="width:48px;height:{{navMenuHeight}}px;" mode="aspectFit"></image>
+  </view>
+</view>
+</block>
+<view style="height:{{navBarHeight}}px;"></view>

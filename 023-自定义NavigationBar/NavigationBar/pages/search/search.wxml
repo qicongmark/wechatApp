@@ -1,0 +1,12 @@
+<!--pages/sub/sub.wxml-->
+<view class="container">
+  <form class="search-form">
+    <view class="search-group">
+      <view class="search-group-view">
+        <input auto-focus="{{true}}" focus="{{true}}" bindinput="changeKey" class="form-control" maxlength="15" value="{{key}}"/>
+        <button class="search-btn" bindtap="doSearch" type="primary" size="mini" style="background-color:#0DA4FD;right:1px;height:30px;line-height:30px;width:80px;">检 索</button>
+      </view>
+    </view>
+  </form>
+</view>
+

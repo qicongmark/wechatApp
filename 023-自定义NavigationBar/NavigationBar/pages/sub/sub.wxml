@@ -1,0 +1,5 @@
+<navbar showBack="{{true}}"></navbar>
+<view class="container">
+  <text>二级页面</text>
+</view>
+

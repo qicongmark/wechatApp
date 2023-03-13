@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<navbar title="我的小程序"></navbar>
+
+<view class="container">
+  <view style="margin-bottom: 60rpx;">这是主页</view>
+
+  <navigator url="/pages/sub/sub">
+    <button type="primary">二级页面</button>
+  </navigator>
+
+</view>

@@ -1,0 +1,35 @@
+.nav-bar{ 
+  position: fixed; 
+  width: 100%; 
+  top: 0; 
+  background: #FFF;
+  z-index: 999;
+}
+.nav-bar-back{
+  position: absolute; 
+  width: 60rpx;
+}
+.nav-bar-search{ 
+  width: 50%; 
+  position: relative; 
+  border-radius: 50px; 
+  border: 1px solid #dbdbdb;
+  background-color: #FFF;
+}
+.nav-bar-input{ 
+  position: absolute;
+  width: 90%; 
+  color: #2a2a2a; 
+  position: absolute; 
+  border-radius: 50px; 
+  padding-left: 30rpx;
+  background-color: #FFF;
+  font-size: small;
+}
+.nav-bar-img{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+}
