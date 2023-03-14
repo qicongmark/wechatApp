@@ -1,4 +1,4 @@
-<navbar showBack="{{true}}"></navbar>
+<navbar showBack="{{true}}" title="请输入内容"></navbar>
 <view class="container">
   <text>二级页面</text>
 </view>

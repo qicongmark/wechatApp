@@ -3,7 +3,7 @@
 
 - 每个文件夹都是一个小程序项目源码，持续更新中，感谢star
 
-- 小程序视频教程：https://jeeweixin.com/wiki/1469644269420576
+- 视频教程都在公众号 祁大聪 ，https://mp.weixin.qq.com/s/shecKfTzMQUvrulpfiU4Og
 
 - 小程序学习文档：https://jeeweixin.com/wiki/1407524274176032
 
