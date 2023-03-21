@@ -37,7 +37,8 @@
     "minifyWXML": true,
     "showES6CompileOption": false,
     "useCompilerPlugins": false,
-    "ignoreUploadUnusedFiles": true
+    "ignoreUploadUnusedFiles": true,
+    "condition": false
   },
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
   "srcMiniprogramRoot": "miniprogram/",
@@ -46,9 +47,8 @@
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
-  "appid": "wxe726becfa390d669",
+  "appid": "wx5bc743c1ba6135ed",
   "libVersion": "2.24.5",
-  "isGameTourist": false,
   "packOptions": {
     "ignore": [],
     "include": []
